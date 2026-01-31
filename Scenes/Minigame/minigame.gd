@@ -1,5 +1,6 @@
 @tool
 extends Node2D
+class_name Minigame
 
 @onready var char_sprite = %CharacterSprite
 
@@ -23,34 +24,41 @@ var character_sprites = {
 	CharacterEnum.chars.JEANKEVIN: preload("res://Assets/Characters/jean-kevin.png")
 }
 
+var reply_text: String
+var character_text: String
+var npc_sequence: Array
+
 var reset_timer: Timer
 
 func _ready() -> void:
 	reset_timer = Timer.new()
 	self.add_child(reset_timer)
-	reset_timer.finished.connect(_on_timer_finished)
+	reset_timer.timeout.connect(_on_timer_finished)
 	
 	is_npc = true
 
 func _on_timer_finished():
 	$MaskSticks.reset()
 
-func play_sequence_npc(sequence: Array[int]):
-	for emotion in sequence:
+func start():
+	is_npc = false
+
+func play_sequence_npc():
+	for emotion in npc_sequence:
 		$MaskSticks.set_mask(emotion)
 		reset_timer.start(1.0)
 		
-		await get_tree().create_timer(tempo_ms).timeout
-		
-	return true
+		print("displaying emotion: ", emotion)
+		await get_tree().create_timer(tempo_ms / 1000.0).timeout
 
 func press_direction(direction):
 	if is_npc:
 		return
 		
 	$MaskSticks.set_mask(direction)
+	
 	# SFX handle
-	AudioController.play_feelings(direction)
+	#AudioController.play_feelings(direction)
 	
 	var camera_anim = %Camera2D.get_node("AnimationPlayer")
 	if camera_anim.is_playing():

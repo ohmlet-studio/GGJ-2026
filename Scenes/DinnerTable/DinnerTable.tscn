@@ -90,7 +90,9 @@ size = Vector2i(580, 915)
 
 [node name="Minigame" parent="SubViewportMinigame" unique_id=1383645364 instance=ExtResource("2_ai5vm")]
 unique_name_in_owner = true
-character = 3
+tempo_ms = 200.0
+character = 4
+is_npc = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=447278973]
 unique_name_in_owner = true
@@ -105,7 +107,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_dy18p")
-current_dialog_index = 2
 
 [node name="Label" type="Label" parent="DialogController" unique_id=585406073]
 layout_mode = 0
@@ -115,7 +116,7 @@ offset_right = 1056.0
 offset_bottom = 983.0
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_wh2rv")
-text = "It's not bad... it's just that I've tasted better"
+text = "I'm so glad to have you home dear."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -123,21 +124,83 @@ script = ExtResource("5_hotc4")
 
 [node name="Prompts" type="Node" parent="DialogController" unique_id=957683940]
 
-[node name="DialogPrompt" type="Node" parent="DialogController/Prompts" unique_id=1687083404]
+[node name="DialogPromptTUTO1" type="Node" parent="DialogController/Prompts" unique_id=1687083404]
 script = ExtResource("4_l8u7i")
-char_dialog = "It's not bad... it's just that I've tasted better"
-character = 3
-metadata/_custom_type_script = "uid://btusn0kqjv6ew"
-
-[node name="DialogPrompt2" type="Node" parent="DialogController/Prompts" unique_id=604181248]
-script = ExtResource("4_l8u7i")
+char_dialog = "I'm so glad to have you home dear."
+response = "(Oh, that's right, I'm home, time to perform, ok, let's get used to it)
+I'm glad to be home too mom !"
+input_sequence = "HAPPY"
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
-[node name="DialogPrompt3" type="Node" parent="DialogController/Prompts" unique_id=1325620412]
+[node name="DialogPromptTUTO2" type="Node" parent="DialogController/Prompts" unique_id=1335219409]
 script = ExtResource("4_l8u7i")
-char_dialog = "acaccaca"
+char_dialog = "I missed you while you were away..."
+response = "I missed all of you too..."
+input_sequence = "SAD"
+character = 4
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPromptTUTO3" type="Node" parent="DialogController/Prompts" unique_id=155398893]
+script = ExtResource("4_l8u7i")
+char_dialog = "By the way you could have texted and call more, I was worried!"
+response = "Yeah, I'm so overwhlmed between classes and work, it sucks!"
+input_sequence = "ANGER"
+character = 4
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPromptTUTO4" type="Node" parent="DialogController/Prompts" unique_id=338594483]
+script = ExtResource("4_l8u7i")
+char_dialog = "If you did you would know, we just adopted a kitten yesterday, we named it Zoomies!"
+response = "Oh waow, I can't wait to meet it !"
+input_sequence = "SURPRISE"
+character = 4
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="Level1" type="Node" parent="DialogController" unique_id=454303209]
+
+[node name="DialogPrompt1" type="Node" parent="DialogController/Level1" unique_id=604181248]
+script = ExtResource("4_l8u7i")
+char_dialog = "Let's dig in ! We're having carrots and peas, salad, pasghetti and fishies."
+response = "Yeah !"
+input_sequence = "SURPRISE SURPRISE HAPPY HAPPY"
+character = 4
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPrompt2" type="Node" parent="DialogController/Level1" unique_id=1985790026]
+script = ExtResource("4_l8u7i")
+char_dialog = "Yeah, so I just got laid off, turns out you need to know how to count to be an engineer..."
+response = "Oh whaouh, I never would have guessed, I'm so sorry..."
+input_sequence = "SAD SAD ANGER SURPRISE SAD ANGER"
+character = 1
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPrompt3" type="Node" parent="DialogController/Level1" unique_id=2010035605]
+script = ExtResource("4_l8u7i")
+char_dialog = "Bollocks, work sucks anyway, I'm glad you got out of it. Do you want me to throw a brick through their window ?"
+response = "Yeah, that will show them."
+input_sequence = "ANGER ANGER SAD HAPPY SAD HAPPY ANGER SURPRISE HAPPY HAPPY"
 character = 6
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
-[node name="Tuto" type="Node" parent="DialogController" unique_id=685698510]
+[node name="DialogPrompt4" type="Node" parent="DialogController/Level1" unique_id=1410690082]
+script = ExtResource("4_l8u7i")
+char_dialog = "ABGAH ! Humst aaaah uh."
+response = "(Wow, baby seems to already be anti-establishment, never too young to develop social consciousness I guess)"
+input_sequence = "HAPPY ANGER ANGER HAPPY SURPRISE"
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPrompt5" type="Node" parent="DialogController/Level1" unique_id=890825669]
+script = ExtResource("4_l8u7i")
+char_dialog = "JEAN KEV Aaaah, I'm glad I'm still in school. Did I tell you I got casted in the school play !"
+response = "Oh whaou, that's great, I'm so proud of you!"
+input_sequence = "SAD HAPPY HAPPY HAPPY SURPRISE HAPPY SURPRISE SURPRISE"
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPrompt6" type="Node" parent="DialogController/Level1" unique_id=1175370586]
+script = ExtResource("4_l8u7i")
+char_dialog = "That's how I met you grandma, I was Juliette and she was a teckie, it was love at first sight, I miss her."
+response = "Yeah, I remember the picture, you looked like youo were having fun."
+input_sequence = "SURPRISE HAPPY SURPRISE HAPPY SAD SAD HAPPY SAD"
+character = 5
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"

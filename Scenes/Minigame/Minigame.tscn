@@ -79,6 +79,7 @@ _data = {
 [node name="Minigame" type="Node2D" unique_id=1383645364]
 script = ExtResource("1_f4dal")
 tempo_ms = null
+character = null
 is_npc = null
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1027360473]
@@ -109,7 +110,7 @@ script = ExtResource("6_dn3w5")
 [node name="UpArrow" type="Sprite2D" parent="MaskSticks/UpStick" unique_id=2088617050]
 position = Vector2(0, -703.3333)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("9_r6p87")
+texture = ExtResource("7_yhojd")
 script = ExtResource("7_dn3w5")
 align = true
 
@@ -157,7 +158,7 @@ script = ExtResource("6_dn3w5")
 position = Vector2(0, -703.3333)
 rotation = -1.5707964
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("7_yhojd")
+texture = ExtResource("9_r6p87")
 script = ExtResource("7_dn3w5")
 align = true
 
