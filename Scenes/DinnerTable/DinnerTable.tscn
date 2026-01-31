@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://8hum8taroxds"]
 
+[ext_resource type="Texture2D" uid="uid://cpb7fdqdsxenx" path="res://Assets/Background/kitchen_table_scene.jpg" id="2_3mdec"]
 [ext_resource type="PackedScene" uid="uid://wfojq22ofpch" path="res://Scenes/Minigame/Minigame.tscn" id="2_ai5vm"]
 [ext_resource type="Script" uid="uid://bqkhobriou2pa" path="res://Scenes/DinnerTable/PushInput.gd" id="2_wh2rv"]
 [ext_resource type="Script" uid="uid://cr0vs2pn8smo6" path="res://Scenes/DinnerTable/dialog_controller.gd" id="4_dy18p"]
 [ext_resource type="Script" uid="uid://btusn0kqjv6ew" path="res://Scenes/Dialog/dialog_prompt.gd" id="4_l8u7i"]
 [ext_resource type="Script" uid="uid://cxcw0vi7mftul" path="res://Scenes/DinnerTable/label_char_to_char.gd" id="5_hotc4"]
+[ext_resource type="Texture2D" uid="uid://cbxyq5ssseuoj" path="res://Assets/Textures/talking_hint.png" id="7_umv17"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_wh2rv"]
 viewport_path = NodePath("SubViewportMinigame")
@@ -56,8 +58,13 @@ expand_margin_bottom = 15.0
 [node name="DinnerTable" type="Node2D" unique_id=665496141]
 script = ExtResource("2_wh2rv")
 
+[node name="KitchenTableScene" type="Sprite2D" parent="." unique_id=48707983]
+position = Vector2(960, 540)
+scale = Vector2(0.49832204, 0.49832204)
+texture = ExtResource("2_3mdec")
+
 [node name="Minigame" type="Sprite2D" parent="." unique_id=66658314]
-position = Vector2(1487, 540)
+position = Vector2(1442, 540)
 texture = SubResource("ViewportTexture_wh2rv")
 
 [node name="SubViewportMinigame" type="SubViewport" parent="." unique_id=1699164104]
@@ -66,7 +73,6 @@ size = Vector2i(580, 915)
 
 [node name="Minigame" parent="SubViewportMinigame" unique_id=1383645364 instance=ExtResource("2_ai5vm")]
 unique_name_in_owner = true
-character = 0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=447278973]
 unique_name_in_owner = true
@@ -81,7 +87,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_dy18p")
-current_dialog_index = 1
+current_dialog_index = 2
 
 [node name="Label" type="Label" parent="DialogController" unique_id=585406073]
 layout_mode = 0
@@ -91,6 +97,7 @@ offset_right = 1056.0
 offset_bottom = 983.0
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_wh2rv")
+text = "COUCOU"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -100,9 +107,23 @@ script = ExtResource("5_hotc4")
 
 [node name="DialogPrompt" type="Node" parent="DialogController/Prompts" unique_id=1687083404]
 script = ExtResource("4_l8u7i")
+char_dialog = "COUCOU"
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="DialogPrompt2" type="Node" parent="DialogController/Prompts" unique_id=604181248]
 script = ExtResource("4_l8u7i")
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPrompt3" type="Node" parent="DialogController/Prompts" unique_id=1325620412]
+script = ExtResource("4_l8u7i")
+char_dialog = "acaccaca"
+character = 6
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="Tuto" type="Node" parent="DialogController" unique_id=685698510]
+
+[node name="TalkingHint" type="Sprite2D" parent="." unique_id=554268627]
+position = Vector2(325, 497)
+scale = Vector2(0.5156563, 0.5156563)
+texture = ExtResource("7_umv17")

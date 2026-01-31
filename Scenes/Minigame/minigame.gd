@@ -17,7 +17,8 @@ var character_sprites = {
 	CharacterEnum.chars.MOM: preload("res://Assets/Characters/mom.png"),
 	CharacterEnum.chars.DAD: preload("res://Assets/Characters/dad.png"),
 	CharacterEnum.chars.OLD_LADY: preload("res://Assets/Characters/old_lady.png"),
-	CharacterEnum.chars.PUNK: preload("res://Assets/Characters/punk.png")
+	CharacterEnum.chars.PUNK: preload("res://Assets/Characters/punk.png"),
+	CharacterEnum.chars.JEANKEVIN: preload("res://Assets/Characters/jean-kevin.png")
 }
 
 var reset_timer: Timer

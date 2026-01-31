@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpnt2a7xvl7o7"
-path="res://.godot/imported/jean-kevin_.png-6773139c6c5f60edb60f0a931927480a.ctex"
+uid="uid://bcttd71n0bp0c"
+path="res://.godot/imported/happy.png-e8a7a0c526a9e66a74cacbe63f186af2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/jean-kevin_.png"
-dest_files=["res://.godot/imported/jean-kevin_.png-6773139c6c5f60edb60f0a931927480a.ctex"]
+source_file="res://Assets/Masks/happy.png"
+dest_files=["res://.godot/imported/happy.png-e8a7a0c526a9e66a74cacbe63f186af2.ctex"]
 
 [params]
 
