@@ -14,6 +14,10 @@ extends Control
 
 func _ready():
 	play_prompt(0)
+	
+	minigame.input_invalid.connect(func(value): print("input_invalid"))
+	minigame.input_valid.connect(func(value): print("input_valid"))
+	minigame.input_missed.connect(func(value): print("input_missed"))
 
 func _convert_sequence(string_sequence: String):
 	var string_to_enum = {
