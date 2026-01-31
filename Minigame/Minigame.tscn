@@ -1,15 +1,16 @@
-[gd_scene format=3 uid="uid://bvuwenxa12133"]
+[gd_scene format=3 uid="uid://wfojq22ofpch"]
 
 [ext_resource type="Script" uid="uid://cfqpsurhe7tfo" path="res://Minigame/minigame.gd" id="1_f4dal"]
-[ext_resource type="Texture2D" uid="uid://b75nfpv6knxbl" path="res://Minigame/white_circular.png" id="1_fqyxi"]
+[ext_resource type="Texture2D" uid="uid://b75nfpv6knxbl" path="res://Minigame/Assets/Textures/white_circular.png" id="1_fqyxi"]
 [ext_resource type="Script" uid="uid://b0p7rhk20kma5" path="res://Minigame/simon_says.gd" id="1_uwbv6"]
 [ext_resource type="Script" uid="uid://b450iaatc07hq" path="res://Minigame/tempo_indicator.gd" id="3_jxsht"]
+[ext_resource type="Script" uid="uid://bomi3fxjve32g" path="res://Minigame/SquashOnTick.gd" id="3_o6pu6"]
 [ext_resource type="Script" uid="uid://c84ifqdpeko0t" path="res://Minigame/arrow_sequence.gd" id="4_gmjc4"]
-[ext_resource type="Texture2D" uid="uid://8au8clcrs2lu" path="res://Minigame/arrow.png" id="4_vllsg"]
-[ext_resource type="Texture2D" uid="uid://cqtskiivla07o" path="res://Minigame/stick.webp" id="6_8l3v4"]
+[ext_resource type="Texture2D" uid="uid://8au8clcrs2lu" path="res://Minigame/Assets/Textures/arrow.png" id="4_vllsg"]
+[ext_resource type="Texture2D" uid="uid://cqtskiivla07o" path="res://Minigame/Assets/Textures/stick.webp" id="6_8l3v4"]
 [ext_resource type="Script" uid="uid://50eiryj543y8" path="res://Minigame/MaskHandle.gd" id="6_dn3w5"]
 [ext_resource type="Script" uid="uid://dnv3p0xv5vlsu" path="res://Minigame/keep_rotation.gd" id="7_dn3w5"]
-[ext_resource type="Texture2D" uid="uid://cj6xmgoltcbqm" path="res://Minigame/Character.png" id="10_ckcjh"]
+[ext_resource type="Texture2D" uid="uid://cj6xmgoltcbqm" path="res://Minigame/Assets/Textures/Character.png" id="10_ckcjh"]
 
 [sub_resource type="Curve" id="Curve_f4dal"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.49545455, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -83,6 +84,7 @@ color = Color(0, 0.14711776, 0.09343865, 1)
 [node name="Character" type="Sprite2D" parent="." unique_id=823834987]
 position = Vector2(576, 440)
 texture = ExtResource("10_ckcjh")
+script = ExtResource("3_o6pu6")
 
 [node name="SimonSays" type="Node2D" parent="." unique_id=191971695]
 unique_name_in_owner = true

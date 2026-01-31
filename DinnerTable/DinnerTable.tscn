@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://8hum8taroxds"]
 
 [ext_resource type="Texture2D" uid="uid://dnxcacjlrml1x" path="res://DinnerTable/background.webp" id="1_giple"]
-[ext_resource type="PackedScene" uid="uid://bvuwenxa12133" path="res://Minigame/Minigame.tscn" id="2_ai5vm"]
+[ext_resource type="PackedScene" uid="uid://wfojq22ofpch" path="res://Minigame/Minigame.tscn" id="2_ai5vm"]
 [ext_resource type="Script" uid="uid://bqkhobriou2pa" path="res://DinnerTable/PushInput.gd" id="2_wh2rv"]
+[ext_resource type="Script" uid="uid://cr0vs2pn8smo6" path="res://DinnerTable/dialog_controller.gd" id="4_dy18p"]
+[ext_resource type="Script" uid="uid://btusn0kqjv6ew" path="res://Dialog/dialog_prompt.gd" id="4_l8u7i"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_wh2rv"]
 viewport_path = NodePath("SubViewportMinigame")
@@ -44,12 +46,19 @@ _data = {
 &"RESET": SubResource("Animation_o6pu6")
 }
 
-[node name="Node3D" type="Node2D" unique_id=665496141]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh2rv"]
+bg_color = Color(0.36, 0.36, 0.36, 0.8745098)
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[node name="DinnerTable" type="Node2D" unique_id=665496141]
 script = ExtResource("2_wh2rv")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1950622168]
-position = Vector2(576, 324)
-scale = Vector2(0.6233122, 0.6233122)
+position = Vector2(574.00006, 324.00003)
+scale = Vector2(0.61770815, 0.61770815)
 texture = ExtResource("1_giple")
 
 [node name="Minigame" type="Sprite2D" parent="." unique_id=66658314]
@@ -70,3 +79,29 @@ position = Vector2(576, 324)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D" unique_id=1418315104]
 libraries/ = SubResource("AnimationLibrary_ai5vm")
+
+[node name="DialogController" type="Control" parent="." unique_id=699625499]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_dy18p")
+
+[node name="Label" type="Label" parent="DialogController" unique_id=585406073]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 460.0
+offset_right = 636.0
+offset_bottom = 600.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_wh2rv")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Prompts" type="Node" parent="DialogController" unique_id=957683940]
+
+[node name="DialogPrompt" type="Node" parent="DialogController/Prompts" unique_id=1687083404]
+script = ExtResource("4_l8u7i")
+dialog_content = "It's not that it's bad, it's just that I'm not THAT hungry"
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"

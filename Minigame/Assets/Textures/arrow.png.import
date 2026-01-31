@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj6xmgoltcbqm"
-path="res://.godot/imported/Character.png-031a7c605133d62a85ea8f9760327574.ctex"
+uid="uid://8au8clcrs2lu"
+path="res://.godot/imported/arrow.png-2b7c74bf45c5183ef298bee48c3a5023.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Minigame/Character.png"
-dest_files=["res://.godot/imported/Character.png-031a7c605133d62a85ea8f9760327574.ctex"]
+source_file="res://Minigame/Assets/Textures/arrow.png"
+dest_files=["res://.godot/imported/arrow.png-2b7c74bf45c5183ef298bee48c3a5023.ctex"]
 
 [params]
 

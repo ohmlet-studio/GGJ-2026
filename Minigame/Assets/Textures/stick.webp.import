@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b75nfpv6knxbl"
-path="res://.godot/imported/white_circular.png-a8b39fb42d07de0f7c215937a3d947e9.ctex"
+uid="uid://cqtskiivla07o"
+path="res://.godot/imported/stick.webp-35cdbfc06f30ef0041ea7a6fb5edab7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Minigame/white_circular.png"
-dest_files=["res://.godot/imported/white_circular.png-a8b39fb42d07de0f7c215937a3d947e9.ctex"]
+source_file="res://Minigame/Assets/Textures/stick.webp"
+dest_files=["res://.godot/imported/stick.webp-35cdbfc06f30ef0041ea7a6fb5edab7f.ctex"]
 
 [params]
 
