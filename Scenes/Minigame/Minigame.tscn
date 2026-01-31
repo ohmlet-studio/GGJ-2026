@@ -78,9 +78,7 @@ _data = {
 
 [node name="Minigame" type="Node2D" unique_id=1383645364]
 script = ExtResource("1_f4dal")
-tempo_ms = null
-character = null
-is_npc = null
+is_npc = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1027360473]
 offset_left = -664.0
