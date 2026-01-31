@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cr0vs2pn8smo6" path="res://Scenes/DinnerTable/dialog_controller.gd" id="4_dy18p"]
 [ext_resource type="Script" uid="uid://btusn0kqjv6ew" path="res://Scenes/Dialog/dialog_prompt.gd" id="4_l8u7i"]
 [ext_resource type="Texture2D" uid="uid://dbifr1m051iuv" path="res://Assets/Characters/speaking_bonus/Baby1.png" id="5_d8ug0"]
+[ext_resource type="Texture2D" uid="uid://chivd6n8n466k" path="res://Assets/Minigame/Cadre.png" id="6_3ppc4"]
 [ext_resource type="Texture2D" uid="uid://b1qa6gfnifvm2" path="res://Assets/Characters/speaking_bonus/Baby2.png" id="6_npwxr"]
 [ext_resource type="Texture2D" uid="uid://ctvsyexeqoqld" path="res://Assets/Characters/speaking_bonus/Bob1.png" id="7_sxdy7"]
 [ext_resource type="Texture2D" uid="uid://dsoimn06wu41w" path="res://Assets/Characters/speaking_bonus/Bob2.png" id="8_r6s68"]
@@ -134,7 +135,7 @@ _data = {
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh2rv"]
-bg_color = Color(0.36, 0.36, 0.36, 0.8745098)
+bg_color = Color(0.08468988, 0.08468994, 0.08468992, 0.8745098)
 expand_margin_left = 15.0
 expand_margin_top = 15.0
 expand_margin_right = 15.0
@@ -171,6 +172,11 @@ position = Vector2(1488, 588)
 position = Vector2(-0.37731934, -0.31549072)
 texture = SubResource("ViewportTexture_wh2rv")
 
+[node name="Cadre" type="Sprite2D" parent="Node2D/Minigame" unique_id=144302358]
+position = Vector2(-4.6226807, 22.31549)
+scale = Vector2(2.307139, 2.307139)
+texture = ExtResource("6_3ppc4")
+
 [node name="Hint" type="Node2D" parent="." unique_id=1231922989]
 position = Vector2(691, 494)
 scale = Vector2(0.7556988, 0.7556988)
@@ -181,7 +187,7 @@ scale = Vector2(0.7327273, 0.7327273)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_baby"
 autoplay = "hint_baby"
-frame_progress = 0.5558717
+frame_progress = 0.2777076
 script = ExtResource("18_sxdy7")
 
 [node name="Hint_bob" type="AnimatedSprite2D" parent="Hint" unique_id=290357471]
@@ -190,7 +196,7 @@ scale = Vector2(0.43457946, 0.43457943)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_bob"
 autoplay = "hint_bob"
-frame_progress = 0.23401336
+frame_progress = 0.9558496
 script = ExtResource("18_sxdy7")
 
 [node name="Hint_jeanKev" type="AnimatedSprite2D" parent="Hint" unique_id=719400306]
@@ -199,6 +205,7 @@ scale = Vector2(0.426103, 0.426103)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_jeanKev"
 autoplay = "hint_jeanKev"
+frame_progress = 0.13121593
 script = ExtResource("18_sxdy7")
 
 [node name="Hint_mom" type="AnimatedSprite2D" parent="Hint" unique_id=1681096808]
@@ -207,6 +214,7 @@ scale = Vector2(0.48713222, 0.48713225)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_mom"
 autoplay = "hint_mom"
+frame_progress = 0.47572345
 script = ExtResource("18_sxdy7")
 
 [node name="Hint_oldBaby" type="AnimatedSprite2D" parent="Hint" unique_id=1582503323]
@@ -215,6 +223,7 @@ scale = Vector2(0.31102362, 0.31102362)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_oldBaby"
 autoplay = "hint_oldBaby"
+frame_progress = 0.6029111
 script = ExtResource("18_sxdy7")
 
 [node name="Hint_punk" type="AnimatedSprite2D" parent="Hint" unique_id=1938297556]
@@ -223,7 +232,15 @@ scale = Vector2(0.38934425, 0.38934427)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_punk"
 autoplay = "hint_punk"
+frame_progress = 0.6736346
 script = ExtResource("18_sxdy7")
+
+[node name="TempoVisualizer" type="Node2D" parent="." unique_id=1149478507]
+position = Vector2(1491, 102)
+scale = Vector2(2.1442087, 2.1442087)
+
+[node name="MasqueGros" type="Sprite2D" parent="TempoVisualizer" unique_id=886975122]
+texture = ExtResource("12_fhul8")
 
 [node name="SubViewportMinigame" type="SubViewport" parent="." unique_id=1699164104]
 unique_name_in_owner = true
@@ -361,10 +378,3 @@ response = "Yeah, I remember the picture, you looked like youo were having fun."
 input_sequence = "SURPRISE HAPPY SURPRISE HAPPY SAD SAD HAPPY SAD"
 character = 5
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
-
-[node name="TempoVisualizer" type="Node2D" parent="." unique_id=1149478507]
-position = Vector2(1491, 102)
-scale = Vector2(2.1442087, 2.1442087)
-
-[node name="MasqueGros" type="Sprite2D" parent="TempoVisualizer" unique_id=886975122]
-texture = ExtResource("12_fhul8")
