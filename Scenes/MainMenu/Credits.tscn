@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://cku784e6ltmm2"]
+
+[ext_resource type="Texture2D" uid="uid://dvy3dyw842sjh" path="res://Assets/Background/title_scene.jpg" id="1_0gov2"]
+[ext_resource type="Script" uid="uid://2kjy751nrfg6" path="res://Scenes/MainMenu/credits.gd" id="1_n222b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0gov2"]
+texture = ExtResource("1_0gov2")
+
+[sub_resource type="SystemFont" id="SystemFont_0gov2"]
+font_names = PackedStringArray("Arial Rounded MT Bold", "Arial Rounded MT Bold")
+modulate_color_glyphs = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n222b"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0.09019608, 0.09019608, 0.09019608, 0.6431373)
+shadow_size = 20
+shadow_offset = Vector2(15, 15)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7h06"]
+bg_color = Color(0.1584728, 0.15847209, 0.15847251, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0.051970966, 0.051970966, 0.051970936, 0.8509804)
+shadow_size = 20
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rvot"]
+bg_color = Color(0.89925843, 0.8992584, 0.89925843, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0.09019608, 0.09019608, 0.09019608, 0.8509804)
+shadow_size = 20
+shadow_offset = Vector2(5, 5)
+
+[node name="Credits" type="Control" unique_id=1738094265]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n222b")
+
+[node name="Panel" type="Panel" parent="." unique_id=914929765]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0gov2")
+
+[node name="return" type="Button" parent="." unique_id=1708189662]
+layout_mode = 0
+offset_left = 1581.0
+offset_top = 896.0
+offset_right = 1785.0
+offset_bottom = 966.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.1404478, 0.14044732, 0.14044747, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_fonts/font = SubResource("SystemFont_0gov2")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_n222b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o7h06")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2rvot")
+text = "return"
+
+[connection signal="pressed" from="return" to="." method="_on_return_pressed"]
