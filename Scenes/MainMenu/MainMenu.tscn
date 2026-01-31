@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b7l3o1mcbb8jg" path="res://Assets/TitleScene/doorbell.png" id="6_8qovt"]
 [ext_resource type="Texture2D" uid="uid://btmk8rn5ufa20" path="res://Assets/TitleScene/enter.png" id="7_8qovt"]
 [ext_resource type="Shader" uid="uid://djx8tgp8tq2cw" path="res://Scenes/MainMenu/MainMenu.gdshader" id="8_0hjx5"]
+[ext_resource type="FontFile" uid="uid://bo1h63330vth6" path="res://Assets/main_font.ttf" id="8_fv0xt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cruaa"]
 texture = ExtResource("2_sg7ab")
@@ -123,9 +124,6 @@ albedo_texture = ExtResource("3_kpx3y")
 material = SubResource("StandardMaterial3D_ua038")
 size = Vector2(0.96, 1.45)
 
-[sub_resource type="SystemFont" id="SystemFont_8qovt"]
-font_names = PackedStringArray("Oabin Cute")
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qovt"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
@@ -223,7 +221,7 @@ offset_bottom = 1135.0
 scale = Vector2(0.4816388, 0.4816388)
 theme_override_colors/font_color = Color(0.5439063, 0.27090228, 0.022036087, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = SubResource("SystemFont_8qovt")
+theme_override_fonts/font = ExtResource("8_fv0xt")
 theme_override_font_sizes/font_size = 136
 theme_override_styles/normal = SubResource("StyleBoxFlat_8qovt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0hjx5")
@@ -257,7 +255,7 @@ offset_bottom = 1135.0
 scale = Vector2(0.4816388, 0.4816388)
 theme_override_colors/font_color = Color(0.5439063, 0.27090228, 0.022036087, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = SubResource("SystemFont_8qovt")
+theme_override_fonts/font = ExtResource("8_fv0xt")
 theme_override_font_sizes/font_size = 136
 theme_override_styles/normal = SubResource("StyleBoxFlat_8qovt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0hjx5")
