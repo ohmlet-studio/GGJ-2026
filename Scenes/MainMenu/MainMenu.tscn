@@ -7,7 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://teevvvp0t2ea" path="res://Assets/TitleScene/ringring.png" id="5_vapy7"]
 [ext_resource type="Texture2D" uid="uid://b7l3o1mcbb8jg" path="res://Assets/TitleScene/doorbell.png" id="6_8qovt"]
 [ext_resource type="Texture2D" uid="uid://btmk8rn5ufa20" path="res://Assets/TitleScene/enter.png" id="7_8qovt"]
-[ext_resource type="Shader" uid="uid://djx8tgp8tq2cw" path="res://Scenes/MainMenu/MainMenu.gdshader" id="8_0hjx5"]
+[ext_resource type="Script" uid="uid://8ncrgqe8cbnj" path="res://Scenes/MainMenu/doorbell_anim.gd" id="7_fv0xt"]
+[ext_resource type="Shader" path="res://Scenes/MainMenu/MainMenu.gdshader" id="8_0hjx5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cruaa"]
 texture = ExtResource("2_sg7ab")
@@ -116,6 +117,9 @@ _data = {
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ua038"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("3_kpx3y")
 
@@ -205,6 +209,8 @@ offset_bottom = 881.0
 scale = Vector2(0.56936, 0.56936)
 texture_normal = ExtResource("5_vapy7")
 texture_hover = ExtResource("6_8qovt")
+texture_focused = ExtResource("6_8qovt")
+script = ExtResource("7_fv0xt")
 
 [node name="enter_panel" type="TextureRect" parent="." unique_id=923673086]
 layout_mode = 0
