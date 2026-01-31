@@ -1,21 +1,21 @@
 [gd_scene format=3 uid="uid://wfojq22ofpch"]
 
 [ext_resource type="Script" uid="uid://cfqpsurhe7tfo" path="res://Scenes/Minigame/minigame.gd" id="1_f4dal"]
-[ext_resource type="Texture2D" uid="uid://b75nfpv6knxbl" path="res://Assets/Textures/white_circular.png" id="1_fqyxi"]
+[ext_resource type="Texture2D" uid="uid://pdxbyhqdrgor" path="res://Assets/Textures/white_circular.png" id="1_fqyxi"]
 [ext_resource type="Script" uid="uid://b0p7rhk20kma5" path="res://Scenes/Minigame/simon_says.gd" id="1_uwbv6"]
-[ext_resource type="Texture2D" uid="uid://bheah4hs2fhu3" path="res://Assets/Minigame/Fond.png" id="2_r6p87"]
-[ext_resource type="Texture2D" uid="uid://1g4r044ltp8i" path="res://Assets/Background/chair_back.png" id="3_g74kh"]
+[ext_resource type="Texture2D" uid="uid://c84jsl0ojjrcu" path="res://Assets/Minigame/Fond.png" id="2_r6p87"]
+[ext_resource type="Texture2D" uid="uid://cbf7sk2tphxor" path="res://Assets/Background/chair_back.png" id="3_g74kh"]
 [ext_resource type="Script" uid="uid://b450iaatc07hq" path="res://Scenes/Minigame/tempo_indicator.gd" id="3_jxsht"]
 [ext_resource type="Script" uid="uid://bomi3fxjve32g" path="res://Scenes/Minigame/SquashOnTick.gd" id="3_o6pu6"]
-[ext_resource type="Texture2D" uid="uid://cy0n6mta0mdea" path="res://Assets/Characters/punk.png" id="4_g74kh"]
+[ext_resource type="Texture2D" uid="uid://ch5x16fg04idx" path="res://Assets/Characters/us.png" id="4_g74kh"]
 [ext_resource type="Script" uid="uid://c84ifqdpeko0t" path="res://Scenes/Minigame/arrow_sequence.gd" id="4_gmjc4"]
-[ext_resource type="Texture2D" uid="uid://cqtskiivla07o" path="res://Assets/Textures/stick.webp" id="6_8l3v4"]
+[ext_resource type="Texture2D" uid="uid://cls6nbt4ieeal" path="res://Assets/Textures/stick.webp" id="6_8l3v4"]
 [ext_resource type="Script" uid="uid://50eiryj543y8" path="res://Scenes/Minigame/MaskHandle.gd" id="6_dn3w5"]
 [ext_resource type="Script" uid="uid://dnv3p0xv5vlsu" path="res://Scenes/Minigame/keep_rotation.gd" id="7_dn3w5"]
-[ext_resource type="Texture2D" uid="uid://bcttd71n0bp0c" path="res://Assets/Masks/happy.png" id="7_yhojd"]
-[ext_resource type="Texture2D" uid="uid://bcjmbwqowuvnf" path="res://Assets/Masks/angry.png" id="9_r6p87"]
-[ext_resource type="Texture2D" uid="uid://byi0l1wyi1cyv" path="res://Assets/Masks/chocked.png" id="10_g74kh"]
-[ext_resource type="Texture2D" uid="uid://bi0tduewq1lqg" path="res://Assets/Masks/sad.png" id="11_o0l4d"]
+[ext_resource type="Texture2D" uid="uid://bl5ih4aooxnm0" path="res://Assets/Masks/happy.png" id="7_yhojd"]
+[ext_resource type="Texture2D" uid="uid://cgj70rdsfq30r" path="res://Assets/Masks/angry.png" id="9_r6p87"]
+[ext_resource type="Texture2D" uid="uid://c0rtppwln6hli" path="res://Assets/Masks/chocked.png" id="10_g74kh"]
+[ext_resource type="Texture2D" uid="uid://cexg34u6ahgd8" path="res://Assets/Masks/sad.png" id="11_o0l4d"]
 
 [sub_resource type="Curve" id="Curve_f4dal"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.49545455, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -80,8 +80,7 @@ _data = {
 
 [node name="Minigame" type="Node2D" unique_id=1383645364]
 script = ExtResource("1_f4dal")
-character = 6
-is_npc = true
+character = 7
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1960037530]
 position = Vector2(298, 535)
