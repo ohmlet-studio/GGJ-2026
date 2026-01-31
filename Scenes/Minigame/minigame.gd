@@ -58,7 +58,7 @@ func press_direction(direction):
 	$MaskSticks.set_mask(direction)
 	
 	# SFX handle
-	#AudioController.play_feelings(direction)
+	AudioController.play_feelings(direction)
 	
 	var camera_anim = %Camera2D.get_node("AnimationPlayer")
 	if camera_anim.is_playing():

@@ -7,12 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://c2tq0i45atf60" path="res://Assets/Background/characters.png" id="4_3ppc4"]
 [ext_resource type="Script" uid="uid://cr0vs2pn8smo6" path="res://Scenes/DinnerTable/dialog_controller.gd" id="4_dy18p"]
 [ext_resource type="Script" uid="uid://btusn0kqjv6ew" path="res://Scenes/Dialog/dialog_prompt.gd" id="4_l8u7i"]
-[ext_resource type="Script" uid="uid://cxcw0vi7mftul" path="res://Scenes/DinnerTable/label_char_to_char.gd" id="5_hotc4"]
+[ext_resource type="Script" path="res://Scenes/DinnerTable/label_char_to_char.gd" id="5_hotc4"]
 [ext_resource type="Texture2D" uid="uid://chivd6n8n466k" path="res://Assets/Minigame/Cadre.png" id="6_3ppc4"]
 [ext_resource type="Texture2D" uid="uid://cmfl502by25g0" path="res://Assets/Background/dad_portrait.png" id="11_mn11s"]
 [ext_resource type="Texture2D" uid="uid://cqwi6v4m4prs8" path="res://Assets/Minigame/MasqueGros.png" id="12_fhul8"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_mn11s"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_wh2rv"]
 viewport_path = NodePath("SubViewportMinigame")
@@ -69,23 +67,20 @@ position = Vector2(960, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_3ppc4")
 
-[node name="Table" type="Sprite2D" parent="." unique_id=1883768351]
-position = Vector2(667.99005, 652.59143)
-scale = Vector2(0.573048, 0.573048)
+[node name="Table" type="Node2D" parent="." unique_id=48510140]
+position = Vector2(684, 695)
+scale = Vector2(0.42751518, 0.42751518)
+
+[node name="Table" type="Sprite2D" parent="Table" unique_id=1883768351]
 texture = ExtResource("3_i1a7h")
 
-[node name="Characters" type="Sprite2D" parent="." unique_id=1968254915]
-position = Vector2(678.99005, 624.59143)
-scale = Vector2(0.5672868, 0.5672868)
+[node name="Characters" type="Sprite2D" parent="Table" unique_id=1968254915]
+position = Vector2(38, -77)
 texture = ExtResource("4_3ppc4")
 
-[node name="TalkingHint" type="AnimatedSprite2D" parent="." unique_id=1967013365]
-position = Vector2(380, -70)
-scale = Vector2(0.5156563, 0.5156563)
-sprite_frames = SubResource("SpriteFrames_mn11s")
-
 [node name="DadPortrait" type="Sprite2D" parent="." unique_id=604282543]
-position = Vector2(927, 194)
+position = Vector2(818, 248)
+scale = Vector2(0.3834019, 0.3834019)
 texture = ExtResource("11_mn11s")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=115562542]

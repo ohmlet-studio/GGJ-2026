@@ -1,5 +1,8 @@
 extends Sprite2D
 
+signal tick(duration: float)
+signal new_tempo_ms(tempo_ms: float)
+
 # the global tempo in ms
 var tempo_ms = 300.0:
 	set(value):
@@ -8,8 +11,6 @@ var tempo_ms = 300.0:
 
 var window_duration_ms = 200.0 # duration of the timing window
 
-signal tick(duration: float)
-signal new_tempo_ms(tempo_ms: float)
 
 var _timer: Timer
 
