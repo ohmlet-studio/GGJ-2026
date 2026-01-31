@@ -66,7 +66,7 @@ size = Vector2i(580, 915)
 
 [node name="Minigame" parent="SubViewportMinigame" unique_id=1383645364 instance=ExtResource("2_ai5vm")]
 unique_name_in_owner = true
-character = 4
+character = 0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=447278973]
 unique_name_in_owner = true
@@ -104,6 +104,5 @@ metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="DialogPrompt2" type="Node" parent="DialogController/Prompts" unique_id=604181248]
 script = ExtResource("4_l8u7i")
-tempo_ms = 0.1
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"

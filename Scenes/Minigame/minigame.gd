@@ -32,5 +32,5 @@ func press_direction(direction):
 	if camera_anim.is_playing():
 		camera_anim.stop(false)
 	camera_anim.play("PulseZoom")
-	
+		
 	reset_timer.start(1.0)

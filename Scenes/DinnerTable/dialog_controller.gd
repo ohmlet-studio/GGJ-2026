@@ -33,8 +33,8 @@ func _set_dialog(value):
 	var current_prompt = prompts[value]
 
 	if not Engine.is_editor_hint():
-		Metronome.tempo_ms = current_prompt.tempo_ms
-		
+		Metronome.tempo_ms = current_prompt.tempo_bpm * 6000.0
+	
 	label.text = current_prompt.char_dialog
 	
 	%Minigame.character = current_prompt.character
