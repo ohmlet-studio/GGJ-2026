@@ -11,9 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_start_pressed() -> void:
-	# change scene
-	get_tree().call_deferred("change_scene_to_file", "res://DinnerTable/DinnerTable.tscn")
-
-func _on_credits_pressed() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://MainMenu/Credits.tscn")
+func _on_return_pressed() -> void:
+	get_tree().call_deferred("change_scene_to_file", "res://MainMenu/MainMenu.tscn")

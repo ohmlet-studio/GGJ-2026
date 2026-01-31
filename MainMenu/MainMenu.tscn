@@ -86,7 +86,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_b76km")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cruaa")
 text = "go masking !"
 
-[node name="settings" type="Button" parent="VBoxContainer" unique_id=593898606]
+[node name="credits" type="Button" parent="VBoxContainer" unique_id=1132657592]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.1404478, 0.14044732, 0.14044747, 1)
@@ -97,21 +97,8 @@ theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_otibh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_b76km")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cruaa")
-text = "settings"
-
-[node name="exit" type="Button" parent="VBoxContainer" unique_id=1132657592]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.1404478, 0.14044732, 0.14044747, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
-theme_override_fonts/font = SubResource("SystemFont_mlc1t")
-theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxFlat_otibh")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_b76km")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cruaa")
-text = "exit"
+text = "credits"
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/credits" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/credits" to="." method="_on_credits_pressed"]
