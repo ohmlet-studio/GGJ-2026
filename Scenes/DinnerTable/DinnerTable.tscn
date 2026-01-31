@@ -180,8 +180,9 @@ position = Vector2(-288.47473, 86.01314)
 scale = Vector2(0.7327273, 0.7327273)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_baby"
-frame_progress = 0.4323008
-speed_scale = 5.0
+autoplay = "hint_baby"
+frame_progress = 0.5558717
+script = ExtResource("18_sxdy7")
 
 [node name="Hint_bob" type="AnimatedSprite2D" parent="Hint" unique_id=290357471]
 position = Vector2(15.468506, -155.49997)
@@ -189,7 +190,7 @@ scale = Vector2(0.43457946, 0.43457943)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_bob"
 autoplay = "hint_bob"
-frame_progress = 0.6449354
+frame_progress = 0.23401336
 script = ExtResource("18_sxdy7")
 
 [node name="Hint_jeanKev" type="AnimatedSprite2D" parent="Hint" unique_id=719400306]
@@ -197,28 +198,32 @@ position = Vector2(-95.276085, 190.55212)
 scale = Vector2(0.426103, 0.426103)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_jeanKev"
-speed_scale = 5.0
+autoplay = "hint_jeanKev"
+script = ExtResource("18_sxdy7")
 
 [node name="Hint_mom" type="AnimatedSprite2D" parent="Hint" unique_id=1681096808]
 position = Vector2(78.468506, 320.49997)
 scale = Vector2(0.48713222, 0.48713225)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_mom"
-speed_scale = 5.0
+autoplay = "hint_mom"
+script = ExtResource("18_sxdy7")
 
 [node name="Hint_oldBaby" type="AnimatedSprite2D" parent="Hint" unique_id=1582503323]
 position = Vector2(-313.5315, -126.50003)
 scale = Vector2(0.31102362, 0.31102362)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_oldBaby"
-speed_scale = 5.0
+autoplay = "hint_oldBaby"
+script = ExtResource("18_sxdy7")
 
 [node name="Hint_punk" type="AnimatedSprite2D" parent="Hint" unique_id=1938297556]
 position = Vector2(363.4685, -44.500122)
 scale = Vector2(0.38934425, 0.38934427)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_punk"
-speed_scale = 5.0
+autoplay = "hint_punk"
+script = ExtResource("18_sxdy7")
 
 [node name="SubViewportMinigame" type="SubViewport" parent="." unique_id=1699164104]
 unique_name_in_owner = true
