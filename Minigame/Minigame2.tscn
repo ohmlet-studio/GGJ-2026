@@ -1,0 +1,216 @@
+[gd_scene format=3 uid="uid://dvg5ot1ntb530"]
+
+[ext_resource type="Script" uid="uid://cfqpsurhe7tfo" path="res://Minigame/minigame.gd" id="1_s4t2r"]
+[ext_resource type="Texture2D" uid="uid://cj6xmgoltcbqm" path="res://Minigame/Character.png" id="2_o8vfv"]
+[ext_resource type="Script" uid="uid://b0p7rhk20kma5" path="res://Minigame/simon_says.gd" id="3_euovq"]
+[ext_resource type="Script" uid="uid://b450iaatc07hq" path="res://Minigame/tempo_indicator.gd" id="4_275yy"]
+[ext_resource type="Texture2D" uid="uid://b75nfpv6knxbl" path="res://Minigame/white_circular.png" id="5_0ro1k"]
+[ext_resource type="Script" uid="uid://c84ifqdpeko0t" path="res://Minigame/arrow_sequence.gd" id="6_q5jxm"]
+[ext_resource type="Texture2D" uid="uid://cqtskiivla07o" path="res://Minigame/stick.webp" id="7_j0ows"]
+[ext_resource type="Script" uid="uid://50eiryj543y8" path="res://Minigame/MaskHandle.gd" id="8_hutta"]
+[ext_resource type="Texture2D" uid="uid://8au8clcrs2lu" path="res://Minigame/arrow.png" id="9_5htws"]
+[ext_resource type="Script" uid="uid://dnv3p0xv5vlsu" path="res://Minigame/keep_rotation.gd" id="10_5cku0"]
+
+[sub_resource type="Curve" id="Curve_f4dal"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.49545455, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_vllsg"]
+curve = SubResource("Curve_f4dal")
+
+[sub_resource type="Curve" id="Curve_gmjc4"]
+_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
+point_count = 2
+metadata/_snap_enabled = true
+metadata/_snap_count = 17
+
+[sub_resource type="CurveTexture" id="CurveTexture_pccoa"]
+curve = SubResource("Curve_gmjc4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8l3v4"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_pccoa")
+alpha_curve = SubResource("CurveTexture_vllsg")
+
+[sub_resource type="Animation" id="Animation_ckcjh"]
+resource_name = "PulseZoom"
+length = 0.302
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_o6pu6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n2sav"]
+_data = {
+&"PulseZoom": SubResource("Animation_ckcjh"),
+&"RESET": SubResource("Animation_o6pu6")
+}
+
+[node name="Minigame" type="Node2D" unique_id=1383645364]
+script = ExtResource("1_s4t2r")
+
+[node name="Panel" type="Panel" parent="." unique_id=1823134188]
+clip_contents = true
+offset_right = 425.0
+offset_bottom = 523.0
+
+[node name="ColorRect" type="ColorRect" parent="Panel" unique_id=1027360473]
+layout_mode = 0
+offset_left = -366.0
+offset_top = -108.0
+offset_right = 787.0
+offset_bottom = 541.0
+color = Color(0, 0.14711776, 0.09343865, 1)
+
+[node name="Character" type="Sprite2D" parent="Panel" unique_id=823834987]
+position = Vector2(210, 332)
+texture = ExtResource("2_o8vfv")
+
+[node name="SimonSays" type="Node2D" parent="Panel" unique_id=191971695]
+position = Vector2(207, 227)
+scale = Vector2(0.5491291, 0.5491291)
+script = ExtResource("3_euovq")
+
+[node name="UP" type="ColorRect" parent="Panel/SimonSays" unique_id=728679963]
+modulate = Color(0.46618086, 0.4661808, 0.4661808, 1)
+offset_left = -73.0
+offset_top = -517.18256
+offset_right = 82.0
+offset_bottom = -362.18256
+color = Color(1, 0, 0, 1)
+
+[node name="DOWN" type="ColorRect" parent="Panel/SimonSays" unique_id=961252678]
+modulate = Color(0.46618086, 0.4661808, 0.4661808, 1)
+offset_left = -72.84261
+offset_top = 509.89832
+offset_right = 82.15739
+offset_bottom = 664.8983
+color = Color(0, 0.4333334, 1, 1)
+
+[node name="LEFT" type="ColorRect" parent="Panel/SimonSays" unique_id=788957150]
+modulate = Color(0.46618086, 0.4661808, 0.4661808, 1)
+offset_left = -502.614
+offset_right = -347.614
+offset_bottom = 155.0
+color = Color(0, 1, 0.26666665, 1)
+
+[node name="RIGHT" type="ColorRect" parent="Panel/SimonSays" unique_id=523605058]
+modulate = Color(0.46618086, 0.4661808, 0.4661808, 1)
+offset_left = 364.21304
+offset_right = 519.213
+offset_bottom = 155.0
+color = Color(1, 1, 0, 1)
+
+[node name="TempoIndicator" type="Node2D" parent="Panel" unique_id=601610124]
+position = Vector2(206, 446)
+script = ExtResource("4_275yy")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Panel/TempoIndicator" unique_id=1300371685]
+position = Vector2(-0.9979782, 3.0019531)
+scale = Vector2(0.2369309, 0.23623234)
+amount = 1
+texture = ExtResource("5_0ro1k")
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_8l3v4")
+
+[node name="WhiteCircular" type="Sprite2D" parent="Panel/TempoIndicator" unique_id=1656896363]
+modulate = Color(4.813075e-06, 0.9709764, 0.48473066, 0.37254903)
+position = Vector2(-0.9979782, 3.0020142)
+scale = Vector2(0.52730954, 0.52730954)
+texture = ExtResource("5_0ro1k")
+
+[node name="MaskSticks" type="Node2D" parent="Panel" unique_id=859019692]
+position = Vector2(207, 227)
+script = ExtResource("6_q5jxm")
+
+[node name="UpStick" type="Sprite2D" parent="Panel/MaskSticks" unique_id=325687152]
+position = Vector2(-1, -339)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_j0ows")
+offset = Vector2(0, -320)
+script = ExtResource("8_hutta")
+
+[node name="UpArrow" type="Sprite2D" parent="Panel/MaskSticks/UpStick" unique_id=2088617050]
+modulate = Color(0.8, 0, 0, 1)
+position = Vector2(0, -703.3333)
+texture = ExtResource("9_5htws")
+script = ExtResource("10_5cku0")
+align = true
+
+[node name="DownStick" type="Sprite2D" parent="Panel/MaskSticks" unique_id=523577066]
+position = Vector2(-1, 333)
+rotation = 3.1415927
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_j0ows")
+offset = Vector2(0, -320)
+script = ExtResource("8_hutta")
+
+[node name="UpArrow" type="Sprite2D" parent="Panel/MaskSticks/DownStick" unique_id=1836674700]
+modulate = Color(0, 0.22666664, 0.8, 1)
+position = Vector2(0, -703.3333)
+texture = ExtResource("9_5htws")
+script = ExtResource("10_5cku0")
+align = true
+
+[node name="LeftStick" type="Sprite2D" parent="Panel/MaskSticks" unique_id=1399656873]
+position = Vector2(-343, 5)
+rotation = 4.712389
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_j0ows")
+offset = Vector2(0, -320)
+script = ExtResource("8_hutta")
+
+[node name="UpArrow" type="Sprite2D" parent="Panel/MaskSticks/LeftStick" unique_id=547770535]
+modulate = Color(0, 0.8, 0.1333332, 1)
+position = Vector2(0, -703.3333)
+texture = ExtResource("9_5htws")
+script = ExtResource("10_5cku0")
+align = true
+
+[node name="RightStick" type="Sprite2D" parent="Panel/MaskSticks" unique_id=1744493342]
+position = Vector2(345, 2)
+rotation = -4.712389
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_j0ows")
+offset = Vector2(0, -320)
+script = ExtResource("8_hutta")
+
+[node name="UpArrow" type="Sprite2D" parent="Panel/MaskSticks/RightStick" unique_id=839597248]
+modulate = Color(0.8, 0.7466667, 0, 1)
+position = Vector2(0, -703.3333)
+texture = ExtResource("9_5htws")
+script = ExtResource("10_5cku0")
+align = true
+
+[node name="Camera2D" type="Camera2D" parent="Panel" unique_id=268626552]
+unique_name_in_owner = true
+position = Vector2(207, 267)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel/Camera2D" unique_id=479288951]
+libraries/ = SubResource("AnimationLibrary_n2sav")
