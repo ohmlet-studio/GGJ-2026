@@ -53,7 +53,9 @@ func _set_params(value):
 	minigame.npc_sequence = sequence
 
 func _display_text_npc(prompt_number):
-	$Label.text = prompts[prompt_number].char_dialog
+	var text_to_display = ""
+	text_to_display = prompts[prompt_number].char_dialog
+	label.char2char(text_to_display)
 
 func _display_text_player(prompt_number):
 	$Label.text = prompts[prompt_number].response
