@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://33dwa0yb8pbq"]
+
+[ext_resource type="Script" uid="uid://cdjt41i1vaxfk" path="res://MainMenu/main_menu.gd" id="1_cruaa"]
+[ext_resource type="Texture2D" uid="uid://dvy3dyw842sjh" path="res://Assets/Background/title_scene.jpg" id="1_otibh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cruaa"]
+texture = ExtResource("1_otibh")
+
+[sub_resource type="SystemFont" id="SystemFont_mlc1t"]
+font_names = PackedStringArray("Arial Rounded MT Bold", "Arial Rounded MT Bold")
+modulate_color_glyphs = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otibh"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0.09019608, 0.09019608, 0.09019608, 0.6431373)
+shadow_size = 20
+shadow_offset = Vector2(15, 15)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b76km"]
+bg_color = Color(0.1584728, 0.15847209, 0.15847251, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0.051970966, 0.051970966, 0.051970936, 0.8509804)
+shadow_size = 20
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cruaa"]
+bg_color = Color(0.89925843, 0.8992584, 0.89925843, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0.09019608, 0.09019608, 0.09019608, 0.8509804)
+shadow_size = 20
+shadow_offset = Vector2(5, 5)
+
+[node name="MainMenu" type="Control" unique_id=798517884]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cruaa")
+
+[node name="Panel" type="Panel" parent="." unique_id=317783502]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_cruaa")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=81628598]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.5
+offset_top = -186.25
+offset_right = 300.5
+offset_bottom = 186.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="start" type="Button" parent="VBoxContainer" unique_id=365420291]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.1404478, 0.14044732, 0.14044747, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_fonts/font = SubResource("SystemFont_mlc1t")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_otibh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b76km")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cruaa")
+text = "go masking !"
+
+[node name="settings" type="Button" parent="VBoxContainer" unique_id=593898606]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.1404478, 0.14044732, 0.14044747, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_fonts/font = SubResource("SystemFont_mlc1t")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_otibh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b76km")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cruaa")
+text = "settings"
+
+[node name="exit" type="Button" parent="VBoxContainer" unique_id=1132657592]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.1404478, 0.14044732, 0.14044747, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+theme_override_fonts/font = SubResource("SystemFont_mlc1t")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_otibh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b76km")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cruaa")
+text = "exit"
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_start_pressed"]
