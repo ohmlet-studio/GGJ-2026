@@ -7,12 +7,92 @@
 [ext_resource type="Texture2D" uid="uid://c2tq0i45atf60" path="res://Assets/Background/characters.png" id="4_3ppc4"]
 [ext_resource type="Script" uid="uid://cr0vs2pn8smo6" path="res://Scenes/DinnerTable/dialog_controller.gd" id="4_dy18p"]
 [ext_resource type="Script" uid="uid://btusn0kqjv6ew" path="res://Scenes/Dialog/dialog_prompt.gd" id="4_l8u7i"]
+[ext_resource type="Texture2D" uid="uid://dbifr1m051iuv" path="res://Assets/Characters/speaking_bonus/Baby1.png" id="5_d8ug0"]
 [ext_resource type="Script" uid="uid://cxcw0vi7mftul" path="res://Scenes/DinnerTable/label_anim.gd" id="5_hotc4"]
-[ext_resource type="Texture2D" uid="uid://cbxyq5ssseuoj" path="res://Assets/Textures/talking_hint.png" id="7_umv17"]
+[ext_resource type="Texture2D" uid="uid://b1qa6gfnifvm2" path="res://Assets/Characters/speaking_bonus/Baby2.png" id="6_npwxr"]
+[ext_resource type="Texture2D" uid="uid://ctvsyexeqoqld" path="res://Assets/Characters/speaking_bonus/Bob1.png" id="7_sxdy7"]
 [ext_resource type="FontFile" uid="uid://bo1h63330vth6" path="res://Assets/main_font.ttf" id="8_3ppc4"]
+[ext_resource type="Texture2D" uid="uid://dsoimn06wu41w" path="res://Assets/Characters/speaking_bonus/Bob2.png" id="8_r6s68"]
+[ext_resource type="Texture2D" uid="uid://b7h11ukrltk68" path="res://Assets/Characters/speaking_bonus/Jean_Kev1.png" id="9_lm7s3"]
+[ext_resource type="Texture2D" uid="uid://ccwmfe0t1iah5" path="res://Assets/Characters/speaking_bonus/Jean_Kev2.png" id="10_3kl3o"]
+[ext_resource type="Texture2D" uid="uid://dqihfgxj0be27" path="res://Assets/Characters/speaking_bonus/Mom1.png" id="11_8vjpa"]
+[ext_resource type="Texture2D" uid="uid://d3jkxqq2hcu7i" path="res://Assets/Characters/speaking_bonus/Mom2.png" id="12_ty6aa"]
+[ext_resource type="Texture2D" uid="uid://b8i448676kkq1" path="res://Assets/Characters/speaking_bonus/Old_Lady2 1.png" id="13_54m5f"]
+[ext_resource type="Texture2D" uid="uid://bmmmoegpqrv81" path="res://Assets/Characters/speaking_bonus/Old_Lady2.png" id="14_0vkll"]
+[ext_resource type="Texture2D" uid="uid://br4ix8ei4nulq" path="res://Assets/Characters/speaking_bonus/Punk1.png" id="15_wpjnp"]
+[ext_resource type="Texture2D" uid="uid://bt5vlr5ielw62" path="res://Assets/Characters/speaking_bonus/Punk2.png" id="16_m8rn3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_wh2rv"]
 viewport_path = NodePath("SubViewportMinigame")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dhylr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_d8ug0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_npwxr")
+}],
+"loop": true,
+"name": &"hint_baby",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_sxdy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r6s68")
+}],
+"loop": true,
+"name": &"hint_bob",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_lm7s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3kl3o")
+}],
+"loop": true,
+"name": &"hint_jeanKev",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_8vjpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ty6aa")
+}],
+"loop": true,
+"name": &"hint_mom",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_54m5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0vkll")
+}],
+"loop": true,
+"name": &"hint_oldBaby",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_wpjnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_m8rn3")
+}],
+"loop": true,
+"name": &"hint_punk",
+"speed": 1.0
+}]
 
 [sub_resource type="Animation" id="Animation_ckcjh"]
 resource_name = "PulseZoom"
@@ -80,10 +160,50 @@ texture = ExtResource("4_3ppc4")
 position = Vector2(1442, 540)
 texture = SubResource("ViewportTexture_wh2rv")
 
-[node name="TalkingHint" type="Sprite2D" parent="." unique_id=554268627]
-position = Vector2(380, 296)
-scale = Vector2(0.5156563, 0.5156563)
-texture = ExtResource("7_umv17")
+[node name="Hint" type="Node" parent="." unique_id=1456874720]
+
+[node name="Hint_baby" type="AnimatedSprite2D" parent="Hint" unique_id=1075817944]
+position = Vector2(411.99997, 456.99997)
+scale = Vector2(0.7327273, 0.7327273)
+sprite_frames = SubResource("SpriteFrames_dhylr")
+animation = &"hint_baby"
+frame_progress = 0.4323008
+speed_scale = 5.0
+
+[node name="Hint_bob" type="AnimatedSprite2D" parent="Hint" unique_id=290357471]
+position = Vector2(678, 264.00006)
+scale = Vector2(0.43457946, 0.43457943)
+sprite_frames = SubResource("SpriteFrames_dhylr")
+animation = &"hint_bob"
+speed_scale = 5.0
+
+[node name="Hint_jeanKev" type="AnimatedSprite2D" parent="Hint" unique_id=719400306]
+position = Vector2(597.9181, 578.4375)
+scale = Vector2(0.426103, 0.426103)
+sprite_frames = SubResource("SpriteFrames_dhylr")
+animation = &"hint_jeanKev"
+speed_scale = 5.0
+
+[node name="Hint_mom" type="AnimatedSprite2D" parent="Hint" unique_id=1681096808]
+position = Vector2(741, 740)
+scale = Vector2(0.48713222, 0.48713225)
+sprite_frames = SubResource("SpriteFrames_dhylr")
+animation = &"hint_mom"
+speed_scale = 5.0
+
+[node name="Hint_oldBaby" type="AnimatedSprite2D" parent="Hint" unique_id=1582503323]
+position = Vector2(349, 293.00003)
+scale = Vector2(0.31102362, 0.31102362)
+sprite_frames = SubResource("SpriteFrames_dhylr")
+animation = &"hint_oldBaby"
+speed_scale = 5.0
+
+[node name="Hint_punk" type="AnimatedSprite2D" parent="Hint" unique_id=1938297556]
+position = Vector2(1026, 375)
+scale = Vector2(0.38934425, 0.38934427)
+sprite_frames = SubResource("SpriteFrames_dhylr")
+animation = &"hint_punk"
+speed_scale = 5.0
 
 [node name="SubViewportMinigame" type="SubViewport" parent="." unique_id=1699164104]
 unique_name_in_owner = true
