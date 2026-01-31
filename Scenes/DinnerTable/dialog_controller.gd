@@ -46,7 +46,7 @@ func _set_params(value):
 	var current_prompt = prompts[value]
 
 	if not Engine.is_editor_hint():
-		Metronome.tempo_ms = current_prompt.tempo_bpm * 6000.0
+		Metronome.set_tempo_bpm(current_prompt.tempo_bpm)
 	
 	minigame.character = current_prompt.character
 	

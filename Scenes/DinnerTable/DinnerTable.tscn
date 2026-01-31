@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://cr0vs2pn8smo6" path="res://Scenes/DinnerTable/dialog_controller.gd" id="4_dy18p"]
 [ext_resource type="Script" uid="uid://btusn0kqjv6ew" path="res://Scenes/Dialog/dialog_prompt.gd" id="4_l8u7i"]
 [ext_resource type="Texture2D" uid="uid://dbifr1m051iuv" path="res://Assets/Characters/speaking_bonus/Baby1.png" id="5_d8ug0"]
-[ext_resource type="Script" path="res://Scenes/DinnerTable/label_char_to_char.gd" id="5_hotc4"]
 [ext_resource type="Texture2D" uid="uid://b1qa6gfnifvm2" path="res://Assets/Characters/speaking_bonus/Baby2.png" id="6_npwxr"]
 [ext_resource type="Texture2D" uid="uid://ctvsyexeqoqld" path="res://Assets/Characters/speaking_bonus/Bob1.png" id="7_sxdy7"]
 [ext_resource type="Texture2D" uid="uid://dsoimn06wu41w" path="res://Assets/Characters/speaking_bonus/Bob2.png" id="8_r6s68"]
@@ -23,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://br4ix8ei4nulq" path="res://Assets/Characters/speaking_bonus/Punk1.png" id="15_wpjnp"]
 [ext_resource type="Texture2D" uid="uid://bt5vlr5ielw62" path="res://Assets/Characters/speaking_bonus/Punk2.png" id="16_m8rn3"]
 [ext_resource type="Script" uid="uid://dnikm7l6sqo1d" path="res://Scenes/DinnerTable/hint_anim.gd" id="18_sxdy7"]
+[ext_resource type="Script" path="res://Scenes/DinnerTable/label_anim.gd" id="21_sxdy7"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_wh2rv"]
 viewport_path = NodePath("SubViewportMinigame")
@@ -188,7 +188,8 @@ position = Vector2(15.468506, -155.49997)
 scale = Vector2(0.43457946, 0.43457943)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_bob"
-frame_progress = 0.0715739
+autoplay = "hint_bob"
+frame_progress = 0.6449354
 script = ExtResource("18_sxdy7")
 
 [node name="Hint_jeanKev" type="AnimatedSprite2D" parent="Hint" unique_id=719400306]
@@ -242,11 +243,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_dy18p")
 
-[node name="Label" type="Label" parent="DialogController" unique_id=585406073]
+[node name="label_npc" type="Label" parent="DialogController" unique_id=585406073]
 layout_mode = 0
-offset_left = 134.0
+offset_left = 137.0
 offset_top = 782.0
-offset_right = 1056.0
+offset_right = 1059.0
 offset_bottom = 983.0
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_wh2rv")
@@ -255,7 +256,22 @@ I'm glad to be home too mom !"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-script = ExtResource("5_hotc4")
+script = ExtResource("21_sxdy7")
+
+[node name="label_player" type="Label" parent="DialogController" unique_id=1123392391]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 107.0
+offset_right = 1056.0
+offset_bottom = 308.0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_wh2rv")
+text = "(Oh, that's right, I'm home, time to perform, ok, let's get used to it)
+I'm glad to be home too mom !"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("21_sxdy7")
 
 [node name="Prompts" type="Node" parent="DialogController" unique_id=957683940]
 

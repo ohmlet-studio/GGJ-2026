@@ -21,5 +21,8 @@ func _ready() -> void:
 	add_child(_timer)
 	_timer.start()
 
+func set_tempo_bpm(value: int):
+	self.tempo_ms = 60000.0 / value
+
 func _on_timer_timeout() -> void:
 	tick.emit(tempo_ms)
