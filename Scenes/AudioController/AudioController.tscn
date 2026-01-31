@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cisl8qn8xgfet"]
+
+[ext_resource type="Script" uid="uid://xtsfxmi1grsb" path="res://Scenes/AudioController/audio_controller.gd" id="1_0psx2"]
+[ext_resource type="AudioStream" uid="uid://bbar0gmytkv6n" path="res://Assets/SFX/SFX_Sad1.mp3" id="1_yn20y"]
+[ext_resource type="AudioStream" uid="uid://bai8hwkntc6q" path="res://Assets/SFX/SFX_Happy1.mp3" id="3_3gx02"]
+[ext_resource type="AudioStream" uid="uid://dpewoorcb6xgt" path="res://Assets/SFX/SFX_Angry1.mp3" id="4_7tu6i"]
+[ext_resource type="AudioStream" uid="uid://8gnorulgqv87" path="res://Assets/SFX/SFX_Surprised1.mp3" id="5_t2j3s"]
+
+[node name="AudioController" type="Node2D" unique_id=2003875157]
+script = ExtResource("1_0psx2")
+
+[node name="Sad_sfx" type="AudioStreamPlayer" parent="." unique_id=2040713395]
+stream = ExtResource("1_yn20y")
+bus = &"SFX"
+
+[node name="Happy_sfx" type="AudioStreamPlayer" parent="." unique_id=1818402577]
+stream = ExtResource("3_3gx02")
+bus = &"SFX"
+
+[node name="Angry_sfx" type="AudioStreamPlayer" parent="." unique_id=1911039497]
+stream = ExtResource("4_7tu6i")
+bus = &"SFX"
+
+[node name="Surprised_sfx" type="AudioStreamPlayer" parent="." unique_id=316907276]
+stream = ExtResource("5_t2j3s")
+bus = &"SFX"
