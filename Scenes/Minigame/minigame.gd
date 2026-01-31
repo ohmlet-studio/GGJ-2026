@@ -3,13 +3,15 @@ extends Node2D
 
 @onready var char_sprite = %CharacterSprite
 
-@export var tempo_bpm: float = 1.0
+@export var tempo_ms: float = 200.0
 @export var character: CharacterEnum.chars:
 	set(value):
 		character = value
 		if char_sprite:
 			char_sprite.texture = character_sprites[value]
-		
+
+@export var is_npc: bool = false
+
 var character_sprites = {
 	CharacterEnum.chars.BABY: preload("res://Assets/Characters/baby.png"),
 	CharacterEnum.chars.BOB: preload("res://Assets/Characters/bob.png"),
@@ -25,8 +27,27 @@ var reset_timer: Timer
 
 func _ready() -> void:
 	reset_timer = Timer.new()
+	self.add_child(reset_timer)
+	reset_timer.finished.connect(_on_timer_finished)
+	
+	is_npc = true
+
+func _on_timer_finished():
+	$MaskSticks.reset()
+
+func play_sequence_npc(sequence: Array[int]):
+	for emotion in sequence:
+		$MaskSticks.set_mask(emotion)
+		reset_timer.start(1.0)
+		
+		await get_tree().create_timer(tempo_ms).timeout
+		
+	return true
 
 func press_direction(direction):
+	if is_npc:
+		return
+		
 	$MaskSticks.set_mask(direction)
 	
 	var camera_anim = %Camera2D.get_node("AnimationPlayer")

@@ -18,6 +18,10 @@ func _process(delta: float) -> void:
 func hide_mask(direction):
 	direction_sticks[direction].hide_mask()
 
+func reset():
+	for direction in [SimonDirections.UP, SimonDirections.DOWN, SimonDirections.LEFT, SimonDirections.RIGHT]:
+		hide_mask(direction)
+
 func set_mask(direction):
 	var current_mask = direction_sticks[direction]
 	
