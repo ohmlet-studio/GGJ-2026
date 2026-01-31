@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8hum8taroxds"]
 
-[ext_resource type="Texture2D" uid="uid://cpb7fdqdsxenx" path="res://Assets/Background/kitchen_table_scene.jpg" id="2_3mdec"]
+[ext_resource type="Texture2D" uid="uid://bdu8ujc1pplhj" path="res://Assets/Background/walls.png" id="2_3ppc4"]
 [ext_resource type="PackedScene" uid="uid://wfojq22ofpch" path="res://Scenes/Minigame/Minigame.tscn" id="2_ai5vm"]
 [ext_resource type="Script" uid="uid://bqkhobriou2pa" path="res://Scenes/DinnerTable/PushInput.gd" id="2_wh2rv"]
 [ext_resource type="Texture2D" uid="uid://cg860iri3m7gx" path="res://Assets/Background/table.png" id="3_i1a7h"]
@@ -8,7 +8,11 @@
 [ext_resource type="Script" uid="uid://cr0vs2pn8smo6" path="res://Scenes/DinnerTable/dialog_controller.gd" id="4_dy18p"]
 [ext_resource type="Script" uid="uid://btusn0kqjv6ew" path="res://Scenes/Dialog/dialog_prompt.gd" id="4_l8u7i"]
 [ext_resource type="Script" uid="uid://cxcw0vi7mftul" path="res://Scenes/DinnerTable/label_char_to_char.gd" id="5_hotc4"]
-[ext_resource type="Texture2D" uid="uid://cbxyq5ssseuoj" path="res://Assets/Textures/talking_hint.png" id="7_umv17"]
+[ext_resource type="Texture2D" uid="uid://chivd6n8n466k" path="res://Assets/Minigame/Cadre.png" id="6_3ppc4"]
+[ext_resource type="Texture2D" uid="uid://cmfl502by25g0" path="res://Assets/Background/dad_portrait.png" id="11_mn11s"]
+[ext_resource type="Texture2D" uid="uid://cqwi6v4m4prs8" path="res://Assets/Minigame/MasqueGros.png" id="12_fhul8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mn11s"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_wh2rv"]
 viewport_path = NodePath("SubViewportMinigame")
@@ -63,7 +67,7 @@ script = ExtResource("2_wh2rv")
 [node name="KitchenTableScene" type="Sprite2D" parent="." unique_id=48707983]
 position = Vector2(960, 540)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_3mdec")
+texture = ExtResource("2_3ppc4")
 
 [node name="Table" type="Sprite2D" parent="." unique_id=1883768351]
 position = Vector2(667.99005, 652.59143)
@@ -75,18 +79,30 @@ position = Vector2(678.99005, 624.59143)
 scale = Vector2(0.5672868, 0.5672868)
 texture = ExtResource("4_3ppc4")
 
-[node name="Minigame" type="Sprite2D" parent="." unique_id=66658314]
-position = Vector2(1442, 540)
+[node name="TalkingHint" type="AnimatedSprite2D" parent="." unique_id=1967013365]
+position = Vector2(380, -70)
+scale = Vector2(0.5156563, 0.5156563)
+sprite_frames = SubResource("SpriteFrames_mn11s")
+
+[node name="DadPortrait" type="Sprite2D" parent="." unique_id=604282543]
+position = Vector2(927, 194)
+texture = ExtResource("11_mn11s")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=115562542]
+position = Vector2(1488, 588)
+
+[node name="Minigame" type="Sprite2D" parent="Node2D" unique_id=66658314]
+position = Vector2(-0.37731934, -0.31549072)
 texture = SubResource("ViewportTexture_wh2rv")
 
-[node name="TalkingHint" type="Sprite2D" parent="." unique_id=554268627]
-position = Vector2(380, 296)
-scale = Vector2(0.5156563, 0.5156563)
-texture = ExtResource("7_umv17")
+[node name="Cadre" type="Sprite2D" parent="Node2D" unique_id=393708149]
+position = Vector2(-1.3771973, 28.684633)
+scale = Vector2(2.3749847, 2.3749847)
+texture = ExtResource("6_3ppc4")
 
 [node name="SubViewportMinigame" type="SubViewport" parent="." unique_id=1699164104]
 unique_name_in_owner = true
-size = Vector2i(580, 915)
+size = Vector2i(607, 775)
 
 [node name="Minigame" parent="SubViewportMinigame" unique_id=1383645364 instance=ExtResource("2_ai5vm")]
 unique_name_in_owner = true
@@ -192,9 +208,10 @@ metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="DialogPrompt5" type="Node" parent="DialogController/Level1" unique_id=890825669]
 script = ExtResource("4_l8u7i")
-char_dialog = "JEAN KEV Aaaah, I'm glad I'm still in school. Did I tell you I got casted in the school play !"
+char_dialog = "Aaaah, I'm glad I'm still in school. Did I tell you I got casted in the school play !"
 response = "Oh whaou, that's great, I'm so proud of you!"
 input_sequence = "SAD HAPPY HAPPY HAPPY SURPRISE HAPPY SURPRISE SURPRISE"
+character = 7
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="DialogPrompt6" type="Node" parent="DialogController/Level1" unique_id=1175370586]
@@ -204,3 +221,10 @@ response = "Yeah, I remember the picture, you looked like youo were having fun."
 input_sequence = "SURPRISE HAPPY SURPRISE HAPPY SAD SAD HAPPY SAD"
 character = 5
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="TempoVisualizer" type="Node2D" parent="." unique_id=1149478507]
+position = Vector2(1491, 102)
+scale = Vector2(2.1442087, 2.1442087)
+
+[node name="MasqueGros" type="Sprite2D" parent="TempoVisualizer" unique_id=886975122]
+texture = ExtResource("12_fhul8")

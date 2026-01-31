@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://cfqpsurhe7tfo" path="res://Scenes/Minigame/minigame.gd" id="1_f4dal"]
 [ext_resource type="Texture2D" uid="uid://b75nfpv6knxbl" path="res://Assets/Textures/white_circular.png" id="1_fqyxi"]
 [ext_resource type="Script" uid="uid://b0p7rhk20kma5" path="res://Scenes/Minigame/simon_says.gd" id="1_uwbv6"]
-[ext_resource type="Texture2D" uid="uid://dgq6sui5h0sqd" path="res://Assets/Characters/baby.png" id="2_4uw7t"]
+[ext_resource type="Texture2D" uid="uid://bheah4hs2fhu3" path="res://Assets/Minigame/Fond.png" id="2_r6p87"]
+[ext_resource type="Texture2D" uid="uid://1g4r044ltp8i" path="res://Assets/Background/chair_back.png" id="3_g74kh"]
 [ext_resource type="Script" uid="uid://b450iaatc07hq" path="res://Scenes/Minigame/tempo_indicator.gd" id="3_jxsht"]
 [ext_resource type="Script" uid="uid://bomi3fxjve32g" path="res://Scenes/Minigame/SquashOnTick.gd" id="3_o6pu6"]
+[ext_resource type="Texture2D" uid="uid://cy0n6mta0mdea" path="res://Assets/Characters/punk.png" id="4_g74kh"]
 [ext_resource type="Script" uid="uid://c84ifqdpeko0t" path="res://Scenes/Minigame/arrow_sequence.gd" id="4_gmjc4"]
 [ext_resource type="Texture2D" uid="uid://cqtskiivla07o" path="res://Assets/Textures/stick.webp" id="6_8l3v4"]
 [ext_resource type="Script" uid="uid://50eiryj543y8" path="res://Scenes/Minigame/MaskHandle.gd" id="6_dn3w5"]
@@ -78,19 +80,24 @@ _data = {
 
 [node name="Minigame" type="Node2D" unique_id=1383645364]
 script = ExtResource("1_f4dal")
+character = 6
 is_npc = true
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1027360473]
-offset_left = -664.0
-offset_right = 1264.0
-offset_bottom = 1084.0
-color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1960037530]
+position = Vector2(298, 535)
+scale = Vector2(3.1446114, 3.1446114)
+texture = ExtResource("2_r6p87")
+
+[node name="ChairBack" type="Sprite2D" parent="." unique_id=1943161378]
+position = Vector2(293, 696)
+scale = Vector2(0.79, 0.79)
+texture = ExtResource("3_g74kh")
 
 [node name="CharacterSprite" type="Sprite2D" parent="." unique_id=823834987]
 unique_name_in_owner = true
 position = Vector2(298, 668.00006)
 scale = Vector2(0.56911236, 0.56911236)
-texture = ExtResource("2_4uw7t")
+texture = ExtResource("4_g74kh")
 script = ExtResource("3_o6pu6")
 scale_factor = Vector2(1, 0.96)
 
