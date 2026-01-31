@@ -10,8 +10,11 @@ func _process(delta: float) -> void:
 	pass
 
 func char2char(text: String):
-	$Label.text= ""
+	$".".text = ""
 	
 	for i in range(text.length()):
-		$Label.text += text[i]
+		$".".text += text[i]
 		await get_tree().create_timer(char_display_speed).timeout
+
+func word2word(text: String):
+	pass

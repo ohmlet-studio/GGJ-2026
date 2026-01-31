@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://c2tq0i45atf60" path="res://Assets/Background/characters.png" id="4_3ppc4"]
 [ext_resource type="Script" uid="uid://cr0vs2pn8smo6" path="res://Scenes/DinnerTable/dialog_controller.gd" id="4_dy18p"]
 [ext_resource type="Script" uid="uid://btusn0kqjv6ew" path="res://Scenes/Dialog/dialog_prompt.gd" id="4_l8u7i"]
-[ext_resource type="Script" uid="uid://cxcw0vi7mftul" path="res://Scenes/DinnerTable/label_char_to_char.gd" id="5_hotc4"]
+[ext_resource type="Script" uid="uid://cxcw0vi7mftul" path="res://Scenes/DinnerTable/label_anim.gd" id="5_hotc4"]
 [ext_resource type="Texture2D" uid="uid://cbxyq5ssseuoj" path="res://Assets/Textures/talking_hint.png" id="7_umv17"]
+[ext_resource type="FontFile" uid="uid://bo1h63330vth6" path="res://Assets/main_font.ttf" id="8_3ppc4"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_wh2rv"]
 viewport_path = NodePath("SubViewportMinigame")
@@ -107,12 +108,28 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_dy18p")
 
-[node name="Label" type="Label" parent="DialogController" unique_id=585406073]
+[node name="label_npc" type="Label" parent="DialogController" unique_id=585406073]
 layout_mode = 0
-offset_left = 134.0
-offset_top = 782.0
-offset_right = 1056.0
-offset_bottom = 983.0
+offset_left = 147.0
+offset_top = 23.0
+offset_right = 1069.0
+offset_bottom = 224.0
+theme_override_fonts/font = ExtResource("8_3ppc4")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_wh2rv")
+text = "I'm so glad to have you home dear."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("5_hotc4")
+
+[node name="label_player" type="Label" parent="DialogController" unique_id=1107166847]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 838.0
+offset_right = 1106.0
+offset_bottom = 1039.0
+theme_override_fonts/font = ExtResource("8_3ppc4")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_wh2rv")
 text = "(Oh, that's right, I'm home, time to perform, ok, let's get used to it)

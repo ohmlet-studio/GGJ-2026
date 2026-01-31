@@ -1,7 +1,8 @@
 @tool
 extends Control
 
-@onready var label = $Label
+@onready var label_npc = $label_npc
+@onready var label_player = $label_player
 @onready var prompts: Array[DialogPrompt]
 @onready var prompts_parent = $Prompts
 @onready var minigame: Minigame = %Minigame
@@ -55,10 +56,10 @@ func _set_params(value):
 func _display_text_npc(prompt_number):
 	var text_to_display = ""
 	text_to_display = prompts[prompt_number].char_dialog
-	label.char2char(text_to_display)
+	label_npc.char2char(text_to_display)
 
 func _display_text_player(prompt_number):
-	$Label.text = prompts[prompt_number].response
+	label_player.text = prompts[prompt_number].response
 
 func play_prompt(prompt_number: int):
 	current_dialog_index = prompt_number
