@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnxcacjlrml1x"
-path="res://.godot/imported/background.webp-490e268ba22a27640901d9923975303e.ctex"
+uid="uid://csrxova8fs38y"
+path="res://.godot/imported/dad.png-e2ca63d2bbac1920af2ef43f53b9bda7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DinnerTable/background.webp"
-dest_files=["res://.godot/imported/background.webp-490e268ba22a27640901d9923975303e.ctex"]
+source_file="res://Assets/Characters/dad.png"
+dest_files=["res://.godot/imported/dad.png-e2ca63d2bbac1920af2ef43f53b9bda7.ctex"]
 
 [params]
 
