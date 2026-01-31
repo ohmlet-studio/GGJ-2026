@@ -273,8 +273,7 @@ offset_right = 1059.0
 offset_bottom = 983.0
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_wh2rv")
-text = "(Oh, that's right, I'm home, time to perform, ok, let's get used to it)
-I'm glad to be home too mom !"
+text = "I'm so glad to have you home dear."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
