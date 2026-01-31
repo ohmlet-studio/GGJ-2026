@@ -10,6 +10,12 @@ extends Control
 		current_dialog_index = value
 		_set_dialog(value)
 
+var is_player_talking: bool = false
+
+func _ready():
+	is_player_talking = false
+	_set_dialog(0)
+
 func _set_dialog(value):
 	if not prompts_parent:
 		return
@@ -29,4 +35,6 @@ func _set_dialog(value):
 	if not Engine.is_editor_hint():
 		Metronome.tempo_ms = current_prompt.tempo_ms
 		
-	label.text = current_prompt.dialog_content
+	label.text = current_prompt.char_dialog
+	
+	%Minigame.character = current_prompt.character

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cfqpsurhe7tfo" path="res://Scenes/Minigame/minigame.gd" id="1_f4dal"]
 [ext_resource type="Texture2D" uid="uid://b75nfpv6knxbl" path="res://Assets/Textures/white_circular.png" id="1_fqyxi"]
 [ext_resource type="Script" uid="uid://b0p7rhk20kma5" path="res://Scenes/Minigame/simon_says.gd" id="1_uwbv6"]
+[ext_resource type="Texture2D" uid="uid://c3fxayjj6uu70" path="res://Assets/Characters/old_lady.png" id="2_4uw7t"]
 [ext_resource type="Script" uid="uid://b450iaatc07hq" path="res://Scenes/Minigame/tempo_indicator.gd" id="3_jxsht"]
 [ext_resource type="Script" uid="uid://bomi3fxjve32g" path="res://Scenes/Minigame/SquashOnTick.gd" id="3_o6pu6"]
 [ext_resource type="Script" uid="uid://c84ifqdpeko0t" path="res://Scenes/Minigame/arrow_sequence.gd" id="4_gmjc4"]
@@ -10,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://cqtskiivla07o" path="res://Assets/Textures/stick.webp" id="6_8l3v4"]
 [ext_resource type="Script" uid="uid://50eiryj543y8" path="res://Scenes/Minigame/MaskHandle.gd" id="6_dn3w5"]
 [ext_resource type="Script" uid="uid://dnv3p0xv5vlsu" path="res://Scenes/Minigame/keep_rotation.gd" id="7_dn3w5"]
-[ext_resource type="Texture2D" uid="uid://cj6xmgoltcbqm" path="res://Assets/Textures/Character.png" id="10_ckcjh"]
 
 [sub_resource type="Curve" id="Curve_f4dal"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.49545455, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -75,17 +75,20 @@ _data = {
 
 [node name="Minigame" type="Node2D" unique_id=1383645364]
 script = ExtResource("1_f4dal")
+character = 5
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1027360473]
 offset_right = 1911.5994
 offset_bottom = 1076.0
 color = Color(0, 0.14711776, 0.09343865, 1)
 
-[node name="Character" type="Sprite2D" parent="." unique_id=823834987]
-position = Vector2(298, 718)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_ckcjh")
+[node name="CharacterSprite" type="Sprite2D" parent="." unique_id=823834987]
+unique_name_in_owner = true
+position = Vector2(298, 668.00006)
+scale = Vector2(0.56911236, 0.56911236)
+texture = ExtResource("2_4uw7t")
 script = ExtResource("3_o6pu6")
+scale_factor = Vector2(1, 0.96)
 
 [node name="MaskSticks" type="Node2D" parent="." unique_id=859019692]
 position = Vector2(-89, 335)
@@ -158,26 +161,26 @@ script = ExtResource("1_uwbv6")
 [node name="UP" type="ColorRect" parent="SimonSays" unique_id=728679963]
 modulate = Color(0.46618086, 0.4661808, 0.4661808, 1)
 offset_left = -73.0
-offset_top = -619.0
+offset_top = -526.0
 offset_right = 82.0
-offset_bottom = -464.0
+offset_bottom = -371.0
 color = Color(1, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="DOWN" type="ColorRect" parent="SimonSays" unique_id=961252678]
 modulate = Color(0.46618086, 0.4661808, 0.4661808, 1)
 offset_left = -85.59007
-offset_top = 342.99997
+offset_top = 405.99997
 offset_right = 69.40993
-offset_bottom = 498.0
+offset_bottom = 561.0
 color = Color(0, 0.4333334, 1, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="LEFT" type="ColorRect" parent="SimonSays" unique_id=788957150]
 modulate = Color(0.46618086, 0.4661808, 0.4661808, 1)
-offset_left = -399.0
+offset_left = -386.0
 offset_top = -77.0
-offset_right = -244.0
+offset_right = -231.0
 offset_bottom = 78.0
 color = Color(0, 1, 0.26666665, 1)
 metadata/_edit_use_anchors_ = true

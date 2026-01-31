@@ -2,7 +2,7 @@ extends Sprite2D
 
 @onready var default_scale = self.scale
 var recovery_time: float = 0.2
-var scale_factor = Vector2(1.0, 0.9)
+@export var scale_factor = Vector2(1.0, 0.99)
 
 func _ready() -> void:
 	Metronome.tick.connect(_on_metronome_tick)
