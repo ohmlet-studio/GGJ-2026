@@ -90,6 +90,7 @@ size = Vector2i(580, 915)
 
 [node name="Minigame" parent="SubViewportMinigame" unique_id=1383645364 instance=ExtResource("2_ai5vm")]
 unique_name_in_owner = true
+character = 3
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=447278973]
 unique_name_in_owner = true
@@ -114,7 +115,7 @@ offset_right = 1056.0
 offset_bottom = 983.0
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_wh2rv")
-text = "COUCOU"
+text = "It's not bad... it's just that I've tasted better"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
