@@ -74,7 +74,7 @@ func play_prompt(prompt_number: int):
 	await get_tree().create_timer(2.0).timeout
 
 	print("Letting the user play the minigame")
-	await minigame.start_minigame()
+	await minigame.start()
 	
 	_display_text_player(prompt_number)
 	

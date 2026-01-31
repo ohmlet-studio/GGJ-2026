@@ -92,7 +92,7 @@ size = Vector2i(580, 915)
 unique_name_in_owner = true
 tempo_ms = 200.0
 character = 4
-is_npc = false
+is_npc = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=447278973]
 unique_name_in_owner = true
