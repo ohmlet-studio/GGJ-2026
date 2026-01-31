@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_start_pressed() -> void:
 	# change scene
-	get_tree().call_deferred("change_scene_to_file", "res://DinnerTable/DinnerTable.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/DinnerTable/DinnerTable.tscn")
 
 func _on_credits_pressed() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://MainMenu/Credits.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/MainMenu/Credits.tscn")

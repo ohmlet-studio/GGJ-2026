@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_return_pressed() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://MainMenu/MainMenu.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/MainMenu/MainMenu.tscn")
