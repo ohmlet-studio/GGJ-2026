@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8au8clcrs2lu"
-path="res://.godot/imported/arrow.png-2b7c74bf45c5183ef298bee48c3a5023.ctex"
+uid="uid://b75nfpv6knxbl"
+path="res://.godot/imported/white_circular.png-577685e0c14386cf0aa8354ca0cb934b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Minigame/Assets/Textures/arrow.png"
-dest_files=["res://.godot/imported/arrow.png-2b7c74bf45c5183ef298bee48c3a5023.ctex"]
+source_file="res://Assets/Textures/white_circular.png"
+dest_files=["res://.godot/imported/white_circular.png-577685e0c14386cf0aa8354ca0cb934b.ctex"]
 
 [params]
 

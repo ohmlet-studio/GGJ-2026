@@ -1,6 +1,6 @@
 extends Sprite2D
 
-var tempo_ms = 600.0 # the global tempo in ms
+var tempo_ms = 300.0 # the global tempo in ms
 var window_duration_ms = 200.0 # duration of the timing window
 
 signal tick(duration: float)

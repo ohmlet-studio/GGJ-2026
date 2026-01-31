@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b75nfpv6knxbl"
-path="res://.godot/imported/white_circular.png-aec09cfc5448af0ec4ce80f10e6f3c3f.ctex"
+uid="uid://cj6xmgoltcbqm"
+path="res://.godot/imported/Character.png-613324e38d42af39823f44eaf6ec08ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Minigame/Assets/Textures/white_circular.png"
-dest_files=["res://.godot/imported/white_circular.png-aec09cfc5448af0ec4ce80f10e6f3c3f.ctex"]
+source_file="res://Assets/Textures/Character.png"
+dest_files=["res://.godot/imported/Character.png-613324e38d42af39823f44eaf6ec08ae.ctex"]
 
 [params]
 
