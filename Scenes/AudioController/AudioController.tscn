@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://dppk8s0rm24sl" path="res://Assets/SFX/SFX_DingDong.mp3" id="24_01pc8"]
 [ext_resource type="AudioStream" uid="uid://lmkfil5g61ic" path="res://Assets/Music/ST_Jungle_100.mp3" id="25_01pc8"]
 [ext_resource type="AudioStream" uid="uid://b4ofnmiemlgqg" path="res://Assets/Music/ST_Menu.mp3" id="26_hnps5"]
+[ext_resource type="AudioStream" uid="uid://d05aiwaquwtu3" path="res://Assets/Music/ST_Inbetween.mp3" id="27_suots"]
 
 [node name="AudioController" type="Node2D" unique_id=2003875157]
 script = ExtResource("1_0psx2")
@@ -134,4 +135,8 @@ parameters/looping = true
 [node name="title_scene" type="AudioStreamPlayer" parent="Music" unique_id=441102852]
 stream = ExtResource("26_hnps5")
 pitch_scale = 1.6
+bus = &"Music"
+
+[node name="between_scene" type="AudioStreamPlayer" parent="Music" unique_id=836745817]
+stream = ExtResource("27_suots")
 bus = &"Music"

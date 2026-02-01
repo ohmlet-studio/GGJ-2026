@@ -10,7 +10,7 @@ var tempo_ms = 1000.0:
 		_timer.wait_time = value / 1000.0
 		new_tempo_ms.emit(value)
 
-var window_duration_ms = 250.0
+var window_duration_ms = 100.0
 
 var _timer: Timer
 var _pretick_timer: Timer

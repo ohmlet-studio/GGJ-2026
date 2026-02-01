@@ -76,7 +76,7 @@ offset_right = 1471.0
 offset_bottom = 573.0001
 theme_override_fonts/font = ExtResource("5_2onug")
 theme_override_font_sizes/font_size = 60
-text = "Average error:"
+text = "Average error (ms):"
 horizontal_alignment = 2
 vertical_alignment = 1
 

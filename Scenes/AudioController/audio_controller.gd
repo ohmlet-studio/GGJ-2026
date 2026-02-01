@@ -2,7 +2,7 @@ extends Node2D
 
 ## Global param
 const origin_tempo_music = 100.0
-enum MUSIC_SCENE {LEVEL, TITLE}
+enum MUSIC_SCENE {LEVEL, TITLE, INBETWEEN}
 
 ## SFX arrays
 @onready var _sad 	= [$SFX/Sad_sfx_1, $SFX/Sad_sfx_2, $SFX/Sad_sfx_3, $SFX/Sad_sfx_4, $SFX/Sad_sfx_5]
@@ -45,7 +45,13 @@ func play_music(tempo_bpm : float, level: MUSIC_SCENE):
 			return
 		
 		$Music/title_scene.stop()
+		$Music/between_scene.stop()
 		$Music/main_beat_music.pitch_scale = tempo_bpm / self.origin_tempo_music
+		
+		await Metronome.tick
 		$Music/main_beat_music.play()
 		
 		last_tempo = tempo_bpm
+	elif level == self.MUSIC_SCENE.INBETWEEN:
+		$Music/main_beat_music.stop()
+		$Music/between_scene.play()
