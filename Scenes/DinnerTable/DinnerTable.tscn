@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://8hum8taroxds"]
 
-[ext_resource type="Texture2D" uid="uid://bve3nl0hoo72e" path="res://Assets/Background/walls.png" id="2_3ppc4"]
 [ext_resource type="PackedScene" uid="uid://wfojq22ofpch" path="res://Scenes/Minigame/Minigame.tscn" id="2_ai5vm"]
+[ext_resource type="Texture2D" uid="uid://c82o2adc5mp81" path="res://Assets/Background/Correc_Perspe.png" id="2_sxdy7"]
 [ext_resource type="Script" uid="uid://bqkhobriou2pa" path="res://Scenes/DinnerTable/PushInput.gd" id="2_wh2rv"]
-[ext_resource type="Texture2D" uid="uid://cobmpo7f72xfx" path="res://Assets/Background/table.png" id="3_i1a7h"]
-[ext_resource type="Texture2D" uid="uid://cwfgx6uq0h325" path="res://Assets/Background/characters.png" id="4_3ppc4"]
+[ext_resource type="Texture2D" uid="uid://d726o21yboy" path="res://Assets/Background/TableEtTapis.png" id="3_r6s68"]
 [ext_resource type="Script" uid="uid://cr0vs2pn8smo6" path="res://Scenes/DinnerTable/dialog_controller.gd" id="4_dy18p"]
 [ext_resource type="Script" uid="uid://btusn0kqjv6ew" path="res://Scenes/Dialog/dialog_prompt.gd" id="4_l8u7i"]
+[ext_resource type="Texture2D" uid="uid://dm6h2bsw8i4j7" path="res://Assets/Background/Papa.png" id="4_lm7s3"]
 [ext_resource type="Texture2D" uid="uid://ckcys8pfrssgg" path="res://Assets/Characters/speaking_bonus/Baby1.png" id="5_d8ug0"]
 [ext_resource type="Texture2D" uid="uid://e4p8vr5nxdyk" path="res://Assets/Minigame/Cadre.png" id="6_3ppc4"]
 [ext_resource type="Texture2D" uid="uid://b64glgxkb2xf5" path="res://Assets/Characters/speaking_bonus/Baby2.png" id="6_npwxr"]
@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://c3slscbmqavdy" path="res://Assets/Characters/speaking_bonus/Jean_Kev1.png" id="9_lm7s3"]
 [ext_resource type="Texture2D" uid="uid://cs6hi0cxns2ae" path="res://Assets/Characters/speaking_bonus/Jean_Kev2.png" id="10_3kl3o"]
 [ext_resource type="Texture2D" uid="uid://bu6n4twj8nt03" path="res://Assets/Characters/speaking_bonus/Mom1.png" id="11_8vjpa"]
-[ext_resource type="Texture2D" uid="uid://yncbdgmhpk1a" path="res://Assets/Background/dad_portrait.png" id="11_mn11s"]
 [ext_resource type="Texture2D" uid="uid://kb7pnv1jbj80" path="res://Assets/Minigame/MasqueGros.png" id="12_fhul8"]
 [ext_resource type="Texture2D" uid="uid://blmsitjf545ix" path="res://Assets/Characters/speaking_bonus/Mom2.png" id="12_ty6aa"]
 [ext_resource type="Texture2D" uid="uid://dak0jv24v7o88" path="res://Assets/Characters/speaking_bonus/Old_Lady2 1.png" id="13_54m5f"]
@@ -23,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cigs1t6shi0kj" path="res://Assets/Characters/speaking_bonus/Punk1.png" id="15_wpjnp"]
 [ext_resource type="Texture2D" uid="uid://dtr862jk8wsgl" path="res://Assets/Characters/speaking_bonus/Punk2.png" id="16_m8rn3"]
 [ext_resource type="Script" uid="uid://dnikm7l6sqo1d" path="res://Scenes/DinnerTable/hint_anim.gd" id="18_sxdy7"]
-[ext_resource type="Script" path="res://Scenes/DinnerTable/label_anim.gd" id="21_sxdy7"]
+[ext_resource type="Script" uid="uid://cxcw0vi7mftul" path="res://Scenes/DinnerTable/label_anim.gd" id="21_sxdy7"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_wh2rv"]
 viewport_path = NodePath("SubViewportMinigame")
@@ -147,23 +146,17 @@ script = ExtResource("2_wh2rv")
 [node name="KitchenTableScene" type="Sprite2D" parent="." unique_id=48707983]
 position = Vector2(960, 540)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_3ppc4")
+texture = ExtResource("2_sxdy7")
 
-[node name="Table" type="Node2D" parent="." unique_id=48510140]
+[node name="Table" type="Sprite2D" parent="." unique_id=1883768351]
 position = Vector2(684, 695)
 scale = Vector2(0.42751518, 0.42751518)
-
-[node name="Table" type="Sprite2D" parent="Table" unique_id=1883768351]
-texture = ExtResource("3_i1a7h")
-
-[node name="Characters" type="Sprite2D" parent="Table" unique_id=1968254915]
-position = Vector2(38, -77)
-texture = ExtResource("4_3ppc4")
+texture = ExtResource("3_r6s68")
 
 [node name="DadPortrait" type="Sprite2D" parent="." unique_id=604282543]
 position = Vector2(818, 248)
 scale = Vector2(0.3834019, 0.3834019)
-texture = ExtResource("11_mn11s")
+texture = ExtResource("4_lm7s3")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=115562542]
 position = Vector2(1488, 588)
