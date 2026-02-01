@@ -454,7 +454,7 @@ char_dialog = "I'll bring a spinach lasagna, it was your dad's favorite!"
 response = "It's been a while since we had some!"
 input_sequence = "HAPPY SAD SURPRISE SAD HAPPY HAPPY HAPPY SAD ANGER SURPRISE SAD ANGER ANGER ANGER SURPRISE SAD SAD SAD"
 tempo_bpm = 100
-character = 5
+character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="DialogPrompt4" type="Node" parent="DialogController/Levels/Level2" unique_id=1157764962]
