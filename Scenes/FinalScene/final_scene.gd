@@ -15,5 +15,5 @@ func _ready() -> void:
 	else:
 		print("No percent data available yet")
 		
-	$av_error_lab.text = str("%.2f" % av_error)
-	$av_pct_lab.text = str("%.0f" % av_pct)
+	$av_error_lab.text = str("%.2f" % av_error + "%")
+	$av_pct_lab.text = str("%.1f" % av_pct +"ms")
