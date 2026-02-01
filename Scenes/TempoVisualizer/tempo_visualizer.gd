@@ -56,6 +56,7 @@ func show_hit():
 	)
 
 func _on_next_queried_direction(direction: int):
+	await Metronome.tick
 	next_color = colors[direction]
 	# don't wait for next beat as the signal in called on beat!
 	spawn_circle(direction, Metronome.tempo_ms)
