@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bdvn5c8a3oifk"]
+
+[ext_resource type="Script" uid="uid://chrqfwshpiujn" path="res://Scenes/TempoVisualizer/tempo_visualizer.gd" id="1_6c20m"]
+[ext_resource type="Texture2D" uid="uid://c2v8v4wy5xlj3" path="res://Assets/Masks/theatre_mask.png" id="1_js08c"]
+[ext_resource type="Texture2D" uid="uid://dpb2tge6lqhwa" path="res://Assets/Textures/white_circle.png" id="2_4p54a"]
+[ext_resource type="Script" uid="uid://b6kpicaq2rrvf" path="res://Scenes/TempoVisualizer/tempo_circle_ui.gd" id="4_1ndj3"]
+[ext_resource type="Texture2D" uid="uid://cjimphvk4wmjq" path="res://Assets/Textures/circle.png" id="5_6o862"]
+[ext_resource type="Texture2D" uid="uid://dcbvtkimfem08" path="res://Assets/Textures/cross.png" id="6_1ld8w"]
+
+[node name="TempoVisualizer" type="Node2D" unique_id=554335005]
+script = ExtResource("1_6c20m")
+
+[node name="CircleExample" type="Sprite2D" parent="." unique_id=2018588626]
+visible = false
+position = Vector2(416, 14)
+scale = Vector2(0.6967787, 0.6967787)
+texture = ExtResource("2_4p54a")
+script = ExtResource("4_1ndj3")
+range_x = 500.0
+
+[node name="DotExample" type="Sprite2D" parent="." unique_id=1154041297]
+visible = false
+modulate = Color(0.5803922, 0.5137255, 0.79607844, 1)
+position = Vector2(416, 14)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_4p54a")
+script = ExtResource("4_1ndj3")
+range_x = 500.0
+
+[node name="TheatreMask" type="Sprite2D" parent="." unique_id=637309495]
+modulate = Color(0.5803922, 0.5137255, 0.79607844, 1)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_js08c")
+
+[node name="LineDecoration" type="Node2D" parent="." unique_id=700185196]
+
+[node name="Line2D" type="Line2D" parent="LineDecoration" unique_id=218010662]
+position = Vector2(2, 0)
+points = PackedVector2Array(109, 41, 404, 41)
+default_color = Color(0.5803922, 0.5137255, 0.79607844, 1)
+
+[node name="Line2D2" type="Line2D" parent="LineDecoration" unique_id=915391691]
+position = Vector2(-521, 0)
+points = PackedVector2Array(109, 41, 404, 41)
+default_color = Color(0.36078432, 0.31764707, 0.49411765, 1)
+
+[node name="Line2D3" type="Line2D" parent="LineDecoration" unique_id=257515085]
+position = Vector2(28, -55)
+points = PackedVector2Array(109, 41, 404, 41)
+default_color = Color(0.5803922, 0.5137255, 0.79607844, 1)
+
+[node name="Line2D4" type="Line2D" parent="LineDecoration" unique_id=1686951419]
+position = Vector2(-547, -55)
+points = PackedVector2Array(109, 41, 404, 41)
+default_color = Color(0.36078432, 0.31764707, 0.49411765, 1)
+
+[node name="Circle" type="Sprite2D" parent="." unique_id=1336508087]
+visible = false
+scale = Vector2(0.51757467, 0.51757467)
+texture = ExtResource("5_6o862")
+
+[node name="Cross" type="Sprite2D" parent="." unique_id=1022516655]
+visible = false
+position = Vector2(-3.3946295, 2.6053698)
+scale = Vector2(0.42315882, 0.42315882)
+texture = ExtResource("6_1ld8w")

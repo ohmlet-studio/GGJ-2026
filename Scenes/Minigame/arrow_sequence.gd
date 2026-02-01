@@ -13,7 +13,7 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	pass
+	self.visible = not get_parent().is_npc
 
 func hide_mask(direction):
 	direction_sticks[direction].hide_mask()

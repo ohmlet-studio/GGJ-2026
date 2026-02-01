@@ -15,6 +15,8 @@ class_name Minigame
 		is_npc = value
 		_update_character_sprite()
 
+signal next_queried_direction(direction: int)
+
 signal finished_sequence_player()
 signal input_valid(offset_ms: float)
 signal input_invalid(offset_ms: float)
@@ -35,7 +37,7 @@ const character_sprites = {
 var reply_text: String
 var character_text: String
 var npc_sequence: Array
-var step_in_sequence_player: int = 0 # the step in the sequence for the player
+var current_step_in_sequence_player: int = 0 # the step in the sequence for the player
 
 var reset_timer: Timer
 var input_window_timer: Timer
@@ -51,8 +53,6 @@ func _ready() -> void:
 	reset_timer.timeout.connect(_on_timer_finished)
 	input_window_timer.timeout.connect(_on_window_missed)
 	
-	Metronome.tick.connect(_on_metronome_tick)
-	
 	_update_character_sprite()  # Update here when everything is ready
 	
 	is_npc = true
@@ -65,34 +65,18 @@ func _update_character_sprite():
 	if character_sprites.has(sprite_key):
 		char_sprite.texture = character_sprites[sprite_key]
 
-func _on_metronome_tick(window_duration_ms: int):
-	# we don't do anything if this is not the player
-	if is_npc:
-		return
-	
-	print("metronome_tick")
-	
-	if step_in_sequence_player == npc_sequence.size():
-		finished_sequence_player.emit()
-		return
-		
-	# create a timer for window_duration_ms
-	print("starting timer for window duration_ms: ", window_duration_ms)
-	input_window_timer.start(window_duration_ms / 1000.0)
-
-	step_in_sequence_player += 1
-
 func _check_if_input_matches_sequence(direction):
 	if input_window_timer.time_left > 0: # if timer is running we are in the window
 		var time_offset_ms = (input_window_timer.wait_time - input_window_timer.time_left) * 1000
-		if direction == npc_sequence[step_in_sequence_player]:
-			# input is valid
+		if current_step_in_sequence_player >= len(npc_sequence):
+			return
+		
+		if direction == npc_sequence[current_step_in_sequence_player]:
 			self.input_valid.emit(time_offset_ms)
 		else:
-			# input is on time but not valid
-			self.input_valid.emit(time_offset_ms)
-
-		input_window_timer.stop()
+			self.input_invalid.emit(time_offset_ms)
+		
+		input_window_timer.stop() # stop the timer, the window iis nw not valid
 
 func _on_window_missed():
 	self.input_missed.emit()
@@ -102,15 +86,35 @@ func _on_timer_finished():
 
 func start_player_turn():
 	is_npc = false
+	current_step_in_sequence_player = 0
+	
+	await Metronome.tick
+
+	next_queried_direction.emit(npc_sequence[current_step_in_sequence_player])
+	
+	await Metronome.pretick
+	
+	for direction in npc_sequence:
+		if current_step_in_sequence_player + 1 < npc_sequence.size() :
+			next_queried_direction.emit(npc_sequence[current_step_in_sequence_player + 1])
+			
+		input_window_timer.start(Metronome.window_duration_ms / 1000.0)
+		await Metronome.pretick
+		current_step_in_sequence_player += 1
+	
+	is_npc = true
+	
+	await Metronome.tick
+	
+	finished_sequence_player.emit()
 
 func play_sequence_npc():
 	for emotion in npc_sequence:
+		await Metronome.tick  # wait for the next tick
+		
 		$MaskSticks.set_mask(emotion)
 		reset_timer.start(1.0)
-		
-		print("displaying emotion: ", emotion)
-		await get_tree().create_timer(tempo_ms / 1000.0).timeout
-
+		print("displaying emotion on npc: ", emotion)
 
 func press_direction(direction):
 	if is_npc:

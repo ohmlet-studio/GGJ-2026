@@ -4,27 +4,35 @@ extends Control
 @onready var label_npc = $label_npc
 @onready var label_player = $label_player
 @onready var prompts: Array[DialogPrompt]
-@onready var prompts_parent = $Prompts
+@onready var levels = $Levels
 @onready var minigame: Minigame = %Minigame
+@onready var tempo_visualizer = $"../TempoVisualizer"
 
-@export_range(0, 100, 1) var current_dialog_index: int:
-	set(value):
-		current_dialog_index = value
-		_set_params(value)
+@export_range(0, 10, 1) var current_dialog_index: int
 
-func _ready():
-	play_prompt(0)
+func _ready():	
+	minigame.input_invalid.connect(_on_input_invalid)
+	minigame.input_valid.connect(_on_input_valid)
+	minigame.input_missed.connect(_on_input_missed)
+
+	await play_level("Intro")
+	await play_level("Level1")
+
+func _on_input_valid(offset_ms):
+	tempo_visualizer.show_hit()
 	
-	minigame.input_invalid.connect(func(value): print("input_invalid"))
-	minigame.input_valid.connect(func(value): print("input_valid"))
-	minigame.input_missed.connect(func(): print("input_missed"))
+func _on_input_invalid(offset_ms):
+	tempo_visualizer.show_miss()
+
+func _on_input_missed():
+	tempo_visualizer.show_miss()
 
 func _convert_sequence(string_sequence: String):
-	var string_to_enum = {
+	var string_to_enum := {
 		"HAPPY": SimonDirections.UP,
 		"SAD": SimonDirections.DOWN,
 		"ANGER": SimonDirections.RIGHT,
-		"SURPRISED" : SimonDirections.LEFT,
+		"SURPRISE" : SimonDirections.LEFT,
 	}
 	
 	var single_words = string_sequence.split(" ")
@@ -35,53 +43,51 @@ func _convert_sequence(string_sequence: String):
 	
 	return enum_sequence
 
-func _set_params(value):
-	prompts.assign(prompts_parent.get_children())
+func _prepare_prompt(level_name: String, index: int):
+	var level_node = levels.get_node(level_name)
+	var current_prompt = level_node.get_child(index)
 	
-	if not prompts_parent:
+	if not current_prompt:
+		print("ERROR: prompt_node does not exist")
 		return
-
-	if not prompts:
-		return
-		
-	if value < 0 or value >= prompts.size():
-		return
-	
-	var current_prompt = prompts[value]
 
 	if not Engine.is_editor_hint():
 		Metronome.set_tempo_bpm(current_prompt.tempo_bpm)
 	
-	minigame.character = current_prompt.character
-	
 	var sequence = _convert_sequence(current_prompt.input_sequence)
+	minigame.character = current_prompt.character
 	minigame.npc_sequence = sequence
+	return current_prompt
 
-func _display_text_npc(prompt_number):
-	var text_to_display = ""
-	text_to_display = prompts[prompt_number].char_dialog
-	label_npc.char2char(text_to_display)
+func _display_text_player(text: String):
+	label_player.text = text
 
-func _display_text_player(prompt_number):
-	label_player.text = prompts[prompt_number].response
-
-func play_prompt(prompt_number: int):
-	current_dialog_index = prompt_number
-
-	print("Displaying text npc")
-	_display_text_npc(prompt_number)
+func play_level(level_name: String):
+	var level_node = levels.get_node(level_name)
 	
-	print("Waiting 2s")
-	await get_tree().create_timer(2.0).timeout
+	for i in range(level_node.get_child_count()):
+		await play_prompt(level_name, i)
+		
+		# wait two ticks between prompts
+		await Metronome.tick
+		await Metronome.tick
+
+func play_prompt(level_name: String, index: int):
+	var current_prompt = _prepare_prompt(level_name, index)
+
+	%TalkHint.visible_hint = current_prompt.character
+	await label_npc.char2char(current_prompt.char_dialog, 0.035)
 	
-	print("Playing npc sequence")
-	await minigame.play_sequence_npc()
+	# wait two ticks
+	await Metronome.tick
+	await Metronome.tick
 
-	print("Waiting 2s")
-	await get_tree().create_timer(2.0).timeout
-
+	# use the NPC to show the masks	
+	#await minigame.play_sequence_npc()
+	
 	print("Letting the user play the minigame")
 	await minigame.start_player_turn()
 	
-	_display_text_player(prompt_number)
+	label_npc.text = ""
+	_display_text_player(current_prompt.response)
 	

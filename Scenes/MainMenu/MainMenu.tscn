@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://33dwa0yb8pbq"]
 
 [ext_resource type="Script" uid="uid://cdjt41i1vaxfk" path="res://Scenes/MainMenu/main_menu.gd" id="1_cruaa"]
-[ext_resource type="Texture2D" uid="uid://dcj3wo8dqv737" path="res://Assets/TitleScene/wall.png" id="2_sg7ab"]
-[ext_resource type="Texture2D" uid="uid://dt43qwaeslgkh" path="res://Assets/TitleScene/door.png" id="3_kpx3y"]
-[ext_resource type="Texture2D" uid="uid://cukh7ukntpfp1" path="res://Assets/TitleScene/charac_door.png" id="3_ua038"]
-[ext_resource type="Texture2D" uid="uid://teevvvp0t2ea" path="res://Assets/TitleScene/ringring.png" id="5_vapy7"]
-[ext_resource type="Texture2D" uid="uid://b7l3o1mcbb8jg" path="res://Assets/TitleScene/doorbell.png" id="6_8qovt"]
-[ext_resource type="Texture2D" uid="uid://btmk8rn5ufa20" path="res://Assets/TitleScene/enter.png" id="7_8qovt"]
+[ext_resource type="Texture2D" uid="uid://bbx0eygrmerye" path="res://Assets/TitleScene/wall.png" id="2_sg7ab"]
+[ext_resource type="Texture2D" uid="uid://bwesv2ikhog3o" path="res://Assets/TitleScene/door.png" id="3_kpx3y"]
+[ext_resource type="Texture2D" uid="uid://dx372563ase7t" path="res://Assets/TitleScene/charac_door.png" id="3_ua038"]
+[ext_resource type="Texture2D" uid="uid://bh34lqcwyy3mh" path="res://Assets/TitleScene/ringring.png" id="5_vapy7"]
+[ext_resource type="Texture2D" uid="uid://cmht5gqe5mw76" path="res://Assets/TitleScene/doorbell.png" id="6_8qovt"]
+[ext_resource type="Texture2D" uid="uid://525pxxjd3n0c" path="res://Assets/TitleScene/enter.png" id="7_8qovt"]
 [ext_resource type="Shader" uid="uid://djx8tgp8tq2cw" path="res://Scenes/MainMenu/MainMenu.gdshader" id="8_0hjx5"]
-[ext_resource type="FontFile" uid="uid://bo1h63330vth6" path="res://Assets/main_font.ttf" id="8_fv0xt"]
+[ext_resource type="FontFile" uid="uid://bhv7184n448y8" path="res://Assets/main_font.ttf" id="8_fv0xt"]
+[ext_resource type="Texture2D" uid="uid://dl8tmipe47wrd" path="res://Assets/Textures/2d_light_texture.png" id="10_sng02"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cruaa"]
 texture = ExtResource("2_sg7ab")
@@ -139,6 +140,7 @@ shader = ExtResource("8_0hjx5")
 shader_parameter/lod = 3.5
 
 [node name="MainMenu" type="Control" unique_id=798517884]
+modulate = Color(0.72464263, 0.7246426, 0.7246426, 1)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -148,6 +150,7 @@ grow_vertical = 2
 script = ExtResource("1_cruaa")
 
 [node name="background" type="Panel" parent="." unique_id=317783502]
+light_mask = 513
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -262,6 +265,13 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8qovt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0hjx5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fv0xt")
 text = "Return"
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2072592993]
+position = Vector2(965, 315)
+scale = Vector2(8.254, 8.254)
+energy = 0.49
+range_item_cull_mask = 512
+texture = ExtResource("10_sng02")
 
 [connection signal="animation_finished" from="door/SubViewport/Node3D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="doorbell" to="." method="_on_doorbell_pressed"]

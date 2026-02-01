@@ -1,15 +1,13 @@
 @tool
 extends Label
 
-var char_display_speed = 0.05 #seconds
-
 func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
 	pass
 
-func char2char(text: String):
+func char2char(text: String, char_display_speed: float):
 	$".".text = ""
 	
 	for i in range(text.length()):

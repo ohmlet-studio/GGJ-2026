@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pdxbyhqdrgor"
-path="res://.godot/imported/white_circular.png-577685e0c14386cf0aa8354ca0cb934b.ctex"
+uid="uid://dcbvtkimfem08"
+path="res://.godot/imported/cross.png-b3ba5fa333e39f18a59e93b1ccae76d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/white_circular.png"
-dest_files=["res://.godot/imported/white_circular.png-577685e0c14386cf0aa8354ca0cb934b.ctex"]
+source_file="res://Assets/Textures/cross.png"
+dest_files=["res://.godot/imported/cross.png-b3ba5fa333e39f18a59e93b1ccae76d7.ctex"]
 
 [params]
 
