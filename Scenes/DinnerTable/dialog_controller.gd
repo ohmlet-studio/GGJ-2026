@@ -7,6 +7,7 @@ extends Control
 @onready var levels = $Levels
 @onready var minigame: Minigame = %Minigame
 @onready var tempo_visualizer = $"../TempoVisualizer"
+@onready var in_between_scene = %InBetweenScene
 
 @export_range(0, 10, 1) var current_dialog_index: int
 
@@ -15,7 +16,10 @@ func _ready():
 	minigame.input_valid.connect(_on_input_valid)
 	minigame.input_missed.connect(_on_input_missed)
 
-	await play_level("Intro")
+	var errors_ms = await play_level("Intro")
+	
+	#in_between_scene.fill_label_text(errors_ms, good_thought, bad_thought)
+	
 	await play_level("Level1")
 
 func _on_input_valid(offset_ms):

@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://bta2kp608mcqf"]
+
+[ext_resource type="Texture2D" uid="uid://dl8tmipe47wrd" path="res://Assets/Textures/2d_light_texture.png" id="1_dj6c7"]
+[ext_resource type="Script" uid="uid://dr20c3x75f11g" path="res://Scenes/DinnerTable/LevelInBetween/in_between_scene.gd" id="1_f7hks"]
+[ext_resource type="Texture2D" uid="uid://c84jsl0ojjrcu" path="res://Assets/Minigame/Fond.png" id="2_f7hks"]
+[ext_resource type="Texture2D" uid="uid://cbf7sk2tphxor" path="res://Assets/Background/chair_back.png" id="3_2onug"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wvkjd"]
+load_path = "res://.godot/imported/us.png-a8077e8163a5785567f2607a7fa4a30d.ctex"
+
+[node name="InBetweenScene" type="Node2D" unique_id=1291481279]
+script = ExtResource("1_f7hks")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=456030286]
+position = Vector2(419, 548.00006)
+scale = Vector2(6.614931, 6.614931)
+range_item_cull_mask = 512
+texture = ExtResource("1_dj6c7")
+
+[node name="Fond" type="Sprite2D" parent="." unique_id=1386756846]
+modulate = Color(0.22670749, 0.22670749, 0.22670746, 1)
+light_mask = 513
+position = Vector2(924, 521.9999)
+scale = Vector2(8.327374, 3.6473753)
+texture = ExtResource("2_f7hks")
+
+[node name="ChairBack" type="Sprite2D" parent="." unique_id=2019810671]
+modulate = Color(0.4390491, 0.43904912, 0.43904912, 1)
+light_mask = 513
+position = Vector2(434.16333, 908.38794)
+scale = Vector2(0.9347172, 0.9347172)
+texture = ExtResource("3_2onug")
+
+[node name="Us" type="Sprite2D" parent="." unique_id=595562864]
+position = Vector2(422.16336, 759.38794)
+scale = Vector2(0.7002567, 0.7002567)
+texture = SubResource("CompressedTexture2D_wvkjd")
+
+[node name="LabelInnerThoughts" type="Label" parent="." unique_id=1791856454]
+offset_left = 863.0
+offset_top = 118.0
+offset_right = 1671.0
+offset_bottom = 228.0
+theme_override_font_sizes/font_size = 80
+text = "I need to get better..."
+
+[node name="TextNotesPercentage" type="Label" parent="." unique_id=883601132]
+offset_left = 753.0
+offset_top = 329.0
+offset_right = 1471.0
+offset_bottom = 483.00012
+theme_override_font_sizes/font_size = 60
+text = "Percentage of notes hits:"
+vertical_alignment = 1
+
+[node name="CompletionPercentageLabel" type="Label" parent="." unique_id=877901922]
+offset_left = 1526.0
+offset_top = 355.0
+offset_right = 1719.0
+offset_bottom = 509.00012
+theme_override_constants/shadow_outline_size = 87
+theme_override_font_sizes/font_size = 75
+text = "0%"
+
+[node name="TextNotesError" type="Label" parent="." unique_id=225190622]
+offset_left = 914.0
+offset_top = 419.0
+offset_right = 1471.0
+offset_bottom = 573.0001
+theme_override_font_sizes/font_size = 60
+text = "Average error (ms):"
+vertical_alignment = 1
+
+[node name="AverageErrorMsLabel" type="Label" parent="." unique_id=324618338]
+offset_left = 1526.0
+offset_top = 445.0
+offset_right = 1719.0
+offset_bottom = 599.0001
+theme_override_constants/shadow_outline_size = 87
+theme_override_font_sizes/font_size = 75
+text = "100"
+
+[node name="FinalScoreLetter" type="Label" parent="." unique_id=544318291]
+offset_left = 570.0
+offset_top = 673.0
+offset_right = 1378.0001
+offset_bottom = 1219.0
+rotation = -0.2617994
+theme_override_colors/font_color = Color(1, 0, 0.12156863, 1)
+theme_override_colors/font_shadow_color = Color(0.10980392, 0.10980392, 0.10980392, 0.48235294)
+theme_override_constants/shadow_outline_size = 175
+theme_override_font_sizes/font_size = 400
+text = "F"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RetryButton" type="Button" parent="." unique_id=2112990882]
+offset_left = 1311.0
+offset_top = 704.0
+offset_right = 1807.0
+offset_bottom = 825.0
+theme_override_font_sizes/font_size = 50
+text = "Retry"
+
+[node name="Next Level" type="Button" parent="." unique_id=1742945161]
+offset_left = 1311.0
+offset_top = 855.0
+offset_right = 1807.0
+offset_bottom = 976.0
+theme_override_font_sizes/font_size = 50
+text = "Next Level"
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Next Level" to="." method="_on_next_level_pressed"]

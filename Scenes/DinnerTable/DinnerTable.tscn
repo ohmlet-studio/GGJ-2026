@@ -32,6 +32,7 @@
 [ext_resource type="Script" uid="uid://cxcw0vi7mftul" path="res://Scenes/DinnerTable/label_anim.gd" id="21_sxdy7"]
 [ext_resource type="Script" uid="uid://dh06rerknyks1" path="res://Scenes/DinnerTable/fps_counter.gd" id="24_r6s68"]
 [ext_resource type="Script" uid="uid://cegw0hppiklu6" path="res://Scenes/DinnerTable/LevelParams.gd" id="30_m8rn3"]
+[ext_resource type="PackedScene" uid="uid://bta2kp608mcqf" path="res://Scenes/DinnerTable/LevelInBetween/InBetweenScene.tscn" id="32_dhylr"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_wh2rv"]
 viewport_path = NodePath("SubViewportMinigame")
@@ -422,6 +423,10 @@ input_sequence = "SURPRISE HAPPY SURPRISE HAPPY SAD SAD HAPPY SAD"
 tempo_bpm = 100
 character = 5
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="InBetweenScene" parent="." unique_id=1291481279 instance=ExtResource("32_dhylr")]
+unique_name_in_owner = true
+visible = false
 
 [node name="FPS_counter" type="Label" parent="." unique_id=380752383]
 offset_right = 40.0
