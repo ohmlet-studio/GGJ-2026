@@ -79,12 +79,15 @@ scale_factor = Vector2(1, 0.96)
 position = Vector2(-89, 335)
 script = ExtResource("4_gmjc4")
 
-[node name="UpStick" type="Sprite2D" parent="MaskSticks" unique_id=325687152]
+[node name="UpStick" type="Node2D" parent="MaskSticks" unique_id=1369643163]
 position = Vector2(387, -355)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("6_8l3v4")
-offset = Vector2(0, -320)
 script = ExtResource("6_dn3w5")
+
+[node name="Stick" type="Sprite2D" parent="MaskSticks/UpStick" unique_id=1999404829]
+position = Vector2(2.6666565, -234.66664)
+scale = Vector2(0.7857968, 0.7857968)
+texture = ExtResource("6_8l3v4")
 
 [node name="UpArrow" type="Sprite2D" parent="MaskSticks/UpStick" unique_id=2088617050]
 position = Vector2(1.9999995, -703.3333)
@@ -93,13 +96,16 @@ texture = ExtResource("7_yhojd")
 script = ExtResource("7_dn3w5")
 align = true
 
-[node name="DownStick" type="Sprite2D" parent="MaskSticks" unique_id=523577066]
+[node name="DownStick" type="Node2D" parent="MaskSticks" unique_id=762279644]
 position = Vector2(388.5, 709.0001)
 rotation = 3.1415927
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("6_8l3v4")
-offset = Vector2(0, -320)
 script = ExtResource("6_dn3w5")
+
+[node name="Stick" type="Sprite2D" parent="MaskSticks/DownStick" unique_id=1244149527]
+position = Vector2(2.666626, -245.33313)
+scale = Vector2(0.7857968, 0.7857968)
+texture = ExtResource("6_8l3v4")
 
 [node name="UpArrow" type="Sprite2D" parent="MaskSticks/DownStick" unique_id=1836674700]
 position = Vector2(0, -703.3333)
@@ -109,13 +115,16 @@ texture = ExtResource("11_o0l4d")
 script = ExtResource("7_dn3w5")
 align = true
 
-[node name="LeftStick" type="Sprite2D" parent="MaskSticks" unique_id=1399656873]
+[node name="LeftStick" type="Node2D" parent="MaskSticks" unique_id=1079313703]
 position = Vector2(-171, 186.00003)
 rotation = 4.712389
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("6_8l3v4")
-offset = Vector2(0, -320)
 script = ExtResource("6_dn3w5")
+
+[node name="Stick" type="Sprite2D" parent="MaskSticks/LeftStick" unique_id=1407997643]
+position = Vector2(2.666687, -325.3333)
+scale = Vector2(0.7857968, 0.7857968)
+texture = ExtResource("6_8l3v4")
 
 [node name="UpArrow" type="Sprite2D" parent="MaskSticks/LeftStick" unique_id=547770535]
 position = Vector2(-5.8034425e-07, -752)
@@ -125,13 +134,16 @@ texture = ExtResource("12_g74kh")
 script = ExtResource("7_dn3w5")
 align = true
 
-[node name="RightStick" type="Sprite2D" parent="MaskSticks" unique_id=1744493342]
+[node name="RightStick" type="Node2D" parent="MaskSticks" unique_id=1335799469]
 position = Vector2(907, 178)
 rotation = 1.5707964
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("6_8l3v4")
-offset = Vector2(0, -320)
 script = ExtResource("6_dn3w5")
+
+[node name="Stick" type="Sprite2D" parent="MaskSticks/RightStick" unique_id=882124374]
+position = Vector2(2.666687, -274.66663)
+scale = Vector2(0.7857968, 0.7857968)
+texture = ExtResource("6_8l3v4")
 
 [node name="UpArrow" type="Sprite2D" parent="MaskSticks/RightStick" unique_id=839597248]
 position = Vector2(0, -703.3333)

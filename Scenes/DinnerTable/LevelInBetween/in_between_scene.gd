@@ -46,7 +46,7 @@ func show_in_between_scene(errors_ms: Array, good_thought: String, bad_thought: 
 			sum += error
 		avg_error = sum / valid_errors.size()
 		tot_average_error.append(avg_error)
-	average_error_ms.text = str("%.2f" % avg_error + " ms")
+	average_error_ms.text = str(int(avg_error))
 	
 	# Determine letter grade based on average error
 	# Assuming max acceptable error is around 250ms (half of a typical 500ms window)
@@ -66,19 +66,19 @@ func get_letter_grade(avg_error: float, max_error: float) -> String:
 	
 	# Grade thresholds (lower error = better grade)
 	if normalized_error <= 0.15:
-		return "A"
+		return "A+"
 	elif normalized_error <= 0.30:
-		return "B"
+		return "A"
 	elif normalized_error <= 0.45:
-		return "C"
+		return "B"
 	elif normalized_error <= 0.60:
-		return "D"
+		return "C"
 	elif normalized_error <= 0.75:
-		return "E"
+		return "D"
 	elif normalized_error <= 0.90:
-		return "F"
+		return "E"
 	else:
-		return "G"
+		return "F"
 
 func _on_retry_button_pressed() -> void:
 	self.visible = false
