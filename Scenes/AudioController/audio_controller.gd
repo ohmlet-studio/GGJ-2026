@@ -35,10 +35,17 @@ func play_ding():
 	
 ## Music handler
 # Public
+
+var last_tempo = 0
 func play_music(tempo_bpm : float, level: MUSIC_SCENE):
 	if level == self.MUSIC_SCENE.TITLE:
 		$Music/title_scene.play()
 	elif level == self.MUSIC_SCENE.LEVEL:
+		if last_tempo == tempo_bpm:
+			return
+		
 		$Music/title_scene.stop()
 		$Music/main_beat_music.pitch_scale = tempo_bpm / self.origin_tempo_music
 		$Music/main_beat_music.play()
+		
+		last_tempo = tempo_bpm
