@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://d0xkvoo1uejw6"]
+
+[ext_resource type="Texture2D" uid="uid://hj6i4g6jyhcn" path="res://Assets/Final scene /final_scene-1.png" id="1_q58gg"]
+[ext_resource type="Texture2D" uid="uid://b6yd8f5a5go83" path="res://Assets/Final scene /confettis.png" id="2_cgikm"]
+[ext_resource type="Texture2D" uid="uid://cxqkiuqxo00og" path="res://Assets/Final scene /text_congratulations.png" id="3_71mmd"]
+[ext_resource type="Script" uid="uid://c6215vuol8ms2" path="res://addons/sudden_fade_plugin/fade_transition_manager.gd" id="4_71mmd"]
+
+[sub_resource type="Animation" id="Animation_wbyx0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("confettis:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("congrats:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_giihm"]
+resource_name = "animation"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("confettis:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.8, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("congrats:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.0666667, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nn0by"]
+_data = {
+&"RESET": SubResource("Animation_wbyx0"),
+&"animation": SubResource("Animation_giihm")
+}
+
+[node name="FinalScene" type="Control" unique_id=2145293582]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="TextureRect" parent="." unique_id=33651605]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_q58gg")
+expand_mode = 1
+
+[node name="confettis" type="TextureRect" parent="." unique_id=548600448]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_cgikm")
+expand_mode = 1
+
+[node name="congrats" type="TextureRect" parent="." unique_id=2031050504]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 77.99999
+offset_top = 290.00003
+offset_right = 1944.0
+offset_bottom = 744.0
+rotation = -0.09696166
+scale = Vector2(0.45323828, 0.45323828)
+texture = ExtResource("3_71mmd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=17298517]
+libraries/ = SubResource("AnimationLibrary_nn0by")
+autoplay = &"animation"
+
+[node name="FadeTransitionManager" type="ColorRect" parent="." unique_id=927351509]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_71mmd")
+_fade_length = 0.5
+metadata/_custom_type_script = "uid://c6215vuol8ms2"

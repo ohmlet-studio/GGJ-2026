@@ -129,6 +129,7 @@ bus = &"SFX"
 [node name="main_beat_music" type="AudioStreamPlayer" parent="Music" unique_id=923257942]
 stream = ExtResource("25_01pc8")
 bus = &"Music"
+parameters/looping = true
 
 [node name="title_scene" type="AudioStreamPlayer" parent="Music" unique_id=441102852]
 stream = ExtResource("26_hnps5")

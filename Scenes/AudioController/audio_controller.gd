@@ -41,5 +41,4 @@ func play_music(tempo_bpm : float, level: MUSIC_SCENE):
 	elif level == self.MUSIC_SCENE.LEVEL:
 		$Music/title_scene.stop()
 		$Music/main_beat_music.pitch_scale = tempo_bpm / self.origin_tempo_music
-		#print("aud  ", tempo_bpm, "  ", Metronome.tempo_ms, "   ", $Music/main_beat_music.pitch_scale, "   ", pitch)
 		$Music/main_beat_music.play()
