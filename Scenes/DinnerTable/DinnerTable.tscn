@@ -460,6 +460,82 @@ metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="DialogPrompt4" type="Node" parent="DialogController/Levels/Level2" unique_id=1157764962]
 script = ExtResource("4_l8u7i")
+char_dialog = "I won't come this time, I burned myself the other day..."
+response = "That's rough buddy..."
+input_sequence = "SURPRISE SAD SAD ANGER SURPRISE SURPRISE ANGER ANGER ANGER SAD SAD SAD ANGER SURPRISE"
+tempo_bpm = 100
+character = 7
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPrompt5" type="Node" parent="DialogController/Levels/Level2" unique_id=1945313344]
+script = ExtResource("4_l8u7i")
+char_dialog = "Yeah, let's not have a repeat of that..."
+response = "I don't want you to get hurt."
+input_sequence = "SAD SAD SAD SAD SAD ANGER SURPRISE HAPPY SURPRISE SAD ANGER ANGER HAPPY HAPPY SAD SAD SAD SAD SAD"
+tempo_bpm = 100
+character = 4
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPrompt6" type="Node" parent="DialogController/Levels/Level2" unique_id=892114504]
+script = ExtResource("4_l8u7i")
+char_dialog = "Aggrrrrrzzzoouuu"
+response = "It's too early for you to help in the kitchen!"
+input_sequence = "HAPPY SURPRISE HAPPY HAPPY SURPRISE ANGER SURPRISE HAPPY HAPPY HAPPY HAPPY SURPRISE SURPRISE HAPPY ANGER SURPRISE"
+tempo_bpm = 100
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPrompt7" type="Node" parent="DialogController/Levels/Level2" unique_id=1167664340]
+script = ExtResource("4_l8u7i")
+char_dialog = "I'll teach you the lasagna recipee when you're old enough!"
+response = "I'll assist!!"
+input_sequence = "SURPRISE SURPRISE SURPRISE HAPPY ANGER HAPPY HAPPY SURPRISE SAD SAD SAD HAPPY SURPRISE HAPPY HAPPY HAPPY HAPPY"
+tempo_bpm = 100
+character = 5
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPrompt8" type="Node" parent="DialogController/Levels/Level2" unique_id=1460843187]
+script = ExtResource("4_l8u7i")
+char_dialog = "But no pressure, I'm old enough but I still suck at it ahah."
+response = "Well, you're not known for your cooking skills."
+input_sequence = "ANGER ANGER SAD SAD SAD SAD ANGER HAPPY SURPRISE HAPPY HAPPY SURPRISE SURPRISE SURPRISE ANGER HAPPY ANGER SAD"
+tempo_bpm = 100
+character = 1
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="Level3" type="Node" parent="DialogController/Levels" unique_id=407305531]
+script = ExtResource("30_m8rn3")
+dialog_succes = "Okay, okay Im doing it!"
+dialog_failure = "Oof I have to get it together..."
+
+[node name="DialogPrompt1" type="Node" parent="DialogController/Levels/Level3" unique_id=210389404]
+script = ExtResource("4_l8u7i")
+char_dialog = "I'm going to the community kitchen tomorrow, wanna come ?"
+response = "I would love to!"
+input_sequence = "SURPRISE HAPPY HAPPY SURPRISE HAPPY SURPRISE SURPRSE HAPPY HAPPY HAPPY"
+tempo_bpm = 100
+character = 6
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPrompt2" type="Node" parent="DialogController/Levels/Level3" unique_id=2131118851]
+script = ExtResource("4_l8u7i")
+char_dialog = "It's important to give in these hard times..."
+response = "Yeah..."
+input_sequence = "SAD SAD SURPRISE ANGER SURPRISE ANGER ANGER SAD SAD SAD SURPRISE SURPRISE SAD ANGER ANGER"
+tempo_bpm = 100
+character = 5
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPrompt3" type="Node" parent="DialogController/Levels/Level3" unique_id=52635737]
+script = ExtResource("4_l8u7i")
+char_dialog = "I'll bring a spinach lasagna, it was your dad's favorite!"
+response = "It's been a while since we had some!"
+input_sequence = "HAPPY SAD SURPRISE SAD HAPPY HAPPY HAPPY SAD ANGER SURPRISE SAD ANGER ANGER ANGER SURPRISE SAD SAD SAD"
+tempo_bpm = 100
+character = 4
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPrompt4" type="Node" parent="DialogController/Levels/Level3" unique_id=1201989599]
+script = ExtResource("4_l8u7i")
 char_dialog = "I'll bring a spinach lasagna, it was your dad's favorite!"
 response = "It's been a while since we had some!"
 input_sequence = "HAPPY SAD SURPRISE SAD HAPPY HAPPY HAPPY SAD ANGER SURPRISE SAD ANGER ANGER ANGER SURPRISE SAD SAD SAD"
