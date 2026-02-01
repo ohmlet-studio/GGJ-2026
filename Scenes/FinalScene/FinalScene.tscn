@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d0xkvoo1uejw6"]
 
 [ext_resource type="Texture2D" uid="uid://hj6i4g6jyhcn" path="res://Assets/Final scene /final_scene-1.png" id="1_q58gg"]
+[ext_resource type="Script" uid="uid://bstbpetk0lfff" path="res://Scenes/FinalScene/final_scene.gd" id="1_wbyx0"]
 [ext_resource type="Texture2D" uid="uid://b6yd8f5a5go83" path="res://Assets/Final scene /confettis.png" id="2_cgikm"]
 [ext_resource type="Texture2D" uid="uid://cxqkiuqxo00og" path="res://Assets/Final scene /text_congratulations.png" id="3_71mmd"]
 [ext_resource type="Script" uid="uid://c6215vuol8ms2" path="res://addons/sudden_fade_plugin/fade_transition_manager.gd" id="4_71mmd"]
@@ -73,6 +74,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wbyx0")
 
 [node name="background" type="TextureRect" parent="." unique_id=33651605]
 layout_mode = 1
@@ -103,6 +105,16 @@ rotation = -0.09696166
 scale = Vector2(0.45323828, 0.45323828)
 texture = ExtResource("3_71mmd")
 
+[node name="av_pct_lab" type="Label" parent="." unique_id=896921053]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="av_error_lab" type="Label" parent="." unique_id=1805088630]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=17298517]
 libraries/ = SubResource("AnimationLibrary_nn0by")
 autoplay = &"animation"
@@ -114,3 +126,5 @@ offset_bottom = 40.0
 script = ExtResource("4_71mmd")
 _fade_length = 0.5
 metadata/_custom_type_script = "uid://c6215vuol8ms2"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

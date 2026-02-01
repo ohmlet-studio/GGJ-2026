@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dr20c3x75f11g" path="res://Scenes/DinnerTable/LevelInBetween/in_between_scene.gd" id="1_f7hks"]
 [ext_resource type="Texture2D" uid="uid://c84jsl0ojjrcu" path="res://Assets/Minigame/Fond.png" id="2_f7hks"]
 [ext_resource type="Texture2D" uid="uid://cbf7sk2tphxor" path="res://Assets/Background/chair_back.png" id="3_2onug"]
+[ext_resource type="FontFile" uid="uid://bhv7184n448y8" path="res://Assets/main_font.ttf" id="5_2onug"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wvkjd"]
 load_path = "res://.godot/imported/us.png-a8077e8163a5785567f2607a7fa4a30d.ctex"
@@ -41,6 +42,7 @@ offset_left = 30.0
 offset_top = 118.0
 offset_right = 1899.0
 offset_bottom = 228.0
+theme_override_fonts/font = ExtResource("5_2onug")
 theme_override_font_sizes/font_size = 80
 text = "I need to get better..."
 horizontal_alignment = 1
@@ -50,6 +52,7 @@ offset_left = 753.0
 offset_top = 329.0
 offset_right = 1471.0
 offset_bottom = 483.00012
+theme_override_fonts/font = ExtResource("5_2onug")
 theme_override_font_sizes/font_size = 60
 text = "Percentage of notes hits:"
 vertical_alignment = 1
@@ -60,6 +63,7 @@ offset_top = 355.0
 offset_right = 1719.0
 offset_bottom = 509.00012
 theme_override_constants/shadow_outline_size = 87
+theme_override_fonts/font = ExtResource("5_2onug")
 theme_override_font_sizes/font_size = 75
 text = "0%"
 
@@ -68,8 +72,9 @@ offset_left = 914.0
 offset_top = 419.0
 offset_right = 1471.0
 offset_bottom = 573.0001
+theme_override_fonts/font = ExtResource("5_2onug")
 theme_override_font_sizes/font_size = 60
-text = "Average error (ms):"
+text = "Average error:"
 vertical_alignment = 1
 
 [node name="AverageErrorMsLabel" type="Label" parent="." unique_id=324618338]
@@ -78,6 +83,7 @@ offset_top = 445.0
 offset_right = 1719.0
 offset_bottom = 599.0001
 theme_override_constants/shadow_outline_size = 87
+theme_override_fonts/font = ExtResource("5_2onug")
 theme_override_font_sizes/font_size = 75
 text = "100"
 
@@ -90,6 +96,7 @@ rotation = -0.2617994
 theme_override_colors/font_color = Color(1, 0, 0.12156863, 1)
 theme_override_colors/font_shadow_color = Color(0.10980392, 0.10980392, 0.10980392, 0.48235294)
 theme_override_constants/shadow_outline_size = 175
+theme_override_fonts/font = ExtResource("5_2onug")
 theme_override_font_sizes/font_size = 400
 text = "F"
 horizontal_alignment = 1
@@ -100,6 +107,7 @@ offset_left = 1311.0
 offset_top = 704.0
 offset_right = 1807.0
 offset_bottom = 825.0
+theme_override_fonts/font = ExtResource("5_2onug")
 theme_override_font_sizes/font_size = 50
 text = "Retry"
 
@@ -108,6 +116,7 @@ offset_left = 1311.0
 offset_top = 855.0
 offset_right = 1807.0
 offset_bottom = 976.0
+theme_override_fonts/font = ExtResource("5_2onug")
 theme_override_font_sizes/font_size = 50
 text = "Next Level"
 
