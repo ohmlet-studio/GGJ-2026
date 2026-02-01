@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var inner_thought_label = $LabelInnerThoughts
 @onready var completion_label_pct = $CompletionPercentageLabel
-@onready var average_error_ms = $AverageErrorMsLabel2
+@onready var average_error_ms = $AverageErrorMsLabel
 @onready var score_letter = $FinalScoreLetter
 
 signal retry_level()
@@ -15,7 +15,7 @@ func _ready():
 # @param errors_ms: Array of absolute error values in milliseconds for each note (-1 if missed)
 # @param good_thought: Text to show for good performance
 # @param bad_thought: Text to show for bad performance
-func fill_label_text(errors_ms: Array, good_thought: String, bad_thought: String) -> void:
+func show_in_between_scene(errors_ms: Array, good_thought: String, bad_thought: String) -> void:
 	self.visible = true
 	
 	var total_notes = errors_ms.size()

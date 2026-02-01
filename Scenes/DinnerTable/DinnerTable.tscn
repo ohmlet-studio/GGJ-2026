@@ -426,9 +426,6 @@ tempo_bpm = 100
 character = 5
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
-[node name="InBetweenScene" parent="." unique_id=1291481279 instance=ExtResource("32_dhylr")]
-unique_name_in_owner = true
-visible = false
 [node name="Level2" type="Node" parent="DialogController/Levels" unique_id=731598036]
 script = ExtResource("30_m8rn3")
 dialog_succes = "Okay, okay Im doing it!"
@@ -514,6 +511,10 @@ response = "We will organize to overthrow this rotten system."
 input_sequence = "ANGER SURPRISE ANGER SURPRISE HAPPY HAPPY SURPRISE SURPRISE ANGER ANGER ANGER HAPPY SURPRISE SAD ANGER SAD SAD SURPRISE ANGER HAPPY"
 tempo_bpm = 100
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="InBetweenScene" parent="." unique_id=1291481279 instance=ExtResource("32_dhylr")]
+unique_name_in_owner = true
+visible = false
 
 [node name="FPS_counter" type="Label" parent="." unique_id=380752383]
 offset_right = 40.0
