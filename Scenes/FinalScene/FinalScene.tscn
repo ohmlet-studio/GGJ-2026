@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b6yd8f5a5go83" path="res://Assets/Final scene /confettis.png" id="2_cgikm"]
 [ext_resource type="Texture2D" uid="uid://cxqkiuqxo00og" path="res://Assets/Final scene /text_congratulations.png" id="3_71mmd"]
 [ext_resource type="Script" uid="uid://c6215vuol8ms2" path="res://addons/sudden_fade_plugin/fade_transition_manager.gd" id="4_71mmd"]
+[ext_resource type="FontFile" uid="uid://bhv7184n448y8" path="res://Assets/main_font.ttf" id="5_giihm"]
 
 [sub_resource type="Animation" id="Animation_wbyx0"]
 length = 0.001
@@ -107,13 +108,43 @@ texture = ExtResource("3_71mmd")
 
 [node name="av_pct_lab" type="Label" parent="." unique_id=896921053]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 1547.0
+offset_top = 821.0
+offset_right = 1640.0
+offset_bottom = 882.0
+theme_override_fonts/font = ExtResource("5_giihm")
+theme_override_font_sizes/font_size = 60
+text = "pct"
+
+[node name="av_pct_text_lab" type="Label" parent="." unique_id=544980017]
+layout_mode = 0
+offset_left = 1140.0
+offset_top = 826.0
+offset_right = 1514.0
+offset_bottom = 887.0
+theme_override_fonts/font = ExtResource("5_giihm")
+theme_override_font_sizes/font_size = 60
+text = "Average hits:"
+
+[node name="av_error_text_lab" type="Label" parent="." unique_id=942795509]
+layout_mode = 0
+offset_left = 1064.0
+offset_top = 949.0
+offset_right = 1519.0
+offset_bottom = 1010.0
+theme_override_fonts/font = ExtResource("5_giihm")
+theme_override_font_sizes/font_size = 60
+text = "Average errors:"
 
 [node name="av_error_lab" type="Label" parent="." unique_id=1805088630]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 1551.0
+offset_top = 951.0
+offset_right = 1707.0
+offset_bottom = 1012.0
+theme_override_fonts/font = ExtResource("5_giihm")
+theme_override_font_sizes/font_size = 60
+text = "error"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=17298517]
 libraries/ = SubResource("AnimationLibrary_nn0by")

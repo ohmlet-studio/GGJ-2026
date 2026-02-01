@@ -33,8 +33,8 @@
 [ext_resource type="Script" uid="uid://cxcw0vi7mftul" path="res://Scenes/DinnerTable/label_anim.gd" id="21_sxdy7"]
 [ext_resource type="Script" uid="uid://dh06rerknyks1" path="res://Scenes/DinnerTable/fps_counter.gd" id="24_r6s68"]
 [ext_resource type="Script" uid="uid://ci680c8mxneim" path="res://Scenes/DinnerTable/IntroBackground/intro_background.gd" id="26_xdat0"]
-[ext_resource type="Script" uid="uid://kgcjf68j0pf3" path="res://Scenes/DinnerTable/camera_2d.gd" id="30_aijkx"]
-[ext_resource type="Script" uid="uid://cegw0hppiklu6" path="res://Scenes/DinnerTable/LevelParams.gd" id="30_m8rn3"]
+[ext_resource type="Script" path="res://Scenes/DinnerTable/camera_2d.gd" id="30_aijkx"]
+[ext_resource type="Script" path="res://Scenes/DinnerTable/LevelParams.gd" id="30_m8rn3"]
 [ext_resource type="PackedScene" uid="uid://bta2kp608mcqf" path="res://Scenes/DinnerTable/LevelInBetween/InBetweenScene.tscn" id="32_dhylr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dhylr"]
@@ -122,7 +122,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.06666667, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.005, 1.005), Vector2(1, 1)]
+"values": [Vector2(1, 1), Vector2(1.002, 1.002), Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_o6pu6"]
@@ -288,7 +288,6 @@ size = Vector2i(607, 775)
 
 [node name="Minigame" parent="SubViewportMinigame" unique_id=1383645364 instance=ExtResource("2_ai5vm")]
 unique_name_in_owner = true
-character = 6
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=447278973]
 unique_name_in_owner = true
@@ -304,7 +303,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_dy18p")
-level_number = 2
 
 [node name="label_npc" type="Label" parent="DialogController" unique_id=585406073]
 layout_mode = 0
@@ -340,6 +338,8 @@ script = ExtResource("21_sxdy7")
 
 [node name="Intro" type="Node" parent="DialogController/Levels" unique_id=957683940]
 script = ExtResource("30_m8rn3")
+dialog_succes = "Okay, okay Im doing it!"
+dialog_failure = "Oof I have to get it together..."
 
 [node name="DialogPromptTUTO1" type="Node" parent="DialogController/Levels/Intro" unique_id=1687083404]
 script = ExtResource("4_l8u7i")
@@ -388,7 +388,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "Let's dig in ! We're having carrots and peas, salad, pasghetti and fishies."
 response = "Yeah !"
 input_sequence = "SURPRISE SURPRISE HAPPY HAPPY"
-tempo_bpm = 100
+tempo_bpm = 120
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
@@ -397,7 +397,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "Yeah, so I just got laid off, turns out you need to know how to count to be an engineer..."
 response = "Oh whaouh, I never would have guessed, I'm so sorry..."
 input_sequence = "SAD SAD ANGER SURPRISE SAD ANGER"
-tempo_bpm = 100
+tempo_bpm = 120
 character = 1
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
@@ -406,7 +406,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "Bollocks, work sucks anyway, I'm glad you got out of it. Do you want me to throw a brick through their window ?"
 response = "Yeah, that will show them."
 input_sequence = "ANGER ANGER SAD HAPPY SAD HAPPY ANGER SURPRISE HAPPY HAPPY"
-tempo_bpm = 100
+tempo_bpm = 120
 character = 6
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
@@ -415,7 +415,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "ABGAH ! Humst aaaah uh."
 response = "(Wow, baby seems to already be anti-establishment, never too young to develop social consciousness I guess)"
 input_sequence = "HAPPY ANGER ANGER HAPPY SURPRISE"
-tempo_bpm = 100
+tempo_bpm = 120
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="DialogPrompt5" type="Node" parent="DialogController/Levels/Level1" unique_id=890825669]
@@ -423,7 +423,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "Aaaah, I'm glad I'm still in school. Did I tell you I got casted in the school play !"
 response = "Oh whaou, that's great, I'm so proud of you!"
 input_sequence = "SAD HAPPY HAPPY HAPPY SURPRISE HAPPY SURPRISE SURPRISE"
-tempo_bpm = 100
+tempo_bpm = 120
 character = 7
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
@@ -432,7 +432,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "That's how I met you grandma, I was Juliette and she was a teckie, it was love at first sight, I miss her."
 response = "Yeah, I remember the picture, you looked like youo were having fun."
 input_sequence = "SURPRISE HAPPY SURPRISE HAPPY SAD SAD HAPPY SAD"
-tempo_bpm = 100
+tempo_bpm = 120
 character = 5
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
@@ -519,38 +519,73 @@ dialog_failure = "Oof I have to get it together..."
 
 [node name="DialogPrompt1" type="Node" parent="DialogController/Levels/Level3" unique_id=210389404]
 script = ExtResource("4_l8u7i")
-char_dialog = "I'm going to the community kitchen tomorrow, wanna come ?"
-response = "I would love to!"
-input_sequence = "SURPRISE HAPPY HAPPY SURPRISE HAPPY SURPRISE SURPRISE HAPPY HAPPY HAPPY"
-tempo_bpm = 100
-character = 6
+char_dialog = "I'm so happy you're home, I hope you'll be staying for a while."
+response = "I wish I could stay long but I can't..."
+input_sequence = "SAD SAD SAD SAD ANGER SAD ANGER ANGER SAD SURPRISE SAD ANGER ANGER ANGER SAD SURPRISE SURPRISE SAD SAD SAD ANGER SURPRISE ANGER ANGER"
+tempo_bpm = 150
+character = 5
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="DialogPrompt2" type="Node" parent="DialogController/Levels/Level3" unique_id=2131118851]
 script = ExtResource("4_l8u7i")
-char_dialog = "It's important to give in these hard times..."
-response = "Yeah..."
-input_sequence = "SAD SAD SURPRISE ANGER SURPRISE ANGER ANGER SAD SAD SAD SURPRISE SURPRISE SAD ANGER ANGER"
-tempo_bpm = 100
-character = 5
+char_dialog = "You haven't been home much since dad..."
+response = "I'm trying..."
+input_sequence = "ANGER ANGER SAD ANGER SAD SAD SURPRISE SURPRISE HAPPY SAD SAD ANGER SAD HAPPY SURPRISE SURPRISE SAD ANGER ANGER ANGER SAD SAD SAD SAD ANGER HAPPY HAPPY ANGER"
+tempo_bpm = 150
+character = 1
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="DialogPrompt3" type="Node" parent="DialogController/Levels/Level3" unique_id=52635737]
 script = ExtResource("4_l8u7i")
-char_dialog = "I'll bring a spinach lasagna, it was your dad's favorite!"
-response = "It's been a while since we had some!"
-input_sequence = "HAPPY SAD SURPRISE SAD HAPPY HAPPY HAPPY SAD ANGER SURPRISE SAD ANGER ANGER ANGER SURPRISE SAD SAD SAD"
-tempo_bpm = 100
+char_dialog = "But anyway ! How is school ?"
+response = "School's a lot but it's nice to see yoou all."
+input_sequence = "SAD ANGER SAD ANGER ANGER SAD SAD ANGER SURPRISE SURPRISE SURPRISE SAD ANGER SAD SURPRISE HAPPY SAD ANGER SAD ANGER SAD SURPRISE HAPPY"
+tempo_bpm = 150
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="DialogPrompt4" type="Node" parent="DialogController/Levels/Level3" unique_id=1201989599]
 script = ExtResource("4_l8u7i")
-char_dialog = "I'll bring a spinach lasagna, it was your dad's favorite!"
-response = "It's been a while since we had some!"
-input_sequence = "HAPPY SAD SURPRISE SAD HAPPY HAPPY HAPPY SAD ANGER SURPRISE SAD ANGER ANGER ANGER SURPRISE SAD SAD SAD"
-tempo_bpm = 100
+char_dialog = "Do you like your major ? And the people in your dorm ?"
+response = "Yeah yeah, it's interesting and people are nice I guess!"
+input_sequence = "SURPRISE SURPRISE SURPRISE SAD SURPRISE ANGER SAD HAPPY SAD SAD SAD HAPPY ANGER SAD SAD ANGER HAPPY HAPPY HAPPY SURPRISE ANGER SAD SAD SAD SURPRISE"
+tempo_bpm = 150
+character = 6
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPrompt5" type="Node" parent="DialogController/Levels/Level3" unique_id=1524408559]
+script = ExtResource("4_l8u7i")
+char_dialog = "You said you got a small job to makesome pocket money!"
+response = "Yes, I'm a barista at the campus Café, my coworkers are really cool!"
+input_sequence = "HAPPY SURPRISE HAPPY SURPRISE HAPPY SURPRISE HAPPY HAPPY HAPPY HAPPY HAPPY ANGER SURPRISE ANGER SURPRISE SURPRISE SURPRISE HAPPY SAD ANGER SURPRISE SURPRISE HAPPY HAPPY HAPPY"
+tempo_bpm = 150
+character = 7
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPrompt6" type="Node" parent="DialogController/Levels/Level3" unique_id=93516089]
+script = ExtResource("4_l8u7i")
+char_dialog = "Ooooh, I'd love to see your skills, will you make me some coffee ?"
+response = "Of course grammy !"
+input_sequence = "HAPPY SURPRISE HAPPY SURPRISE SURPRISE SURPRISE SURPRISE HAPPY ANGER ANGER SAD SAD HAPPY HAPPY HAPPY HAPPY SAD HAPPY SURPPRISE ANGER ANGER SAD SAD SURPRISE SAD SAD SAD HAPPY SAD HAPPY HAPPY ANGER"
+tempo_bpm = 150
 character = 5
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPrompt7" type="Node" parent="DialogController/Levels/Level3" unique_id=513211177]
+script = ExtResource("4_l8u7i")
+char_dialog = "I would love an espresso !"
+response = "Yes yes, I'll make some for everyone."
+input_sequence = "HAPPY SURPRISE HAPPY SURPRISE SURPRISE SURPRISE SURPRISE HAPPY ANGER ANGER HAPPY HAPPY HAPPY ANGER SAD SAD SAD SAD SURPRISE SAD SUPRISE SURPRISE SAD ANGER ANGER ANGER ANGER HAPPY SURPRISE SURPRISE SURPRISE"
+tempo_bpm = 150
+character = 1
+metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="DialogPrompt8" type="Node" parent="DialogController/Levels/Level3" unique_id=633943534]
+script = ExtResource("4_l8u7i")
+char_dialog = "Aahhhmaaa uuuuuuhbuua."
+response = "I already told you, no more coffee for you, you get really wound up."
+input_sequence = "ANGER SAD ANGER SAD SURPRISE SURPRISE SAD ANGER SAD SAD SAD SAD SAD ANGER ANGER ANGER ANGER ANGER HAPY ANGER SURPRISE HAPPY HAPPY HAPPY HAPPY SAD ANGER HAPPY SURPRISE SAD HAPPY"
+tempo_bpm = 150
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="LevelBaby" type="Node" parent="DialogController/Levels" unique_id=685952985]
@@ -563,7 +598,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "Balbambah, gugugugaga, hehehehehehe! Eeeeeek, eeeek, aaaaah!"
 response = "You're so right, these carrots and peas are delicious but I miss dad's cooking as well."
 input_sequence = "HAPPY HAPPY HAPPY SAD SAD SAD"
-tempo_bpm = 100
+tempo_bpm = 170
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="DialogPrompt2" type="Node" parent="DialogController/Levels/LevelBaby" unique_id=1319473176]
@@ -571,7 +606,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "Hmspfff, ayaa, mehmuh aahgaaah. Hmmp eh!"
 response = "Life truly is complex to navigate through."
 input_sequence = "SURPRISE SAD HAPPY SAD ANGER ANGER SURPRISE HAPPY HAPPY"
-tempo_bpm = 100
+tempo_bpm = 170
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="DialogPrompt3" type="Node" parent="DialogController/Levels/LevelBaby" unique_id=2005260051]
@@ -579,7 +614,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "Yaaa-yaaa-yaaa ouhm."
 response = "I too have wondered...."
 input_sequence = "HAPPY SURPRISE SAD ANGER SURPRISE SURPRISE SAD HAPPY ANGER ANGER"
-tempo_bpm = 100
+tempo_bpm = 170
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="DialogPrompt4" type="Node" parent="DialogController/Levels/LevelBaby" unique_id=1359760911]
@@ -587,7 +622,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "Ahuuuuummm aaaaaa agh behh."
 response = "I had never thought about it this way."
 input_sequence = "SURPRISE SAD SAD SAD ANGER SURPRISE SURPRISE HAPPY SURPRISE SAD HAPPY HAPPY SAD ANGER SURPRISE SURPRISE"
-tempo_bpm = 100
+tempo_bpm = 170
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="DialogPrompt5" type="Node" parent="DialogController/Levels/LevelBaby" unique_id=580110987]
@@ -595,7 +630,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "AAAAAAH YAAAAAA UHUUUUU"
 response = "We will organize to overthrow this rotten system."
 input_sequence = "ANGER SURPRISE ANGER SURPRISE HAPPY HAPPY SURPRISE SURPRISE ANGER ANGER ANGER HAPPY SURPRISE SAD ANGER SAD SAD SURPRISE ANGER HAPPY"
-tempo_bpm = 100
+tempo_bpm = 170
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="InBetweenScene" parent="." unique_id=1291481279 instance=ExtResource("32_dhylr")]

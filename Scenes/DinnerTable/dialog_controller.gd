@@ -31,9 +31,10 @@ func play_level_and_in_between(level_number: int):
 		func():
 			if level_number == 1:
 				get_tree().call_deferred("change_scene_to_file", "res://Scenes/FinalScene/FinalScene.tscn")
-			level_number += 1
-			$"../IntroBackground".hide()
-			play_level_and_in_between(level_number)
+			else:
+				level_number += 1
+				$"../IntroBackground".hide()
+				play_level_and_in_between(level_number)
 	)
 	
 	in_between_scene.retry_level.connect(
@@ -69,6 +70,7 @@ func _convert_sequence(string_sequence: String):
 func _prepare_prompt(level_number: int, index: int):
 	var level_node = levels.get_child(level_number)
 	var current_prompt = level_node.get_child(index)
+	print("Level number: ", level_number)
 	
 	if not current_prompt:
 		print("ERROR: prompt_node does not exist")
@@ -130,5 +132,5 @@ func play_prompt(level_number: int, index: int):
 	
 	minigame.is_npc = true
 	
-	print("PROMPT SCORES: ", prompt_scores)
+	#print("PROMPT SCORES: ", prompt_scores)
 	return prompt_scores
