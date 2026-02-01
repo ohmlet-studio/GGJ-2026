@@ -15,28 +15,6 @@ gravity = Vector3(0, 98, 0)
 [node name="TempoVisualizer" type="Node2D" unique_id=554335005]
 script = ExtResource("1_6c20m")
 
-[node name="CircleExample" type="Sprite2D" parent="." unique_id=2018588626]
-visible = false
-position = Vector2(416, 14)
-scale = Vector2(0.075, 0.075)
-texture = ExtResource("2_1ld8w")
-script = ExtResource("4_1ndj3")
-range_x = 500.0
-
-[node name="DotExample" type="Sprite2D" parent="." unique_id=1154041297]
-visible = false
-modulate = Color(0.5803922, 0.5137255, 0.79607844, 1)
-position = Vector2(416, 14)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_4p54a")
-script = ExtResource("4_1ndj3")
-range_x = 500.0
-
-[node name="TheatreMask" type="Sprite2D" parent="." unique_id=637309495]
-modulate = Color(0.5803922, 0.5137255, 0.79607844, 1)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("1_js08c")
-
 [node name="LineDecoration" type="Node2D" parent="." unique_id=700185196]
 
 [node name="Line2D" type="Line2D" parent="LineDecoration" unique_id=218010662]
@@ -58,6 +36,27 @@ default_color = Color(0.5803922, 0.5137255, 0.79607844, 1)
 position = Vector2(-547, -55)
 points = PackedVector2Array(109, 41, 404, 41)
 default_color = Color(0.36078432, 0.31764707, 0.49411765, 1)
+
+[node name="CircleExample" type="Sprite2D" parent="." unique_id=2018588626]
+position = Vector2(416, 14)
+scale = Vector2(0.17681605, 0.17681605)
+texture = ExtResource("2_1ld8w")
+script = ExtResource("4_1ndj3")
+range_x = 500.0
+
+[node name="DotExample" type="Sprite2D" parent="." unique_id=1154041297]
+visible = false
+modulate = Color(0.5803922, 0.5137255, 0.79607844, 1)
+position = Vector2(416, 14)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_4p54a")
+script = ExtResource("4_1ndj3")
+range_x = 500.0
+
+[node name="TheatreMask" type="Sprite2D" parent="." unique_id=637309495]
+modulate = Color(0.5803922, 0.5137255, 0.79607844, 1)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_js08c")
 
 [node name="Circle" type="Sprite2D" parent="." unique_id=1336508087]
 visible = false
