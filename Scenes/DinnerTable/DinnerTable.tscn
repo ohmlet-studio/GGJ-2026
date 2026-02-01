@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://c3slscbmqavdy" path="res://Assets/Characters/speaking_bonus/Jean_Kev1.png" id="9_lm7s3"]
 [ext_resource type="Texture2D" uid="uid://cs6hi0cxns2ae" path="res://Assets/Characters/speaking_bonus/Jean_Kev2.png" id="10_3kl3o"]
 [ext_resource type="Texture2D" uid="uid://bu6n4twj8nt03" path="res://Assets/Characters/speaking_bonus/Mom1.png" id="11_8vjpa"]
+[ext_resource type="PackedScene" uid="uid://do16nwi04atts" path="res://Scenes/DinnerTable/IntroBackground/IntroBackground.tscn" id="11_pingq"]
 [ext_resource type="Texture2D" uid="uid://blmsitjf545ix" path="res://Assets/Characters/speaking_bonus/Mom2.png" id="12_ty6aa"]
 [ext_resource type="Texture2D" uid="uid://dak0jv24v7o88" path="res://Assets/Characters/speaking_bonus/Old_Lady2 1.png" id="13_54m5f"]
 [ext_resource type="Texture2D" uid="uid://cioq1sm8k3p8d" path="res://Assets/Characters/speaking_bonus/Old_Lady2.png" id="14_0vkll"]
@@ -31,10 +32,9 @@
 [ext_resource type="PackedScene" uid="uid://bdvn5c8a3oifk" path="res://Scenes/TempoVisualizer/tempo_visualizer.tscn" id="19_sxdy7"]
 [ext_resource type="Script" uid="uid://cxcw0vi7mftul" path="res://Scenes/DinnerTable/label_anim.gd" id="21_sxdy7"]
 [ext_resource type="Script" uid="uid://dh06rerknyks1" path="res://Scenes/DinnerTable/fps_counter.gd" id="24_r6s68"]
+[ext_resource type="Script" uid="uid://ci680c8mxneim" path="res://Scenes/DinnerTable/IntroBackground/intro_background.gd" id="26_xdat0"]
 [ext_resource type="Script" path="res://Scenes/DinnerTable/LevelParams.gd" id="30_m8rn3"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_wh2rv"]
-viewport_path = NodePath("SubViewportMinigame")
+[ext_resource type="PackedScene" uid="uid://bta2kp608mcqf" path="res://Scenes/DinnerTable/LevelInBetween/InBetweenScene.tscn" id="32_dhylr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dhylr"]
 animations = [{
@@ -104,6 +104,9 @@ animations = [{
 "name": &"hint_punk",
 "speed": 1.0
 }]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wh2rv"]
+viewport_path = NodePath("SubViewportMinigame")
 
 [sub_resource type="Animation" id="Animation_ckcjh"]
 resource_name = "PulseZoom"
@@ -197,18 +200,6 @@ position = Vector2(818, 248)
 scale = Vector2(0.3834019, 0.3834019)
 texture = ExtResource("4_lm7s3")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=115562542]
-position = Vector2(1488, 588)
-
-[node name="Minigame" type="Sprite2D" parent="Node2D" unique_id=66658314]
-position = Vector2(-0.37731934, -0.31549072)
-texture = SubResource("ViewportTexture_wh2rv")
-
-[node name="Cadre" type="Sprite2D" parent="Node2D/Minigame" unique_id=144302358]
-position = Vector2(-4.6226807, 22.31549)
-scale = Vector2(2.307139, 2.307139)
-texture = ExtResource("6_3ppc4")
-
 [node name="TalkHint" type="Node2D" parent="." unique_id=1231922989]
 unique_name_in_owner = true
 position = Vector2(691, 494)
@@ -270,6 +261,22 @@ autoplay = "hint_punk"
 frame_progress = 0.6736346
 script = ExtResource("18_sxdy7")
 
+[node name="IntroBackground" parent="." unique_id=216538798 instance=ExtResource("11_pingq")]
+visible = false
+script = ExtResource("26_xdat0")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=115562542]
+position = Vector2(1488, 588)
+
+[node name="Minigame" type="Sprite2D" parent="Node2D" unique_id=66658314]
+position = Vector2(-0.37731934, -0.31549072)
+texture = SubResource("ViewportTexture_wh2rv")
+
+[node name="Cadre" type="Sprite2D" parent="Node2D/Minigame" unique_id=144302358]
+position = Vector2(-4.6226807, 22.31549)
+scale = Vector2(2.307139, 2.307139)
+texture = ExtResource("6_3ppc4")
+
 [node name="TempoVisualizer" parent="." unique_id=554335005 instance=ExtResource("19_sxdy7")]
 position = Vector2(1554.0001, 100.00001)
 scale = Vector2(0.7, 0.7)
@@ -280,6 +287,7 @@ size = Vector2i(607, 775)
 
 [node name="Minigame" parent="SubViewportMinigame" unique_id=1383645364 instance=ExtResource("2_ai5vm")]
 unique_name_in_owner = true
+character = 6
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=447278973]
 unique_name_in_owner = true
@@ -436,7 +444,7 @@ dialog_failure = "Oof I have to get it together..."
 script = ExtResource("4_l8u7i")
 char_dialog = "I'm going to the community kitchen tomorrow, wanna come ?"
 response = "I would love to!"
-input_sequence = "SURPRISE HAPPY HAPPY SURPRISE HAPPY SURPRISE SURPRSE HAPPY HAPPY HAPPY"
+input_sequence = "SURPRISE HAPPY HAPPY SURPRISE HAPPY SURPRISE SURPRISE HAPPY HAPPY HAPPY"
 tempo_bpm = 140
 character = 6
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
@@ -618,6 +626,10 @@ char_dialog = "AAAAAAH YAAAAAA UHUUUUU"
 response = "We will organize to overthrow this rotten system."
 input_sequence = "ANGER SURPRISE ANGER SURPRISE HAPPY HAPPY SURPRISE SURPRISE ANGER ANGER ANGER HAPPY SURPRISE SAD ANGER SAD SAD SURPRISE ANGER HAPPY"
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="InBetweenScene" parent="." unique_id=1291481279 instance=ExtResource("32_dhylr")]
+unique_name_in_owner = true
+visible = false
 
 [node name="FPS_counter" type="Label" parent="." unique_id=380752383]
 offset_right = 40.0

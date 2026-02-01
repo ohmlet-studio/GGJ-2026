@@ -7,16 +7,37 @@ extends Control
 @onready var levels = $Levels
 @onready var minigame: Minigame = %Minigame
 @onready var tempo_visualizer = $"../TempoVisualizer"
+@onready var in_between_scene = %InBetweenScene
 
 @export_range(0, 10, 1) var current_dialog_index: int
+
+@export var level_number: int = 0
 
 func _ready():
 	minigame.input_invalid.connect(_on_input_invalid)
 	minigame.input_valid.connect(_on_input_valid)
 	minigame.input_missed.connect(_on_input_missed)
 
-	await play_level("Intro")
-	await play_level("Level1")
+	play_level_and_in_between(level_number)
+
+func play_level_and_in_between(level_number: int):
+	var level_errors_ms = await play_level(level_number)
+	
+	var good_thought = levels.get_child(level_number).dialog_succes
+	var bad_thought = levels.get_child(level_number).dialog_failure
+	in_between_scene.show_in_between_scene(level_errors_ms, good_thought, bad_thought)
+	
+	in_between_scene.next_level.connect(
+		func():
+			level_number += 1
+			$"../IntroBackground".hide()
+			play_level_and_in_between(level_number)
+	)
+	
+	in_between_scene.retry_level.connect(
+		func():
+			play_level_and_in_between(level_number)
+	)
 
 func _on_input_valid(offset_ms):
 	tempo_visualizer.show_hit()
@@ -43,8 +64,8 @@ func _convert_sequence(string_sequence: String):
 	
 	return enum_sequence
 
-func _prepare_prompt(level_name: String, index: int):
-	var level_node = levels.get_node(level_name)
+func _prepare_prompt(level_number: int, index: int):
+	var level_node = levels.get_child(level_number)
 	var current_prompt = level_node.get_child(index)
 	
 	if not current_prompt:
@@ -62,19 +83,22 @@ func _prepare_prompt(level_name: String, index: int):
 func _display_text_player(text: String):
 	label_player.text = text
 
-func play_level(level_name: String):
-	var level_node = levels.get_node(level_name)
+func play_level(level_number: int):
+	var level_node = levels.get_child(level_number)
 	
+	var level_error = []
 
 	for i in range(level_node.get_child_count()):
-		await play_prompt(level_name, i)
+		var error_ms_level = await play_prompt(level_number, i)
+		level_error += error_ms_level
 		
-		# wait two ticks between prompts
+		# wait one ticks between prompts
 		await Metronome.tick
-		await Metronome.tick
+		
+	return level_error
 
-func play_prompt(level_name: String, index: int):
-	var current_prompt = _prepare_prompt(level_name, index)
+func play_prompt(level_number: int, index: int):
+	var current_prompt = _prepare_prompt(level_number, index)
 	
 	# Play music with correct tempo / param is in bpm
 	AudioController.play_music(Metronome.get_tempo_bpm(), AudioController.MUSIC_SCENE.LEVEL)
@@ -89,9 +113,17 @@ func play_prompt(level_name: String, index: int):
 	# use the NPC to show the masks	
 	#await minigame.play_sequence_npc()
 	
+	var prompt_scores = []
+	
 	print("Letting the user play the minigame")
+	minigame.input_valid.connect(func(value): prompt_scores.append(abs(value)))
+	minigame.input_invalid.connect(func(_value): prompt_scores.append(-1))
+	minigame.input_missed.connect(func(_value): prompt_scores.append(-1))
+
 	await minigame.start_player_turn()
 	
 	label_npc.text = ""
 	_display_text_player(current_prompt.response)
 	
+	print("PROMPT SCORES: ", prompt_scores)
+	return prompt_scores
