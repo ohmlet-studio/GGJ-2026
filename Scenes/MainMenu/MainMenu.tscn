@@ -1,46 +1,146 @@
 [gd_scene format=3 uid="uid://33dwa0yb8pbq"]
 
 [ext_resource type="Script" uid="uid://cdjt41i1vaxfk" path="res://Scenes/MainMenu/main_menu.gd" id="1_cruaa"]
-[ext_resource type="Texture2D" uid="uid://dvy3dyw842sjh" path="res://Assets/Background/title_scene.jpg" id="1_otibh"]
+[ext_resource type="Texture2D" uid="uid://bbx0eygrmerye" path="res://Assets/TitleScene/wall.png" id="2_sg7ab"]
+[ext_resource type="Texture2D" uid="uid://bwesv2ikhog3o" path="res://Assets/TitleScene/door.png" id="3_kpx3y"]
+[ext_resource type="Texture2D" uid="uid://dx372563ase7t" path="res://Assets/TitleScene/charac_door.png" id="3_ua038"]
+[ext_resource type="Texture2D" uid="uid://bh34lqcwyy3mh" path="res://Assets/TitleScene/ringring.png" id="5_vapy7"]
+[ext_resource type="Texture2D" uid="uid://cmht5gqe5mw76" path="res://Assets/TitleScene/doorbell.png" id="6_8qovt"]
+[ext_resource type="Texture2D" uid="uid://525pxxjd3n0c" path="res://Assets/TitleScene/enter.png" id="7_8qovt"]
+[ext_resource type="Shader" uid="uid://djx8tgp8tq2cw" path="res://Scenes/MainMenu/MainMenu.gdshader" id="8_0hjx5"]
+[ext_resource type="FontFile" uid="uid://bhv7184n448y8" path="res://Assets/main_font.ttf" id="8_fv0xt"]
+[ext_resource type="Texture2D" uid="uid://dl8tmipe47wrd" path="res://Assets/Textures/2d_light_texture.png" id="10_sng02"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cruaa"]
-texture = ExtResource("1_otibh")
+texture = ExtResource("2_sg7ab")
 
-[sub_resource type="SystemFont" id="SystemFont_mlc1t"]
-font_names = PackedStringArray("Arial Rounded MT Bold", "Arial Rounded MT Bold")
-modulate_color_glyphs = true
+[sub_resource type="Animation" id="Animation_sg7ab"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../character:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(311.00003, 75)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../character:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.51578313, 0.5352259)]
+}
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otibh"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-shadow_color = Color(0.09019608, 0.09019608, 0.09019608, 0.6431373)
-shadow_size = 20
-shadow_offset = Vector2(15, 15)
+[sub_resource type="Animation" id="Animation_0hjx5"]
+resource_name = "bounce"
+length = 1.1666666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(642, 75.00001), Vector2(642, 46)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../character:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.51578313, 0.5352259), Vector2(0.52, 0.545)]
+}
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b76km"]
-bg_color = Color(0.1584728, 0.15847209, 0.15847251, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-shadow_color = Color(0.051970966, 0.051970966, 0.051970936, 0.8509804)
-shadow_size = 20
-shadow_offset = Vector2(3, 3)
+[sub_resource type="Animation" id="Animation_8qovt"]
+resource_name = "door"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.26766664, 0.76666665),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.17453292, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../character:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.1333333, 2.1333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(311.00003, 75), Vector2(642, 75.00001)]
+}
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cruaa"]
-bg_color = Color(0.89925843, 0.8992584, 0.89925843, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-shadow_color = Color(0.09019608, 0.09019608, 0.09019608, 0.8509804)
-shadow_size = 20
-shadow_offset = Vector2(5, 5)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0hjx5"]
+_data = {
+&"RESET": SubResource("Animation_sg7ab"),
+&"bounce": SubResource("Animation_0hjx5"),
+&"door": SubResource("Animation_8qovt")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ua038"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("3_kpx3y")
+
+[sub_resource type="QuadMesh" id="QuadMesh_vapy7"]
+material = SubResource("StandardMaterial3D_ua038")
+size = Vector2(0.96, 1.45)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qovt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hjx5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv0xt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fv0xt"]
+shader = ExtResource("8_0hjx5")
+shader_parameter/lod = 3.5
 
 [node name="MainMenu" type="Control" unique_id=798517884]
+modulate = Color(0.72464263, 0.7246426, 0.7246426, 1)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,7 +149,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cruaa")
 
-[node name="Panel" type="Panel" parent="." unique_id=317783502]
+[node name="background" type="Panel" parent="." unique_id=317783502]
+light_mask = 513
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,47 +159,121 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_cruaa")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=81628598]
+[node name="character" type="TextureRect" parent="." unique_id=123811768]
+layout_mode = 0
+offset_left = 311.00003
+offset_top = 75.0
+offset_right = 1306.0011
+offset_bottom = 1865.0
+scale = Vector2(0.51578313, 0.5352259)
+texture = ExtResource("3_ua038")
+
+[node name="door" type="SubViewportContainer" parent="." unique_id=374682708]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.5
-offset_top = -186.25
-offset_right = 300.5
-offset_bottom = 186.25
+offset_left = 257.0
+offset_top = -52.0
+offset_right = 1198.0
+offset_bottom = 1145.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="door" unique_id=1798065275]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(941, 1197)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="door/SubViewport" unique_id=204788765]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12967014, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="door/SubViewport/Node3D" unique_id=1697280063]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6153814, 0, 1.1898167)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="door/SubViewport/Node3D" unique_id=1869504854]
+libraries/ = SubResource("AnimationLibrary_0hjx5")
+autoplay = &"door"
+
+[node name="Node3D" type="Node3D" parent="door/SubViewport/Node3D" unique_id=414045771]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="door/SubViewport/Node3D/Node3D" unique_id=1630152998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3444215, 0, 0)
+mesh = SubResource("QuadMesh_vapy7")
+
+[node name="doorbell" type="TextureButton" parent="." unique_id=254602231]
+layout_mode = 0
+offset_left = 1348.0
+offset_top = 526.0
+offset_right = 1706.0
+offset_bottom = 881.0
+scale = Vector2(0.56936, 0.56936)
+texture_normal = ExtResource("5_vapy7")
+texture_hover = ExtResource("6_8qovt")
+
+[node name="enter_panel" type="TextureRect" parent="." unique_id=923673086]
+layout_mode = 0
+offset_left = 1278.0
+offset_top = 374.0
+offset_right = 1647.0
+offset_bottom = 542.0
+texture = ExtResource("7_8qovt")
+
+[node name="credits" type="Button" parent="." unique_id=1500500062]
+layout_mode = 0
+offset_left = 1617.0
+offset_top = 971.0
+offset_right = 2150.0
+offset_bottom = 1135.0
+scale = Vector2(0.4816388, 0.4816388)
+theme_override_colors/font_color = Color(0.5439063, 0.27090228, 0.022036087, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_fv0xt")
+theme_override_font_sizes/font_size = 136
+theme_override_styles/normal = SubResource("StyleBoxFlat_8qovt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0hjx5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fv0xt")
+text = "Credits"
+
+[node name="credits_screen" type="Control" parent="." unique_id=1380989095]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 30
 
-[node name="start" type="Button" parent="VBoxContainer" unique_id=365420291]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.1404478, 0.14044732, 0.14044747, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
-theme_override_fonts/font = SubResource("SystemFont_mlc1t")
-theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxFlat_otibh")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_b76km")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cruaa")
-text = "go masking !"
+[node name="Panel" type="Panel" parent="credits_screen" unique_id=1950697703]
+material = SubResource("ShaderMaterial_fv0xt")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="credits" type="Button" parent="VBoxContainer" unique_id=1132657592]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.1404478, 0.14044732, 0.14044747, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
-theme_override_fonts/font = SubResource("SystemFont_mlc1t")
-theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxFlat_otibh")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_b76km")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cruaa")
-text = "credits"
+[node name="credit_return" type="Button" parent="credits_screen" unique_id=549736081]
+layout_mode = 0
+offset_left = 1617.0
+offset_top = 971.0
+offset_right = 2150.0
+offset_bottom = 1135.0
+scale = Vector2(0.4816388, 0.4816388)
+theme_override_colors/font_color = Color(0.5439063, 0.27090228, 0.022036087, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_fv0xt")
+theme_override_font_sizes/font_size = 136
+theme_override_styles/normal = SubResource("StyleBoxFlat_8qovt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0hjx5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fv0xt")
+text = "Return"
 
-[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/credits" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/credits" to="." method="_on_credits_pressed"]
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2072592993]
+position = Vector2(965, 315)
+scale = Vector2(8.254, 8.254)
+energy = 0.49
+range_item_cull_mask = 512
+texture = ExtResource("10_sng02")
+
+[connection signal="animation_finished" from="door/SubViewport/Node3D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="doorbell" to="." method="_on_doorbell_pressed"]
+[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="credits_screen/credit_return" to="." method="_on_credit_return_pressed"]

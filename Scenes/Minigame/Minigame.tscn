@@ -1,40 +1,19 @@
 [gd_scene format=3 uid="uid://wfojq22ofpch"]
 
 [ext_resource type="Script" uid="uid://cfqpsurhe7tfo" path="res://Scenes/Minigame/minigame.gd" id="1_f4dal"]
-[ext_resource type="Texture2D" uid="uid://b75nfpv6knxbl" path="res://Assets/Textures/white_circular.png" id="1_fqyxi"]
 [ext_resource type="Script" uid="uid://b0p7rhk20kma5" path="res://Scenes/Minigame/simon_says.gd" id="1_uwbv6"]
-[ext_resource type="Texture2D" uid="uid://c3fxayjj6uu70" path="res://Assets/Characters/old_lady.png" id="2_4uw7t"]
-[ext_resource type="Script" uid="uid://b450iaatc07hq" path="res://Scenes/Minigame/tempo_indicator.gd" id="3_jxsht"]
+[ext_resource type="Texture2D" uid="uid://c84jsl0ojjrcu" path="res://Assets/Minigame/Fond.png" id="2_r6p87"]
+[ext_resource type="Texture2D" uid="uid://cbf7sk2tphxor" path="res://Assets/Background/chair_back.png" id="3_g74kh"]
 [ext_resource type="Script" uid="uid://bomi3fxjve32g" path="res://Scenes/Minigame/SquashOnTick.gd" id="3_o6pu6"]
+[ext_resource type="Texture2D" uid="uid://m81dh5a36b6u" path="res://Assets/Characters/mom.png" id="4_g74kh"]
 [ext_resource type="Script" uid="uid://c84ifqdpeko0t" path="res://Scenes/Minigame/arrow_sequence.gd" id="4_gmjc4"]
-[ext_resource type="Texture2D" uid="uid://8au8clcrs2lu" path="res://Assets/Textures/arrow.png" id="4_vllsg"]
-[ext_resource type="Texture2D" uid="uid://cqtskiivla07o" path="res://Assets/Textures/stick.webp" id="6_8l3v4"]
+[ext_resource type="Texture2D" uid="uid://cls6nbt4ieeal" path="res://Assets/Textures/stick.webp" id="6_8l3v4"]
 [ext_resource type="Script" uid="uid://50eiryj543y8" path="res://Scenes/Minigame/MaskHandle.gd" id="6_dn3w5"]
 [ext_resource type="Script" uid="uid://dnv3p0xv5vlsu" path="res://Scenes/Minigame/keep_rotation.gd" id="7_dn3w5"]
-
-[sub_resource type="Curve" id="Curve_f4dal"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.49545455, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_vllsg"]
-curve = SubResource("Curve_f4dal")
-
-[sub_resource type="Curve" id="Curve_gmjc4"]
-_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
-point_count = 2
-metadata/_snap_enabled = true
-metadata/_snap_count = 17
-
-[sub_resource type="CurveTexture" id="CurveTexture_pccoa"]
-curve = SubResource("Curve_gmjc4")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8l3v4"]
-particle_flag_disable_z = true
-gravity = Vector3(0, 0, 0)
-scale_min = 2.0
-scale_max = 2.0
-scale_curve = SubResource("CurveTexture_pccoa")
-alpha_curve = SubResource("CurveTexture_vllsg")
+[ext_resource type="Texture2D" uid="uid://bl5ih4aooxnm0" path="res://Assets/Masks/happy.png" id="7_yhojd"]
+[ext_resource type="Texture2D" uid="uid://cgj70rdsfq30r" path="res://Assets/Masks/angry.png" id="9_r6p87"]
+[ext_resource type="Texture2D" uid="uid://cexg34u6ahgd8" path="res://Assets/Masks/sad.png" id="11_o0l4d"]
+[ext_resource type="Texture2D" uid="uid://bviuhfm75h1fn" path="res://Assets/Masks/surprised.png" id="12_g74kh"]
 
 [sub_resource type="Animation" id="Animation_ckcjh"]
 resource_name = "PulseZoom"
@@ -75,18 +54,24 @@ _data = {
 
 [node name="Minigame" type="Node2D" unique_id=1383645364]
 script = ExtResource("1_f4dal")
-character = 5
+character = 4
+is_npc = true
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1027360473]
-offset_right = 1911.5994
-offset_bottom = 1076.0
-color = Color(0, 0.14711776, 0.09343865, 1)
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1960037530]
+position = Vector2(298, 535)
+scale = Vector2(3.1446114, 3.1446114)
+texture = ExtResource("2_r6p87")
+
+[node name="ChairBack" type="Sprite2D" parent="." unique_id=1943161378]
+position = Vector2(293, 696)
+scale = Vector2(0.79, 0.79)
+texture = ExtResource("3_g74kh")
 
 [node name="CharacterSprite" type="Sprite2D" parent="." unique_id=823834987]
 unique_name_in_owner = true
 position = Vector2(298, 668.00006)
 scale = Vector2(0.56911236, 0.56911236)
-texture = ExtResource("2_4uw7t")
+texture = ExtResource("4_g74kh")
 script = ExtResource("3_o6pu6")
 scale_factor = Vector2(1, 0.96)
 
@@ -95,21 +80,21 @@ position = Vector2(-89, 335)
 script = ExtResource("4_gmjc4")
 
 [node name="UpStick" type="Sprite2D" parent="MaskSticks" unique_id=325687152]
-position = Vector2(395.5, -346.49997)
+position = Vector2(387, -355)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("6_8l3v4")
 offset = Vector2(0, -320)
 script = ExtResource("6_dn3w5")
 
 [node name="UpArrow" type="Sprite2D" parent="MaskSticks/UpStick" unique_id=2088617050]
-modulate = Color(0.8, 0, 0, 1)
-position = Vector2(0, -703.3333)
-texture = ExtResource("4_vllsg")
+position = Vector2(1.9999995, -703.3333)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("7_yhojd")
 script = ExtResource("7_dn3w5")
 align = true
 
 [node name="DownStick" type="Sprite2D" parent="MaskSticks" unique_id=523577066]
-position = Vector2(388.5, 743.0001)
+position = Vector2(388.5, 709.0001)
 rotation = 3.1415927
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("6_8l3v4")
@@ -117,14 +102,15 @@ offset = Vector2(0, -320)
 script = ExtResource("6_dn3w5")
 
 [node name="UpArrow" type="Sprite2D" parent="MaskSticks/DownStick" unique_id=1836674700]
-modulate = Color(0, 0.22666664, 0.8, 1)
 position = Vector2(0, -703.3333)
-texture = ExtResource("4_vllsg")
+rotation = -3.1415925
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("11_o0l4d")
 script = ExtResource("7_dn3w5")
 align = true
 
 [node name="LeftStick" type="Sprite2D" parent="MaskSticks" unique_id=1399656873]
-position = Vector2(-171, 191.00003)
+position = Vector2(-171, 186.00003)
 rotation = 4.712389
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("6_8l3v4")
@@ -132,14 +118,15 @@ offset = Vector2(0, -320)
 script = ExtResource("6_dn3w5")
 
 [node name="UpArrow" type="Sprite2D" parent="MaskSticks/LeftStick" unique_id=547770535]
-modulate = Color(0, 0.8, 0.1333332, 1)
-position = Vector2(0, -703.3333)
-texture = ExtResource("4_vllsg")
+position = Vector2(-5.8034425e-07, -752)
+rotation = 1.5707964
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("12_g74kh")
 script = ExtResource("7_dn3w5")
 align = true
 
 [node name="RightStick" type="Sprite2D" parent="MaskSticks" unique_id=1744493342]
-position = Vector2(924, 188.00003)
+position = Vector2(907, 178)
 rotation = 1.5707964
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("6_8l3v4")
@@ -147,9 +134,10 @@ offset = Vector2(0, -320)
 script = ExtResource("6_dn3w5")
 
 [node name="UpArrow" type="Sprite2D" parent="MaskSticks/RightStick" unique_id=839597248]
-modulate = Color(0.8, 0.7466667, 0, 1)
 position = Vector2(0, -703.3333)
-texture = ExtResource("4_vllsg")
+rotation = -1.5707964
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("9_r6p87")
 script = ExtResource("7_dn3w5")
 align = true
 
@@ -159,59 +147,44 @@ position = Vector2(298, 523)
 script = ExtResource("1_uwbv6")
 
 [node name="UP" type="ColorRect" parent="SimonSays" unique_id=728679963]
-modulate = Color(0.46618086, 0.4661808, 0.4661808, 1)
-offset_left = -73.0
-offset_top = -526.0
-offset_right = 82.0
-offset_bottom = -371.0
+modulate = Color(0.83889705, 0.83889705, 0.838897, 1)
+offset_left = 355.0
+offset_top = -108.0
+offset_right = 510.0
+offset_bottom = 47.0
+rotation = 0.7853982
 color = Color(1, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="DOWN" type="ColorRect" parent="SimonSays" unique_id=961252678]
-modulate = Color(0.46618086, 0.4661808, 0.4661808, 1)
-offset_left = -85.59007
-offset_top = 405.99997
-offset_right = 69.40993
-offset_bottom = 561.0
+modulate = Color(0.83889705, 0.83889705, 0.838897, 1)
+offset_left = 10.000015
+offset_top = 331.99997
+offset_right = 165.00002
+offset_bottom = 487.0
+rotation = 0.7853982
 color = Color(0, 0.4333334, 1, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="LEFT" type="ColorRect" parent="SimonSays" unique_id=788957150]
-modulate = Color(0.46618086, 0.4661808, 0.4661808, 1)
-offset_left = -386.0
-offset_top = -77.0
-offset_right = -231.0
-offset_bottom = 78.0
+modulate = Color(0.83889705, 0.83889705, 0.838897, 1)
+offset_left = -353.0
+offset_top = -109.0
+offset_right = -198.0
+offset_bottom = 46.0
+rotation = 0.7853982
 color = Color(0, 1, 0.26666665, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="RIGHT" type="ColorRect" parent="SimonSays" unique_id=523605058]
-modulate = Color(0.46618086, 0.4661808, 0.4661808, 1)
-offset_left = 231.00002
-offset_top = -77.0
-offset_right = 386.0
-offset_bottom = 78.0
+modulate = Color(0.83889705, 0.83889705, 0.838897, 1)
+offset_left = 5.44783
+offset_top = -525.0
+offset_right = 160.44781
+offset_bottom = -370.0
+rotation = 0.7853982
 color = Color(1, 1, 0, 1)
 metadata/_edit_use_anchors_ = true
-
-[node name="TempoIndicator" type="Node2D" parent="." unique_id=601610124]
-visible = false
-position = Vector2(572, 554)
-script = ExtResource("3_jxsht")
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="TempoIndicator" unique_id=1300371685]
-position = Vector2(-0.9979782, 3.0019531)
-scale = Vector2(0.2369309, 0.23623234)
-amount = 1
-texture = ExtResource("1_fqyxi")
-lifetime = 0.5
-process_material = SubResource("ParticleProcessMaterial_8l3v4")
-
-[node name="WhiteCircular" type="Sprite2D" parent="TempoIndicator" unique_id=1656896363]
-modulate = Color(4.813075e-06, 0.9709764, 0.48473066, 0.37254903)
-position = Vector2(-0.9979782, 3.0020142)
-scale = Vector2(0.52730954, 0.52730954)
-texture = ExtResource("1_fqyxi")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=268626552]
 unique_name_in_owner = true

@@ -11,10 +11,10 @@ class_name DialogPrompt
 @export_multiline var input_sequence: String
 
 ## le tempo de la musique
-@export_range(60, 1200) var tempo_bpm: int = 600 # tempo of the prompt
+@export_range(60, 1200) var tempo_bpm: int = 200 # tempo of the prompt
 
 ## sur quel beat on doit faire l'input (1: every beat, 2: every two beats, ...)
 @export var beat_modulo: int = 1
 
 ## quel perso, duh
-@export var character: CharacterEnum.chars
+@export var character: GlobalEnum.chars

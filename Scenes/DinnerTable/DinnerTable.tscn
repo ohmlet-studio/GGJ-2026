@@ -1,13 +1,102 @@
 [gd_scene format=3 uid="uid://8hum8taroxds"]
 
 [ext_resource type="PackedScene" uid="uid://wfojq22ofpch" path="res://Scenes/Minigame/Minigame.tscn" id="2_ai5vm"]
+[ext_resource type="Texture2D" uid="uid://c82o2adc5mp81" path="res://Assets/Background/Correc_Perspe.png" id="2_sxdy7"]
 [ext_resource type="Script" uid="uid://bqkhobriou2pa" path="res://Scenes/DinnerTable/PushInput.gd" id="2_wh2rv"]
+[ext_resource type="Texture2D" uid="uid://d726o21yboy" path="res://Assets/Background/TableEtTapis.png" id="3_r6s68"]
 [ext_resource type="Script" uid="uid://cr0vs2pn8smo6" path="res://Scenes/DinnerTable/dialog_controller.gd" id="4_dy18p"]
 [ext_resource type="Script" uid="uid://btusn0kqjv6ew" path="res://Scenes/Dialog/dialog_prompt.gd" id="4_l8u7i"]
-[ext_resource type="Script" uid="uid://cxcw0vi7mftul" path="res://Scenes/DinnerTable/label_char_to_char.gd" id="5_hotc4"]
+[ext_resource type="Texture2D" uid="uid://dm6h2bsw8i4j7" path="res://Assets/Background/Papa.png" id="4_lm7s3"]
+[ext_resource type="Texture2D" uid="uid://ckcys8pfrssgg" path="res://Assets/Characters/speaking_bonus/Baby1.png" id="5_d8ug0"]
+[ext_resource type="Texture2D" uid="uid://e4p8vr5nxdyk" path="res://Assets/Minigame/Cadre.png" id="6_3ppc4"]
+[ext_resource type="Script" uid="uid://dyft328yds4pr" path="res://Scenes/DinnerTable/talk_hint.gd" id="6_lm7s3"]
+[ext_resource type="Texture2D" uid="uid://b64glgxkb2xf5" path="res://Assets/Characters/speaking_bonus/Baby2.png" id="6_npwxr"]
+[ext_resource type="Texture2D" uid="uid://bwcui773arex" path="res://Assets/Characters/speaking_bonus/Bob1.png" id="7_sxdy7"]
+[ext_resource type="Texture2D" uid="uid://d3x2a7105dyqm" path="res://Assets/Characters/speaking_bonus/Bob2.png" id="8_r6s68"]
+[ext_resource type="Texture2D" uid="uid://c3slscbmqavdy" path="res://Assets/Characters/speaking_bonus/Jean_Kev1.png" id="9_lm7s3"]
+[ext_resource type="Texture2D" uid="uid://cs6hi0cxns2ae" path="res://Assets/Characters/speaking_bonus/Jean_Kev2.png" id="10_3kl3o"]
+[ext_resource type="Texture2D" uid="uid://bu6n4twj8nt03" path="res://Assets/Characters/speaking_bonus/Mom1.png" id="11_8vjpa"]
+[ext_resource type="Texture2D" uid="uid://blmsitjf545ix" path="res://Assets/Characters/speaking_bonus/Mom2.png" id="12_ty6aa"]
+[ext_resource type="Texture2D" uid="uid://dak0jv24v7o88" path="res://Assets/Characters/speaking_bonus/Old_Lady2 1.png" id="13_54m5f"]
+[ext_resource type="Texture2D" uid="uid://cioq1sm8k3p8d" path="res://Assets/Characters/speaking_bonus/Old_Lady2.png" id="14_0vkll"]
+[ext_resource type="Texture2D" uid="uid://cigs1t6shi0kj" path="res://Assets/Characters/speaking_bonus/Punk1.png" id="15_wpjnp"]
+[ext_resource type="Texture2D" uid="uid://dtr862jk8wsgl" path="res://Assets/Characters/speaking_bonus/Punk2.png" id="16_m8rn3"]
+[ext_resource type="Script" uid="uid://dnikm7l6sqo1d" path="res://Scenes/DinnerTable/hint_anim.gd" id="18_sxdy7"]
+[ext_resource type="PackedScene" uid="uid://bdvn5c8a3oifk" path="res://Scenes/TempoVisualizer/tempo_visualizer.tscn" id="19_sxdy7"]
+[ext_resource type="Script" uid="uid://cxcw0vi7mftul" path="res://Scenes/DinnerTable/label_anim.gd" id="21_sxdy7"]
+[ext_resource type="Script" uid="uid://dh06rerknyks1" path="res://Scenes/DinnerTable/fps_counter.gd" id="24_r6s68"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_wh2rv"]
 viewport_path = NodePath("SubViewportMinigame")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dhylr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_d8ug0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_npwxr")
+}],
+"loop": true,
+"name": &"hint_baby",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_sxdy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r6s68")
+}],
+"loop": true,
+"name": &"hint_bob",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_lm7s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3kl3o")
+}],
+"loop": true,
+"name": &"hint_jeanKev",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_8vjpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ty6aa")
+}],
+"loop": true,
+"name": &"hint_mom",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_54m5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0vkll")
+}],
+"loop": true,
+"name": &"hint_oldBaby",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_wpjnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_m8rn3")
+}],
+"loop": true,
+"name": &"hint_punk",
+"speed": 1.0
+}]
 
 [sub_resource type="Animation" id="Animation_ckcjh"]
 resource_name = "PulseZoom"
@@ -47,7 +136,7 @@ _data = {
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh2rv"]
-bg_color = Color(0.36, 0.36, 0.36, 0.8745098)
+bg_color = Color(0.08468988, 0.08468994, 0.08468992, 0.8745098)
 expand_margin_left = 15.0
 expand_margin_top = 15.0
 expand_margin_right = 15.0
@@ -56,17 +145,104 @@ expand_margin_bottom = 15.0
 [node name="DinnerTable" type="Node2D" unique_id=665496141]
 script = ExtResource("2_wh2rv")
 
-[node name="Minigame" type="Sprite2D" parent="." unique_id=66658314]
-position = Vector2(1487, 540)
+[node name="KitchenTableScene" type="Sprite2D" parent="." unique_id=48707983]
+position = Vector2(960, 540)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_sxdy7")
+
+[node name="Table" type="Sprite2D" parent="." unique_id=1883768351]
+position = Vector2(684, 695)
+scale = Vector2(0.42751518, 0.42751518)
+texture = ExtResource("3_r6s68")
+
+[node name="DadPortrait" type="Sprite2D" parent="." unique_id=604282543]
+position = Vector2(818, 248)
+scale = Vector2(0.3834019, 0.3834019)
+texture = ExtResource("4_lm7s3")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=115562542]
+position = Vector2(1488, 588)
+
+[node name="Minigame" type="Sprite2D" parent="Node2D" unique_id=66658314]
+position = Vector2(-0.37731934, -0.31549072)
 texture = SubResource("ViewportTexture_wh2rv")
+
+[node name="Cadre" type="Sprite2D" parent="Node2D/Minigame" unique_id=144302358]
+position = Vector2(-4.6226807, 22.31549)
+scale = Vector2(2.307139, 2.307139)
+texture = ExtResource("6_3ppc4")
+
+[node name="TalkHint" type="Node2D" parent="." unique_id=1231922989]
+unique_name_in_owner = true
+position = Vector2(691, 494)
+scale = Vector2(0.7556988, 0.7556988)
+script = ExtResource("6_lm7s3")
+visible_hint = 4
+
+[node name="Hint_baby" type="AnimatedSprite2D" parent="TalkHint" unique_id=1075817944]
+position = Vector2(-288.47473, 86.01314)
+scale = Vector2(0.7327273, 0.7327273)
+sprite_frames = SubResource("SpriteFrames_dhylr")
+animation = &"hint_baby"
+autoplay = "hint_baby"
+frame_progress = 0.2777076
+script = ExtResource("18_sxdy7")
+
+[node name="Hint_bob" type="AnimatedSprite2D" parent="TalkHint" unique_id=290357471]
+position = Vector2(15.468506, -155.49997)
+scale = Vector2(0.43457946, 0.43457943)
+sprite_frames = SubResource("SpriteFrames_dhylr")
+animation = &"hint_bob"
+autoplay = "hint_bob"
+frame_progress = 0.9558496
+script = ExtResource("18_sxdy7")
+
+[node name="Hint_jeanKev" type="AnimatedSprite2D" parent="TalkHint" unique_id=719400306]
+position = Vector2(-95.276085, 190.55212)
+scale = Vector2(0.426103, 0.426103)
+sprite_frames = SubResource("SpriteFrames_dhylr")
+animation = &"hint_jeanKev"
+autoplay = "hint_jeanKev"
+frame_progress = 0.13121593
+script = ExtResource("18_sxdy7")
+
+[node name="Hint_mom" type="AnimatedSprite2D" parent="TalkHint" unique_id=1681096808]
+position = Vector2(78.468506, 320.49997)
+scale = Vector2(0.48713222, 0.48713225)
+sprite_frames = SubResource("SpriteFrames_dhylr")
+animation = &"hint_mom"
+autoplay = "hint_mom"
+frame_progress = 0.47572345
+script = ExtResource("18_sxdy7")
+
+[node name="Hint_oldBaby" type="AnimatedSprite2D" parent="TalkHint" unique_id=1582503323]
+position = Vector2(-313.5315, -126.50003)
+scale = Vector2(0.31102362, 0.31102362)
+sprite_frames = SubResource("SpriteFrames_dhylr")
+animation = &"hint_oldBaby"
+autoplay = "hint_oldBaby"
+frame_progress = 0.6029111
+script = ExtResource("18_sxdy7")
+
+[node name="Hint_punk" type="AnimatedSprite2D" parent="TalkHint" unique_id=1938297556]
+position = Vector2(363.4685, -44.500122)
+scale = Vector2(0.38934425, 0.38934427)
+sprite_frames = SubResource("SpriteFrames_dhylr")
+animation = &"hint_punk"
+autoplay = "hint_punk"
+frame_progress = 0.6736346
+script = ExtResource("18_sxdy7")
+
+[node name="TempoVisualizer" parent="." unique_id=554335005 instance=ExtResource("19_sxdy7")]
+position = Vector2(1478.9999, 100.00001)
+scale = Vector2(0.7, 0.7)
 
 [node name="SubViewportMinigame" type="SubViewport" parent="." unique_id=1699164104]
 unique_name_in_owner = true
-size = Vector2i(580, 915)
+size = Vector2i(607, 775)
 
 [node name="Minigame" parent="SubViewportMinigame" unique_id=1383645364 instance=ExtResource("2_ai5vm")]
 unique_name_in_owner = true
-character = 0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=447278973]
 unique_name_in_owner = true
@@ -81,98 +257,134 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_dy18p")
-current_dialog_index = 1
 
-[node name="Label" type="Label" parent="DialogController" unique_id=585406073]
+[node name="label_npc" type="Label" parent="DialogController" unique_id=585406073]
 layout_mode = 0
-offset_left = 134.0
-offset_top = 782.0
-offset_right = 1056.0
-offset_bottom = 983.0
+offset_left = 128.0
+offset_top = 99.0
+offset_right = 1050.0
+offset_bottom = 300.0
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_wh2rv")
+text = "Let's dig in ! We're having carrots and peas, salad, pasghetti and fishies."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-script = ExtResource("5_hotc4")
+script = ExtResource("21_sxdy7")
 
-[node name="Prompts" type="Node" parent="DialogController" unique_id=957683940]
+[node name="label_player" type="Label" parent="DialogController" unique_id=1123392391]
+visible = false
+layout_mode = 0
+offset_left = 134.0
+offset_top = 107.0
+offset_right = 1056.0
+offset_bottom = 308.0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_wh2rv")
+text = "(Oh, that's right, I'm home, time to perform, ok, let's get used to it)
+I'm glad to be home too mom !"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("21_sxdy7")
 
-[node name="DialogPromptTUTO1" type="Node" parent="DialogController/Prompts" unique_id=1687083404]
+[node name="Levels" type="Node" parent="DialogController" unique_id=656497903]
+
+[node name="Intro" type="Node" parent="DialogController/Levels" unique_id=957683940]
+
+[node name="DialogPromptTUTO1" type="Node" parent="DialogController/Levels/Intro" unique_id=1687083404]
 script = ExtResource("4_l8u7i")
 char_dialog = "I'm so glad to have you home dear."
 response = "(Oh, that's right, I'm home, time to perform, ok, let's get used to it)
 I'm glad to be home too mom !"
-input_sequence = "HAPPY"
+input_sequence = "HAPPY SAD HAPPY SAD HAPPY"
+tempo_bpm = 60
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
-[node name="DialogPromptTUTO2" type="Node" parent="DialogController/Prompts" unique_id=1335219409]
+[node name="DialogPromptTUTO2" type="Node" parent="DialogController/Levels/Intro" unique_id=1335219409]
 script = ExtResource("4_l8u7i")
 char_dialog = "I missed you while you were away..."
 response = "I missed all of you too..."
 input_sequence = "SAD"
+tempo_bpm = 60
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
-[node name="DialogPromptTUTO3" type="Node" parent="DialogController/Prompts" unique_id=155398893]
+[node name="DialogPromptTUTO3" type="Node" parent="DialogController/Levels/Intro" unique_id=155398893]
 script = ExtResource("4_l8u7i")
 char_dialog = "By the way you could have texted and call more, I was worried!"
 response = "Yeah, I'm so overwhlmed between classes and work, it sucks!"
 input_sequence = "ANGER"
+tempo_bpm = 60
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
-[node name="DialogPromptTUTO4" type="Node" parent="DialogController/Prompts" unique_id=338594483]
+[node name="DialogPromptTUTO4" type="Node" parent="DialogController/Levels/Intro" unique_id=338594483]
 script = ExtResource("4_l8u7i")
 char_dialog = "If you did you would know, we just adopted a kitten yesterday, we named it Zoomies!"
 response = "Oh waow, I can't wait to meet it !"
 input_sequence = "SURPRISE"
+tempo_bpm = 60
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
-[node name="DialogPrompt1" type="Node" parent="DialogController/Prompts" unique_id=604181248]
+[node name="Level1" type="Node" parent="DialogController/Levels" unique_id=454303209]
+
+[node name="DialogPrompt1" type="Node" parent="DialogController/Levels/Level1" unique_id=604181248]
 script = ExtResource("4_l8u7i")
 char_dialog = "Let's dig in ! We're having carrots and peas, salad, pasghetti and fishies."
 response = "Yeah !"
 input_sequence = "SURPRISE SURPRISE HAPPY HAPPY"
+tempo_bpm = 70
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
-[node name="DialogPrompt2" type="Node" parent="DialogController/Prompts" unique_id=1985790026]
+[node name="DialogPrompt2" type="Node" parent="DialogController/Levels/Level1" unique_id=1985790026]
 script = ExtResource("4_l8u7i")
 char_dialog = "Yeah, so I just got laid off, turns out you need to know how to count to be an engineer..."
 response = "Oh whaouh, I never would have guessed, I'm so sorry..."
 input_sequence = "SAD SAD ANGER SURPRISE SAD ANGER"
+tempo_bpm = 70
 character = 1
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
-[node name="DialogPrompt3" type="Node" parent="DialogController/Prompts" unique_id=2010035605]
+[node name="DialogPrompt3" type="Node" parent="DialogController/Levels/Level1" unique_id=2010035605]
 script = ExtResource("4_l8u7i")
 char_dialog = "Bollocks, work sucks anyway, I'm glad you got out of it. Do you want me to throw a brick through their window ?"
 response = "Yeah, that will show them."
 input_sequence = "ANGER ANGER SAD HAPPY SAD HAPPY ANGER SURPRISE HAPPY HAPPY"
+tempo_bpm = 70
 character = 6
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
-[node name="DialogPrompt4" type="Node" parent="DialogController/Prompts" unique_id=1410690082]
+[node name="DialogPrompt4" type="Node" parent="DialogController/Levels/Level1" unique_id=1410690082]
 script = ExtResource("4_l8u7i")
 char_dialog = "ABGAH ! Humst aaaah uh."
 response = "(Wow, baby seems to already be anti-establishment, never too young to develop social consciousness I guess)"
 input_sequence = "HAPPY ANGER ANGER HAPPY SURPRISE"
+tempo_bpm = 70
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
-[node name="DialogPrompt5" type="Node" parent="DialogController/Prompts" unique_id=890825669]
+[node name="DialogPrompt5" type="Node" parent="DialogController/Levels/Level1" unique_id=890825669]
 script = ExtResource("4_l8u7i")
-char_dialog = "JEAN KEVAaaah, I'm glad I'm still in school. Did I tell you I got casted in the school play !"
+char_dialog = "Aaaah, I'm glad I'm still in school. Did I tell you I got casted in the school play !"
 response = "Oh whaou, that's great, I'm so proud of you!"
 input_sequence = "SAD HAPPY HAPPY HAPPY SURPRISE HAPPY SURPRISE SURPRISE"
+tempo_bpm = 70
+character = 7
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
-[node name="DialogPrompt6" type="Node" parent="DialogController/Prompts" unique_id=1175370586]
+[node name="DialogPrompt6" type="Node" parent="DialogController/Levels/Level1" unique_id=1175370586]
 script = ExtResource("4_l8u7i")
 char_dialog = "That's how I met you grandma, I was Juliette and she was a teckie, it was love at first sight, I miss her."
 response = "Yeah, I remember the picture, you looked like youo were having fun."
 input_sequence = "SURPRISE HAPPY SURPRISE HAPPY SAD SAD HAPPY SAD"
+tempo_bpm = 70
 character = 5
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
+
+[node name="FPS_counter" type="Label" parent="." unique_id=380752383]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("24_r6s68")

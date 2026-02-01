@@ -16,11 +16,11 @@ func play_feelings(direction):
 	# Handle sad / happy / angry / surprised
 	# with directions
 	match direction:
-		SimonDirections.UP:
+		GlobalEnum.directions.UP:
 			_happy.pick_random().play()
-		SimonDirections.DOWN:
+		GlobalEnum.directions.DOWN:
 			_sad.pick_random().play()
-		SimonDirections.LEFT:
+		GlobalEnum.directions.LEFT:
 			_angry.pick_random().play()
-		SimonDirections.RIGHT:
+		GlobalEnum.directions.RIGHT:
 			_surprised.pick_random().play()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpnt2a7xvl7o7"
-path="res://.godot/imported/jean-kevin_.png-6773139c6c5f60edb60f0a931927480a.ctex"
+uid="uid://dcbvtkimfem08"
+path="res://.godot/imported/cross.png-b3ba5fa333e39f18a59e93b1ccae76d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/jean-kevin_.png"
-dest_files=["res://.godot/imported/jean-kevin_.png-6773139c6c5f60edb60f0a931927480a.ctex"]
+source_file="res://Assets/Textures/cross.png"
+dest_files=["res://.godot/imported/cross.png-b3ba5fa333e39f18a59e93b1ccae76d7.ctex"]
 
 [params]
 
