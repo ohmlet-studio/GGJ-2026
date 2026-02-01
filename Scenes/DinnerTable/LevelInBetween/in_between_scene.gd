@@ -41,14 +41,16 @@ func show_in_between_scene(errors_ms: Array, good_thought: String, bad_thought: 
 	if valid_errors.size() > 0:
 		var sum = 0.0
 		for error in valid_errors:
-			sum += error
+			sum += abs(error)
 		avg_error = sum / valid_errors.size()
 		Globalvar.tot_average_error.append(avg_error)
 	average_error_ms.text = str(int(avg_error))
 	
-	# Determine letter grade based on average error
-	# Assuming max acceptable error is around 250ms (half of a typical 500ms window)
-	var letter = get_letter_grade(avg_error, 250.0)
+	var mean_score =  (1 - (avg_error / Metronome.window_duration_ms)) * (completion_pct / 100.0)
+	
+	print(mean_score)
+	
+	var letter = get_letter_grade(1 - mean_score)
 	score_letter.text = letter
 	
 	# Set inner thought based on performance
@@ -59,10 +61,7 @@ func show_in_between_scene(errors_ms: Array, good_thought: String, bad_thought: 
 		inner_thought_label.text = bad_thought
 
 # Calculate letter grade based on average error
-func get_letter_grade(avg_error: float, max_error: float) -> String:
-	var normalized_error = clamp(avg_error / max_error, 0.0, 1.0)
-	
-	# Grade thresholds (lower error = better grade)
+func get_letter_grade(normalized_error: float) -> String:
 	if normalized_error <= 0.15:
 		return "A+"
 	elif normalized_error <= 0.30:
