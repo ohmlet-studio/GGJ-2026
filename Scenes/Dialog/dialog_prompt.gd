@@ -17,4 +17,4 @@ class_name DialogPrompt
 @export var beat_modulo: int = 1
 
 ## quel perso, duh
-@export var character: CharacterEnum.chars
+@export var character: GlobalEnum.chars

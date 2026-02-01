@@ -5,7 +5,7 @@ class_name Minigame
 @onready var char_sprite = %CharacterSprite
 
 @export var tempo_ms: float = 200.0
-@export var character: CharacterEnum.chars:
+@export var character: GlobalEnum.chars:
 	set(value):
 		character = value
 		_update_character_sprite()
@@ -23,15 +23,15 @@ signal input_invalid(offset_ms: float)
 signal input_missed()
 
 const character_sprites = {
-	CharacterEnum.chars.BABY: preload("res://Assets/Characters/baby.png"),
-	CharacterEnum.chars.BOB: preload("res://Assets/Characters/bob.png"),
-	CharacterEnum.chars.CHILD: preload("res://Assets/Characters/child.png"),
-	CharacterEnum.chars.DAD: preload("res://Assets/Characters/dad.png"),          # ← Swap these two
-	CharacterEnum.chars.MOM: preload("res://Assets/Characters/mom.png"),          # ← 
-	CharacterEnum.chars.OLD_LADY: preload("res://Assets/Characters/old_lady.png"),
-	CharacterEnum.chars.PUNK: preload("res://Assets/Characters/punk.png"),
-	CharacterEnum.chars.JEANKEVIN: preload("res://Assets/Characters/jean-kevin.png"),
-	CharacterEnum.chars.PLAYER: preload("res://Assets/Characters/us.png")
+	GlobalEnum.chars.BABY: preload("res://Assets/Characters/baby.png"),
+	GlobalEnum.chars.BOB: preload("res://Assets/Characters/bob.png"),
+	GlobalEnum.chars.CHILD: preload("res://Assets/Characters/child.png"),
+	GlobalEnum.chars.DAD: preload("res://Assets/Characters/dad.png"),          # ← Swap these two
+	GlobalEnum.chars.MOM: preload("res://Assets/Characters/mom.png"),          # ← 
+	GlobalEnum.chars.OLD_LADY: preload("res://Assets/Characters/old_lady.png"),
+	GlobalEnum.chars.PUNK: preload("res://Assets/Characters/punk.png"),
+	GlobalEnum.chars.JEANKEVIN: preload("res://Assets/Characters/jean-kevin.png"),
+	GlobalEnum.chars.PLAYER: preload("res://Assets/Characters/us.png")
 }
 
 var reply_text: String
@@ -60,7 +60,7 @@ func _ready() -> void:
 func _update_character_sprite():
 	if not char_sprite or not is_node_ready():
 		return
-	var sprite_key = CharacterEnum.chars.PLAYER if not is_npc else character
+	var sprite_key = GlobalEnum.chars.PLAYER if not is_npc else character
 
 	if character_sprites.has(sprite_key):
 		char_sprite.texture = character_sprites[sprite_key]

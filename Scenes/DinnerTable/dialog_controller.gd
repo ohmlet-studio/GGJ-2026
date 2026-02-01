@@ -29,10 +29,10 @@ func _on_input_missed():
 
 func _convert_sequence(string_sequence: String):
 	var string_to_enum := {
-		"HAPPY": SimonDirections.UP,
-		"SAD": SimonDirections.DOWN,
-		"ANGER": SimonDirections.RIGHT,
-		"SURPRISE" : SimonDirections.LEFT,
+		"HAPPY": GlobalEnum.directions.UP,
+		"SAD": GlobalEnum.directions.DOWN,
+		"ANGER": GlobalEnum.directions.RIGHT,
+		"SURPRISE" : GlobalEnum.directions.LEFT,
 	}
 	
 	var single_words = string_sequence.split(" ")
@@ -76,7 +76,7 @@ func play_prompt(level_name: String, index: int):
 	var current_prompt = _prepare_prompt(level_name, index)
 
 	%TalkHint.visible_hint = current_prompt.character
-	await label_npc.char2char(current_prompt.char_dialog, 0.035)
+	await label_npc.char2char(current_prompt.char_dialog, 0.025)
 	
 	# wait two ticks
 	await Metronome.tick

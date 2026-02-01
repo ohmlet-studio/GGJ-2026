@@ -1,17 +1,17 @@
 extends Node2D
 
-@export var visible_hint: CharacterEnum.chars = CharacterEnum.chars.BABY:
+@export var visible_hint: GlobalEnum.chars = GlobalEnum.chars.BABY:
 	set(value):
 		visible_hint = value
 		_update_visibility()
 
 @onready var hint_nodes: Dictionary = {
-	CharacterEnum.chars.BABY: $Hint_baby,
-	CharacterEnum.chars.BOB: $Hint_bob,
-	CharacterEnum.chars.JEANKEVIN: $Hint_jeanKev,
-	CharacterEnum.chars.MOM: $Hint_mom,
-	CharacterEnum.chars.OLD_LADY: $Hint_oldBaby,
-	CharacterEnum.chars.PUNK: $Hint_punk,
+	GlobalEnum.chars.BABY: $Hint_baby,
+	GlobalEnum.chars.BOB: $Hint_bob,
+	GlobalEnum.chars.JEANKEVIN: $Hint_jeanKev,
+	GlobalEnum.chars.MOM: $Hint_mom,
+	GlobalEnum.chars.OLD_LADY: $Hint_oldBaby,
+	GlobalEnum.chars.PUNK: $Hint_punk,
 }
 
 func _ready() -> void:

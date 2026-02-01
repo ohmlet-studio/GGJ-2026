@@ -58,13 +58,13 @@ func show_hit():
 func _on_next_queried_direction(direction: int):
 	next_color = colors[direction]
 	# don't wait for next beat as the signal in called on beat!
-	spawn_circle(next_color, Metronome.tempo_ms)
+	spawn_circle(direction, Metronome.tempo_ms)
 
 func _on_tick(tempo_ms: int, window_duration_ms: int):
 	if next_color:
 		next_color = null
 	else:
-		spawn_dot(Color.hex(0x9483cbFF), tempo_ms)
+		spawn_dot(tempo_ms)
 	
 	# tween middle_element in and out on beat
 	var tween = create_tween()
@@ -72,22 +72,22 @@ func _on_tick(tempo_ms: int, window_duration_ms: int):
 	tween.tween_property(middle_element, "scale", base_scale_middle, 0.075)
 
 
-func spawn_circle(color: Color, time_ms: float):
+func spawn_circle(direction: GlobalEnum.directions, time_ms: float):
 	var new_circle = circle_eg.duplicate()
 	
 	self.add_child(new_circle)
 	
 	new_circle.time_ms = time_ms
-	new_circle.color = color
+	new_circle.direction = direction
 	new_circle.visible = true # this has the effect of launching it
 
-func spawn_dot(color: Color, time_ms: float):
+func spawn_dot(time_ms: float):
 	var new_dot = dot_eg.duplicate()
 	
 	self.add_child(new_dot)
 	
 	new_dot.time_ms = time_ms
-	new_dot.color = color
+	new_dot.direction = GlobalEnum.directions.NONE
 	new_dot.visible = true # this has the effect of launching it
 
 

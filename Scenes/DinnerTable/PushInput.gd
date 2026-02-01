@@ -1,16 +1,16 @@
 extends Node2D
 
 var direction_keys = {
-	KEY_UP: SimonDirections.UP,
-	KEY_DOWN: SimonDirections.DOWN,
-	KEY_LEFT: SimonDirections.LEFT,
-	KEY_RIGHT: SimonDirections.RIGHT,
-	KEY_W: SimonDirections.UP,
-	KEY_S: SimonDirections.DOWN,
-	KEY_A: SimonDirections.LEFT,
-	KEY_D: SimonDirections.RIGHT,
-	KEY_Z: SimonDirections.UP,
-	KEY_Q: SimonDirections.LEFT,
+	KEY_UP: GlobalEnum.directions.UP,
+	KEY_DOWN: GlobalEnum.directions.DOWN,
+	KEY_LEFT: GlobalEnum.directions.LEFT,
+	KEY_RIGHT: GlobalEnum.directions.RIGHT,
+	KEY_W: GlobalEnum.directions.UP,
+	KEY_S: GlobalEnum.directions.DOWN,
+	KEY_A: GlobalEnum.directions.LEFT,
+	KEY_D: GlobalEnum.directions.RIGHT,
+	KEY_Z: GlobalEnum.directions.UP,
+	KEY_Q: GlobalEnum.directions.LEFT,
 }
 
 func _input(event: InputEvent) -> void:	
