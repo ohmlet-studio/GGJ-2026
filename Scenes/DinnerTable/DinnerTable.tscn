@@ -297,8 +297,8 @@ script = ExtResource("4_l8u7i")
 char_dialog = "I'm so glad to have you home dear."
 response = "(Oh, that's right, I'm home, time to perform, ok, let's get used to it)
 I'm glad to be home too mom !"
-input_sequence = "HAPPY SAD HAPPY SAD HAPPY"
-tempo_bpm = 60
+input_sequence = "HAPPY SAD HAPPY SAD HAPPY HAPPY SAD HAPPY SAD HAPPY HAPPY SAD HAPPY SAD HAPPY HAPPY SAD HAPPY SAD HAPPY"
+tempo_bpm = 100
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
@@ -307,7 +307,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "I missed you while you were away..."
 response = "I missed all of you too..."
 input_sequence = "SAD"
-tempo_bpm = 60
+tempo_bpm = 100
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
@@ -316,7 +316,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "By the way you could have texted and call more, I was worried!"
 response = "Yeah, I'm so overwhlmed between classes and work, it sucks!"
 input_sequence = "ANGER"
-tempo_bpm = 60
+tempo_bpm = 100
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
@@ -325,7 +325,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "If you did you would know, we just adopted a kitten yesterday, we named it Zoomies!"
 response = "Oh waow, I can't wait to meet it !"
 input_sequence = "SURPRISE"
-tempo_bpm = 60
+tempo_bpm = 100
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
@@ -336,7 +336,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "Let's dig in ! We're having carrots and peas, salad, pasghetti and fishies."
 response = "Yeah !"
 input_sequence = "SURPRISE SURPRISE HAPPY HAPPY"
-tempo_bpm = 70
+tempo_bpm = 100
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
@@ -345,7 +345,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "Yeah, so I just got laid off, turns out you need to know how to count to be an engineer..."
 response = "Oh whaouh, I never would have guessed, I'm so sorry..."
 input_sequence = "SAD SAD ANGER SURPRISE SAD ANGER"
-tempo_bpm = 70
+tempo_bpm = 100
 character = 1
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
@@ -354,7 +354,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "Bollocks, work sucks anyway, I'm glad you got out of it. Do you want me to throw a brick through their window ?"
 response = "Yeah, that will show them."
 input_sequence = "ANGER ANGER SAD HAPPY SAD HAPPY ANGER SURPRISE HAPPY HAPPY"
-tempo_bpm = 70
+tempo_bpm = 100
 character = 6
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
@@ -363,7 +363,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "ABGAH ! Humst aaaah uh."
 response = "(Wow, baby seems to already be anti-establishment, never too young to develop social consciousness I guess)"
 input_sequence = "HAPPY ANGER ANGER HAPPY SURPRISE"
-tempo_bpm = 70
+tempo_bpm = 100
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="DialogPrompt5" type="Node" parent="DialogController/Levels/Level1" unique_id=890825669]
@@ -371,7 +371,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "Aaaah, I'm glad I'm still in school. Did I tell you I got casted in the school play !"
 response = "Oh whaou, that's great, I'm so proud of you!"
 input_sequence = "SAD HAPPY HAPPY HAPPY SURPRISE HAPPY SURPRISE SURPRISE"
-tempo_bpm = 70
+tempo_bpm = 100
 character = 7
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
@@ -380,7 +380,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "That's how I met you grandma, I was Juliette and she was a teckie, it was love at first sight, I miss her."
 response = "Yeah, I remember the picture, you looked like youo were having fun."
 input_sequence = "SURPRISE HAPPY SURPRISE HAPPY SAD SAD HAPPY SAD"
-tempo_bpm = 70
+tempo_bpm = 100
 character = 5
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 

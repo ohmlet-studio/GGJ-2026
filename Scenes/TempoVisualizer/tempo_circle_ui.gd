@@ -15,8 +15,8 @@ var colors = {
 var rotations = {
 	GlobalEnum.directions.UP: 0.0,
 	GlobalEnum.directions.DOWN: PI,
-	GlobalEnum.directions.LEFT: PI/2,
-	GlobalEnum.directions.RIGHT: -PI/2,
+	GlobalEnum.directions.LEFT: -PI/2,
+	GlobalEnum.directions.RIGHT: PI/2,
 	GlobalEnum.directions.NONE: 0.0
 }
 

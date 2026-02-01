@@ -10,7 +10,7 @@ extends Control
 
 @export_range(0, 10, 1) var current_dialog_index: int
 
-func _ready():	
+func _ready():
 	minigame.input_invalid.connect(_on_input_invalid)
 	minigame.input_valid.connect(_on_input_valid)
 	minigame.input_missed.connect(_on_input_missed)
@@ -35,7 +35,7 @@ func _convert_sequence(string_sequence: String):
 		"SURPRISE" : GlobalEnum.directions.LEFT,
 	}
 	
-	var single_words = string_sequence.split(" ")
+	var single_words = string_sequence.strip_edges().split(" ")
 	
 	var enum_sequence = []
 	for word in single_words:
