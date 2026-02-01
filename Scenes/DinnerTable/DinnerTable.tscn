@@ -346,7 +346,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "I missed you while you were away..."
 response = "I missed all of you too..."
 input_sequence = "HAPPY SAD HAPPY SAD HAPPY SAD"
-tempo_bpm = 100
+tempo_bpm = 150
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
