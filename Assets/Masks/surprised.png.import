@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0rtppwln6hli"
-path="res://.godot/imported/chocked.png-ca508d6ee9e35241e6b9b89d28b876c7.ctex"
+uid="uid://bviuhfm75h1fn"
+path="res://.godot/imported/surprised.png-13aa2c35d54d1deaa8e1b7544261bf11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Masks/chocked.png"
-dest_files=["res://.godot/imported/chocked.png-ca508d6ee9e35241e6b9b89d28b876c7.ctex"]
+source_file="res://Assets/Masks/surprised.png"
+dest_files=["res://.godot/imported/surprised.png-13aa2c35d54d1deaa8e1b7544261bf11.ctex"]
 
 [params]
 
