@@ -30,6 +30,7 @@ func play_level_and_in_between(level_number: int):
 	in_between_scene.next_level.connect(
 		func():
 			level_number += 1
+			$"../IntroBackground".hide()
 			play_level_and_in_between(level_number)
 	)
 	

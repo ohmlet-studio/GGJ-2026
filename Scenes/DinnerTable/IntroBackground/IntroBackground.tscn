@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://do16nwi04atts"]
+
+[ext_resource type="Texture2D" uid="uid://bbx0eygrmerye" path="res://Assets/TitleScene/wall.png" id="1_547w2"]
+
+[node name="IntroBackground" type="Node2D" unique_id=216538798]
+
+[node name="Wall" type="Sprite2D" parent="." unique_id=1529437011]
+position = Vector2(961, 527)
+scale = Vector2(0.515745, 0.515745)
+texture = ExtResource("1_547w2")
