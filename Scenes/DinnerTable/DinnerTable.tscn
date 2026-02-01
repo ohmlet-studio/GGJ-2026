@@ -37,6 +37,7 @@
 [ext_resource type="Script" path="res://Scenes/DinnerTable/LevelParams.gd" id="30_m8rn3"]
 [ext_resource type="PackedScene" uid="uid://bta2kp608mcqf" path="res://Scenes/DinnerTable/LevelInBetween/InBetweenScene.tscn" id="32_dhylr"]
 [ext_resource type="FontFile" uid="uid://bhv7184n448y8" path="res://Assets/main_font.ttf" id="32_dnfph"]
+[ext_resource type="Script" uid="uid://dsdya1vmidax7" path="res://Scenes/DinnerTable/character_name.gd" id="34_f7yi5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dhylr"]
 animations = [{
@@ -153,6 +154,14 @@ expand_margin_left = 15.0
 expand_margin_top = 15.0
 expand_margin_right = 15.0
 expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dnfph"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.8, 0.8, 0)
 
 [node name="DinnerTable" type="Node2D" unique_id=665496141]
 script = ExtResource("2_wh2rv")
@@ -319,6 +328,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 script = ExtResource("21_sxdy7")
+
+[node name="CharacterName" type="Label" parent="DialogController" unique_id=1961968252]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 141.0
+offset_top = 59.0
+offset_right = 740.0
+offset_bottom = 132.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.80784315)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_dnfph")
+text = "Baby"
+script = ExtResource("34_f7yi5")
 
 [node name="label_player" type="Label" parent="DialogController" unique_id=1123392391]
 visible = false

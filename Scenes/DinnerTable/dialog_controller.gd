@@ -107,6 +107,8 @@ func play_prompt(level_number: int, index: int):
 	
 	%TalkHint.visible_hint = current_prompt.character
 	await label_npc.char2char(current_prompt.char_dialog, 0.025)
+	%CharacterName.character_name = current_prompt.character
+
 	
 	# wait two ticks
 	await Metronome.tick
@@ -126,6 +128,7 @@ func play_prompt(level_number: int, index: int):
 	
 	label_npc.text = ""
 	await label_npc.char2char(current_prompt.response, 0.025)
+	%CharacterName.character_name = GlobalEnum.chars.PLAYER
 	
 	await Metronome.tick
 	await Metronome.tick
