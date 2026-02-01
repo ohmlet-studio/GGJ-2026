@@ -69,6 +69,7 @@ func _display_text_player(text: String):
 func play_level(level_name: String):
 	var level_node = levels.get_node(level_name)
 	
+
 	for i in range(level_node.get_child_count()):
 		await play_prompt(level_name, i)
 		
@@ -78,7 +79,10 @@ func play_level(level_name: String):
 
 func play_prompt(level_name: String, index: int):
 	var current_prompt = _prepare_prompt(level_name, index)
-
+	
+	# Play music with correct tempo / param is in bpm
+	AudioController.play_music(Metronome.get_tempo_bpm(), AudioController.MUSIC_SCENE.LEVEL)
+	
 	%TalkHint.visible_hint = current_prompt.character
 	await label_npc.char2char(current_prompt.char_dialog, 0.025)
 	

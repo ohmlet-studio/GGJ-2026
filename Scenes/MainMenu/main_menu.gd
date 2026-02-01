@@ -3,7 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	AudioController.play_music(0, AudioController.MUSIC_SCENE.TITLE)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,6 +16,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 
 func _on_doorbell_pressed() -> void:
+	AudioController.play_ding()
 	$FadeTransitionManager.fade_out()
 	#get_tree().call_deferred("change_scene_to_file", "res://Scenes/DinnerTable/DinnerTable.tscn")
 

@@ -23,6 +23,9 @@
 [ext_resource type="AudioStream" uid="uid://cl7fa2eg4cp0" path="res://Assets/SFX/SFX_Surprised3.mp3" id="21_a1xx1"]
 [ext_resource type="AudioStream" uid="uid://5bpas468o3vu" path="res://Assets/SFX/SFX_Surprised4.mp3" id="22_145uv"]
 [ext_resource type="AudioStream" uid="uid://be8tb4gysbklr" path="res://Assets/SFX/SFX_Surprised5.mp3" id="23_wxol5"]
+[ext_resource type="AudioStream" uid="uid://dppk8s0rm24sl" path="res://Assets/SFX/SFX_DingDong.mp3" id="24_01pc8"]
+[ext_resource type="AudioStream" uid="uid://lmkfil5g61ic" path="res://Assets/Music/ST_Jungle_100.mp3" id="25_01pc8"]
+[ext_resource type="AudioStream" uid="uid://b4ofnmiemlgqg" path="res://Assets/Music/ST_Menu.mp3" id="26_hnps5"]
 
 [node name="AudioController" type="Node2D" unique_id=2003875157]
 script = ExtResource("1_0psx2")
@@ -117,4 +120,17 @@ bus = &"SFX"
 stream = ExtResource("23_wxol5")
 bus = &"SFX"
 
+[node name="Ding_dong_sfx" type="AudioStreamPlayer" parent="SFX" unique_id=1490105342]
+stream = ExtResource("24_01pc8")
+bus = &"SFX"
+
 [node name="Music" type="Node" parent="." unique_id=683004263]
+
+[node name="main_beat_music" type="AudioStreamPlayer" parent="Music" unique_id=923257942]
+stream = ExtResource("25_01pc8")
+bus = &"Music"
+
+[node name="title_scene" type="AudioStreamPlayer" parent="Music" unique_id=441102852]
+stream = ExtResource("26_hnps5")
+pitch_scale = 1.6
+bus = &"Music"

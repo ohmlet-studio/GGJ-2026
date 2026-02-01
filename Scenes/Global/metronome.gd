@@ -37,6 +37,9 @@ func _schedule_pretick():
 
 func set_tempo_bpm(value: int):
 	self.tempo_ms = 60000.0 / value
+	
+func get_tempo_bpm():
+	return (60/self.tempo_ms) * 1000
 
 func _on_pretick_timeout() -> void:
 	pretick.emit(tempo_ms, window_duration_ms)
