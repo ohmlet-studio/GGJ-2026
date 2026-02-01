@@ -363,6 +363,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("12_k2pwb")
+_fade_length = 0.5
 next_scene = ExtResource("13_ah1a3")
 metadata/_custom_type_script = "uid://c6215vuol8ms2"
 

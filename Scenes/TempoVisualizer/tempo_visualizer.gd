@@ -22,7 +22,20 @@ var next_color
 func _ready() -> void:
 	Metronome.tick.connect(_on_tick)
 	minigame.next_queried_direction.connect(_on_next_queried_direction)
+	minigame.sequence_started.connect(_on_sequence_started)  # NEW
 	base_scale_middle = middle_element.scale
+
+func _on_sequence_started(sequence: Array):
+	for i in range(sequence.size()):
+		var direction = sequence[i]
+		
+		var travel_time = Metronome.tempo_ms * 2.0
+		
+		# wait before spawning each circle
+		if i > 0:
+			await Metronome.tick
+		
+		spawn_circle(direction, travel_time)
 
 var _miss_tween: Tween
 var _hit_tween: Tween
@@ -56,6 +69,7 @@ func show_hit():
 	)
 
 func _on_next_queried_direction(direction: int):
+	return
 	await Metronome.tick
 	next_color = colors[direction]
 	# don't wait for next beat as the signal in called on beat!
@@ -65,7 +79,7 @@ func _on_tick(tempo_ms: int, window_duration_ms: int):
 	if next_color:
 		next_color = null
 	else:
-		spawn_dot(tempo_ms)
+		spawn_dot(tempo_ms * 2)
 	
 	# tween middle_element in and out on beat
 	var tween = create_tween()

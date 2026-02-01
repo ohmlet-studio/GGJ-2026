@@ -234,7 +234,7 @@ frame_progress = 0.6736346
 script = ExtResource("18_sxdy7")
 
 [node name="TempoVisualizer" parent="." unique_id=554335005 instance=ExtResource("19_sxdy7")]
-position = Vector2(1478.9999, 100.00001)
+position = Vector2(1554.0001, 100.00001)
 scale = Vector2(0.7, 0.7)
 
 [node name="SubViewportMinigame" type="SubViewport" parent="." unique_id=1699164104]
@@ -266,7 +266,7 @@ offset_right = 1050.0
 offset_bottom = 300.0
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_wh2rv")
-text = "Let's dig in ! We're having carrots and peas, salad, pasghetti and fishies."
+text = "I'm so glad to h"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
