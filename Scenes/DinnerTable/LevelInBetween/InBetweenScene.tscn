@@ -37,12 +37,13 @@ scale = Vector2(0.7002567, 0.7002567)
 texture = SubResource("CompressedTexture2D_wvkjd")
 
 [node name="LabelInnerThoughts" type="Label" parent="." unique_id=1791856454]
-offset_left = 863.0
+offset_left = 30.0
 offset_top = 118.0
-offset_right = 1671.0
+offset_right = 1899.0
 offset_bottom = 228.0
 theme_override_font_sizes/font_size = 80
 text = "I need to get better..."
+horizontal_alignment = 1
 
 [node name="TextNotesPercentage" type="Label" parent="." unique_id=883601132]
 offset_left = 753.0
