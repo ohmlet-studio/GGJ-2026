@@ -21,6 +21,7 @@ func _ready():
 	play_level_and_in_between(level_number)
 
 func play_level_and_in_between(level_number: int):
+	await Metronome.tick
 	var level_errors_ms = await play_level(level_number)
 	
 	var good_thought = levels.get_child(level_number).dialog_succes
@@ -34,12 +35,12 @@ func play_level_and_in_between(level_number: int):
 			else:
 				level_number += 1
 				$"../IntroBackground".hide()
-				play_level_and_in_between(level_number)
+				await play_level_and_in_between(level_number)
 	)
 	
 	in_between_scene.retry_level.connect(
 		func():
-			play_level_and_in_between(level_number)
+			await play_level_and_in_between(level_number)
 	)
 
 func _on_input_valid(offset_ms):
