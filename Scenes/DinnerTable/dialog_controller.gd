@@ -18,10 +18,13 @@ func _ready():
 	minigame.input_valid.connect(_on_input_valid)
 	minigame.input_missed.connect(_on_input_missed)
 
-	play_level_and_in_between(level_number)
+	await play_level_and_in_between(level_number)
 
 func play_level_and_in_between(level_number: int):
 	await Metronome.tick
+	
+	print("LANCEMENT DU NV ", level_number)
+	
 	var level_errors_ms = await play_level(level_number)
 	
 	var good_thought = levels.get_child(level_number).dialog_succes
@@ -106,8 +109,8 @@ func play_prompt(level_number: int, index: int):
 	AudioController.play_music(Metronome.get_tempo_bpm(), AudioController.MUSIC_SCENE.LEVEL)
 	
 	%TalkHint.visible_hint = current_prompt.character
-	await label_npc.char2char(current_prompt.char_dialog, 0.025)
 	%CharacterName.character_name = current_prompt.character
+	await label_npc.char2char(current_prompt.char_dialog, 0.025)
 
 	
 	# wait two ticks
@@ -127,8 +130,8 @@ func play_prompt(level_number: int, index: int):
 	await minigame.start_player_turn()
 	
 	label_npc.text = ""
-	await label_npc.char2char(current_prompt.response, 0.025)
 	%CharacterName.character_name = GlobalEnum.chars.PLAYER
+	await label_npc.char2char(current_prompt.response, 0.025)
 	
 	await Metronome.tick
 	await Metronome.tick

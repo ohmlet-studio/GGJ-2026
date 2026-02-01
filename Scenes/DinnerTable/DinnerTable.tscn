@@ -340,8 +340,9 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 0.80784315)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_dnfph")
-text = "Baby"
+text = "Mom"
 script = ExtResource("34_f7yi5")
+character_name = 4
 
 [node name="label_player" type="Label" parent="DialogController" unique_id=1123392391]
 visible = false

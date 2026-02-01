@@ -50,8 +50,8 @@ func play_music(tempo_bpm : float, level: MUSIC_SCENE):
 		
 		await Metronome.tick
 		$Music/main_beat_music.play()
-		
 		last_tempo = tempo_bpm
+	
 	elif level == self.MUSIC_SCENE.INBETWEEN:
 		$Music/main_beat_music.stop()
 		$Music/between_scene.play()

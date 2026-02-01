@@ -57,7 +57,7 @@ script = ExtResource("4_1ndj3")
 
 [node name="TheatreMask" type="Sprite2D" parent="." unique_id=637309495]
 modulate = Color(0.5803922, 0.5137255, 0.79607844, 1)
-position = Vector2(-444, 0)
+position = Vector2(-444, -15.999999)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_js08c")
 
