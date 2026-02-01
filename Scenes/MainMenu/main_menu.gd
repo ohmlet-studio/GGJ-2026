@@ -16,7 +16,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 
 func _on_doorbell_pressed() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://Scenes/DinnerTable/DinnerTable.tscn")
+	$FadeTransitionManager.fade_out()
+	#get_tree().call_deferred("change_scene_to_file", "res://Scenes/DinnerTable/DinnerTable.tscn")
 
 
 func _on_credits_pressed() -> void:
