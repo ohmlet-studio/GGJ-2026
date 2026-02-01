@@ -302,7 +302,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_dy18p")
-level_number = 2
 
 [node name="label_npc" type="Label" parent="DialogController" unique_id=585406073]
 layout_mode = 0
