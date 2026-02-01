@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://bdvn5c8a3oifk" path="res://Scenes/TempoVisualizer/tempo_visualizer.tscn" id="19_sxdy7"]
 [ext_resource type="Script" uid="uid://cxcw0vi7mftul" path="res://Scenes/DinnerTable/label_anim.gd" id="21_sxdy7"]
 [ext_resource type="Script" uid="uid://dh06rerknyks1" path="res://Scenes/DinnerTable/fps_counter.gd" id="24_r6s68"]
+[ext_resource type="Script" uid="uid://cegw0hppiklu6" path="res://Scenes/DinnerTable/LevelParams.gd" id="30_m8rn3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_wh2rv"]
 viewport_path = NodePath("SubViewportMinigame")
@@ -302,7 +303,7 @@ offset_right = 1050.0
 offset_bottom = 300.0
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_wh2rv")
-text = "I'm so glad to h"
+text = "L"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -327,6 +328,7 @@ script = ExtResource("21_sxdy7")
 [node name="Levels" type="Node" parent="DialogController" unique_id=656497903]
 
 [node name="Intro" type="Node" parent="DialogController/Levels" unique_id=957683940]
+script = ExtResource("30_m8rn3")
 
 [node name="DialogPromptTUTO1" type="Node" parent="DialogController/Levels/Intro" unique_id=1687083404]
 script = ExtResource("4_l8u7i")
@@ -366,6 +368,7 @@ character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
 [node name="Level1" type="Node" parent="DialogController/Levels" unique_id=454303209]
+script = ExtResource("30_m8rn3")
 
 [node name="DialogPrompt1" type="Node" parent="DialogController/Levels/Level1" unique_id=604181248]
 script = ExtResource("4_l8u7i")
