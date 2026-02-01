@@ -8,25 +8,28 @@ class_name Minigame
 @export var character: CharacterEnum.chars:
 	set(value):
 		character = value
-		if char_sprite:
-			char_sprite.texture = character_sprites[value]
+		_update_character_sprite()
 
-@export var is_npc: bool = false
+@export var is_npc: bool = false:
+	set(value):
+		is_npc = value
+		_update_character_sprite()
 
 signal finished_sequence_player()
 signal input_valid(offset_ms: float)
 signal input_invalid(offset_ms: float)
 signal input_missed()
 
-var character_sprites = {
+const character_sprites = {
 	CharacterEnum.chars.BABY: preload("res://Assets/Characters/baby.png"),
 	CharacterEnum.chars.BOB: preload("res://Assets/Characters/bob.png"),
 	CharacterEnum.chars.CHILD: preload("res://Assets/Characters/child.png"),
-	CharacterEnum.chars.MOM: preload("res://Assets/Characters/mom.png"),
-	CharacterEnum.chars.DAD: preload("res://Assets/Characters/dad.png"),
+	CharacterEnum.chars.DAD: preload("res://Assets/Characters/dad.png"),          # ← Swap these two
+	CharacterEnum.chars.MOM: preload("res://Assets/Characters/mom.png"),          # ← 
 	CharacterEnum.chars.OLD_LADY: preload("res://Assets/Characters/old_lady.png"),
 	CharacterEnum.chars.PUNK: preload("res://Assets/Characters/punk.png"),
-	CharacterEnum.chars.JEANKEVIN: preload("res://Assets/Characters/jean-kevin.png")
+	CharacterEnum.chars.JEANKEVIN: preload("res://Assets/Characters/jean-kevin.png"),
+	CharacterEnum.chars.PLAYER: preload("res://Assets/Characters/us.png")
 }
 
 var reply_text: String
@@ -49,7 +52,15 @@ func _ready() -> void:
 	
 	Metronome.tick.connect(_on_metronome_tick)
 	
-	is_npc = true
+	_update_character_sprite()  # Update here when everything is ready
+
+func _update_character_sprite():
+	if not char_sprite or not is_node_ready():
+		return
+	var sprite_key = CharacterEnum.chars.PLAYER if not is_npc else character
+
+	if character_sprites.has(sprite_key):
+		char_sprite.texture = character_sprites[sprite_key]
 
 func _on_metronome_tick(window_duration_ms: int):
 	if is_npc:

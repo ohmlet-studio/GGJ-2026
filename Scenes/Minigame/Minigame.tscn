@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cbf7sk2tphxor" path="res://Assets/Background/chair_back.png" id="3_g74kh"]
 [ext_resource type="Script" uid="uid://b450iaatc07hq" path="res://Scenes/Minigame/tempo_indicator.gd" id="3_jxsht"]
 [ext_resource type="Script" uid="uid://bomi3fxjve32g" path="res://Scenes/Minigame/SquashOnTick.gd" id="3_o6pu6"]
-[ext_resource type="Texture2D" uid="uid://cxr7by2dj7l77" path="res://Assets/Characters/punk.png" id="4_g74kh"]
+[ext_resource type="Texture2D" uid="uid://m81dh5a36b6u" path="res://Assets/Characters/mom.png" id="4_g74kh"]
 [ext_resource type="Script" uid="uid://c84ifqdpeko0t" path="res://Scenes/Minigame/arrow_sequence.gd" id="4_gmjc4"]
 [ext_resource type="Texture2D" uid="uid://cls6nbt4ieeal" path="res://Assets/Textures/stick.webp" id="6_8l3v4"]
 [ext_resource type="Script" uid="uid://50eiryj543y8" path="res://Scenes/Minigame/MaskHandle.gd" id="6_dn3w5"]
@@ -80,7 +80,8 @@ _data = {
 
 [node name="Minigame" type="Node2D" unique_id=1383645364]
 script = ExtResource("1_f4dal")
-character = 6
+character = 4
+is_npc = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1960037530]
 position = Vector2(298, 535)
