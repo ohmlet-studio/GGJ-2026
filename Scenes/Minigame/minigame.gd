@@ -43,6 +43,7 @@ var input_window_timer: Timer
 func _ready() -> void:
 	reset_timer = Timer.new()
 	input_window_timer = Timer.new()
+	input_window_timer.one_shot = true
 	
 	self.add_child(reset_timer)
 	self.add_child(input_window_timer)
@@ -53,6 +54,8 @@ func _ready() -> void:
 	Metronome.tick.connect(_on_metronome_tick)
 	
 	_update_character_sprite()  # Update here when everything is ready
+	
+	is_npc = true
 
 func _update_character_sprite():
 	if not char_sprite or not is_node_ready():
@@ -63,8 +66,9 @@ func _update_character_sprite():
 		char_sprite.texture = character_sprites[sprite_key]
 
 func _on_metronome_tick(window_duration_ms: int):
+	# we don't do anything if this is not the player
 	if is_npc:
-		return # we don't do anything if this is not the player
+		return
 	
 	print("metronome_tick")
 	
@@ -72,7 +76,6 @@ func _on_metronome_tick(window_duration_ms: int):
 		finished_sequence_player.emit()
 		return
 		
-
 	# create a timer for window_duration_ms
 	print("starting timer for window duration_ms: ", window_duration_ms)
 	input_window_timer.start(window_duration_ms / 1000.0)
@@ -92,13 +95,12 @@ func _check_if_input_matches_sequence(direction):
 		input_window_timer.stop()
 
 func _on_window_missed():
-	print("timer window elapsed")
 	self.input_missed.emit()
 
 func _on_timer_finished():
 	$MaskSticks.reset()
 
-func start():
+func start_player_turn():
 	is_npc = false
 
 func play_sequence_npc():

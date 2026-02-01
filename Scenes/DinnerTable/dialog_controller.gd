@@ -17,7 +17,7 @@ func _ready():
 	
 	minigame.input_invalid.connect(func(value): print("input_invalid"))
 	minigame.input_valid.connect(func(value): print("input_valid"))
-	minigame.input_missed.connect(func(value): print("input_missed"))
+	minigame.input_missed.connect(func(): print("input_missed"))
 
 func _convert_sequence(string_sequence: String):
 	var string_to_enum = {
@@ -81,7 +81,7 @@ func play_prompt(prompt_number: int):
 	await get_tree().create_timer(2.0).timeout
 
 	print("Letting the user play the minigame")
-	await minigame.start()
+	await minigame.start_player_turn()
 	
 	_display_text_player(prompt_number)
 	

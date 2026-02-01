@@ -248,7 +248,7 @@ size = Vector2i(607, 775)
 
 [node name="Minigame" parent="SubViewportMinigame" unique_id=1383645364 instance=ExtResource("2_ai5vm")]
 unique_name_in_owner = true
-character = 4
+is_npc = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=447278973]
 unique_name_in_owner = true
@@ -301,7 +301,7 @@ char_dialog = "I'm so glad to have you home dear."
 response = "(Oh, that's right, I'm home, time to perform, ok, let's get used to it)
 I'm glad to be home too mom !"
 input_sequence = "HAPPY"
-tempo_bpm = 120
+tempo_bpm = 60
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
