@@ -33,6 +33,7 @@
 [ext_resource type="Script" uid="uid://cxcw0vi7mftul" path="res://Scenes/DinnerTable/label_anim.gd" id="21_sxdy7"]
 [ext_resource type="Script" uid="uid://dh06rerknyks1" path="res://Scenes/DinnerTable/fps_counter.gd" id="24_r6s68"]
 [ext_resource type="Script" uid="uid://ci680c8mxneim" path="res://Scenes/DinnerTable/IntroBackground/intro_background.gd" id="26_xdat0"]
+[ext_resource type="Script" uid="uid://kgcjf68j0pf3" path="res://Scenes/DinnerTable/camera_2d.gd" id="30_aijkx"]
 [ext_resource type="Script" uid="uid://cegw0hppiklu6" path="res://Scenes/DinnerTable/LevelParams.gd" id="30_m8rn3"]
 [ext_resource type="PackedScene" uid="uid://bta2kp608mcqf" path="res://Scenes/DinnerTable/LevelInBetween/InBetweenScene.tscn" id="32_dhylr"]
 
@@ -121,7 +122,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.06666667, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+"values": [Vector2(1, 1), Vector2(1.005, 1.005), Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_o6pu6"]
@@ -292,6 +293,7 @@ character = 6
 [node name="Camera2D" type="Camera2D" parent="." unique_id=447278973]
 unique_name_in_owner = true
 position = Vector2(960, 540)
+script = ExtResource("30_aijkx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D" unique_id=1418315104]
 libraries/ = SubResource("AnimationLibrary_ai5vm")

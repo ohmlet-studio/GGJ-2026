@@ -6,8 +6,8 @@
 [node name="IntroBackground" type="Node2D" unique_id=216538798]
 
 [node name="Wall" type="Sprite2D" parent="." unique_id=1529437011]
-position = Vector2(961, 527)
-scale = Vector2(2.28308, 2.28308)
+position = Vector2(961, 536)
+scale = Vector2(2.2303061, 2.2303061)
 texture = ExtResource("1_547w2")
 
 [node name="Arrows" type="Sprite2D" parent="." unique_id=1043502320]
