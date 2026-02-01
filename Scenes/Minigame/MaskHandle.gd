@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 
 var rotation_timing = 0.5
 @onready var initial_rotation = self.rotation

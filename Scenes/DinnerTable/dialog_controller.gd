@@ -84,9 +84,6 @@ func _prepare_prompt(level_number: int, index: int):
 	minigame.npc_sequence = sequence
 	return current_prompt
 
-func _display_text_player(text: String):
-	label_player.text = text
-
 func play_level(level_number: int):
 	var level_node = levels.get_child(level_number)
 	
@@ -127,7 +124,13 @@ func play_prompt(level_number: int, index: int):
 	await minigame.start_player_turn()
 	
 	label_npc.text = ""
-	_display_text_player(current_prompt.response)
+	await label_npc.char2char(current_prompt.response, 0.025)
+	
+	await Metronome.tick
+	await Metronome.tick
+	await Metronome.tick
+	
+	minigame.is_npc = true
 	
 	#print("PROMPT SCORES: ", prompt_scores)
 	return prompt_scores

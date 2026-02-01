@@ -55,17 +55,19 @@ offset_bottom = 483.00012
 theme_override_fonts/font = ExtResource("5_2onug")
 theme_override_font_sizes/font_size = 60
 text = "Percentage of notes hits:"
+horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="CompletionPercentageLabel" type="Label" parent="." unique_id=877901922]
 offset_left = 1526.0
-offset_top = 355.0
+offset_top = 336.0
 offset_right = 1719.0
-offset_bottom = 509.00012
+offset_bottom = 490.00012
 theme_override_constants/shadow_outline_size = 87
 theme_override_fonts/font = ExtResource("5_2onug")
 theme_override_font_sizes/font_size = 75
 text = "0%"
+vertical_alignment = 1
 
 [node name="TextNotesError" type="Label" parent="." unique_id=225190622]
 offset_left = 914.0
@@ -75,17 +77,19 @@ offset_bottom = 573.0001
 theme_override_fonts/font = ExtResource("5_2onug")
 theme_override_font_sizes/font_size = 60
 text = "Average error:"
+horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="AverageErrorMsLabel" type="Label" parent="." unique_id=324618338]
 offset_left = 1526.0
-offset_top = 445.0
+offset_top = 424.0
 offset_right = 1719.0
-offset_bottom = 599.0001
+offset_bottom = 578.0001
 theme_override_constants/shadow_outline_size = 87
 theme_override_fonts/font = ExtResource("5_2onug")
 theme_override_font_sizes/font_size = 75
 text = "100"
+vertical_alignment = 1
 
 [node name="FinalScoreLetter" type="Label" parent="." unique_id=544318291]
 offset_left = 570.0
@@ -103,6 +107,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RetryButton" type="Button" parent="." unique_id=2112990882]
+visible = false
 offset_left = 1311.0
 offset_top = 704.0
 offset_right = 1807.0

@@ -47,6 +47,8 @@ func play_music(tempo_bpm : float, level: MUSIC_SCENE):
 		$Music/title_scene.stop()
 		$Music/between_scene.stop()
 		$Music/main_beat_music.pitch_scale = tempo_bpm / self.origin_tempo_music
+		
+		await Metronome.tick
 		$Music/main_beat_music.play()
 		
 		last_tempo = tempo_bpm

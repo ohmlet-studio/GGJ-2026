@@ -33,7 +33,7 @@
 [ext_resource type="Script" uid="uid://cxcw0vi7mftul" path="res://Scenes/DinnerTable/label_anim.gd" id="21_sxdy7"]
 [ext_resource type="Script" uid="uid://dh06rerknyks1" path="res://Scenes/DinnerTable/fps_counter.gd" id="24_r6s68"]
 [ext_resource type="Script" uid="uid://ci680c8mxneim" path="res://Scenes/DinnerTable/IntroBackground/intro_background.gd" id="26_xdat0"]
-[ext_resource type="Script" path="res://Scenes/DinnerTable/camera_2d.gd" id="30_aijkx"]
+[ext_resource type="Script" uid="uid://kgcjf68j0pf3" path="res://Scenes/DinnerTable/camera_2d.gd" id="30_aijkx"]
 [ext_resource type="Script" uid="uid://cegw0hppiklu6" path="res://Scenes/DinnerTable/LevelParams.gd" id="30_m8rn3"]
 [ext_resource type="PackedScene" uid="uid://bta2kp608mcqf" path="res://Scenes/DinnerTable/LevelInBetween/InBetweenScene.tscn" id="32_dhylr"]
 
@@ -209,7 +209,7 @@ script = ExtResource("6_lm7s3")
 visible_hint = 4
 
 [node name="Hint_baby" type="AnimatedSprite2D" parent="TalkHint" unique_id=1075817944]
-position = Vector2(-288.47473, 86.01314)
+position = Vector2(-365.22485, 101.89248)
 scale = Vector2(0.7327273, 0.7327273)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_baby"
@@ -218,7 +218,7 @@ frame_progress = 0.2777076
 script = ExtResource("18_sxdy7")
 
 [node name="Hint_bob" type="AnimatedSprite2D" parent="TalkHint" unique_id=290357471]
-position = Vector2(15.468506, -155.49997)
+position = Vector2(-43.66817, -155.49997)
 scale = Vector2(0.43457946, 0.43457943)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_bob"
@@ -227,7 +227,7 @@ frame_progress = 0.9558496
 script = ExtResource("18_sxdy7")
 
 [node name="Hint_jeanKev" type="AnimatedSprite2D" parent="TalkHint" unique_id=719400306]
-position = Vector2(-95.276085, 190.55212)
+position = Vector2(-149.5305, 234.22032)
 scale = Vector2(0.426103, 0.426103)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_jeanKev"
@@ -236,7 +236,7 @@ frame_progress = 0.13121593
 script = ExtResource("18_sxdy7")
 
 [node name="Hint_mom" type="AnimatedSprite2D" parent="TalkHint" unique_id=1681096808]
-position = Vector2(78.468506, 320.49997)
+position = Vector2(35.7284, 400.95343)
 scale = Vector2(0.48713222, 0.48713225)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_mom"
@@ -245,7 +245,7 @@ frame_progress = 0.47572345
 script = ExtResource("18_sxdy7")
 
 [node name="Hint_oldBaby" type="AnimatedSprite2D" parent="TalkHint" unique_id=1582503323]
-position = Vector2(-373.16455, -123.06491)
+position = Vector2(-390.36716, -124.38819)
 scale = Vector2(0.31102362, 0.31102362)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_oldBaby"
@@ -254,7 +254,7 @@ frame_progress = 0.6029111
 script = ExtResource("18_sxdy7")
 
 [node name="Hint_punk" type="AnimatedSprite2D" parent="TalkHint" unique_id=1938297556]
-position = Vector2(363.4685, -44.500122)
+position = Vector2(365.22485, -19.849173)
 scale = Vector2(0.38934425, 0.38934427)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_punk"
@@ -356,7 +356,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "I missed you while you were away..."
 response = "I missed all of you too..."
 input_sequence = "HAPPY SAD HAPPY SAD HAPPY SAD"
-tempo_bpm = 150
+tempo_bpm = 100
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
