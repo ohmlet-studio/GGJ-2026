@@ -29,11 +29,12 @@ func play_level_and_in_between(level_number: int):
 	
 	in_between_scene.next_level.connect(
 		func():
-			if level_number == 1:
+			if level_number == levels.get_child_count():
 				get_tree().call_deferred("change_scene_to_file", "res://Scenes/FinalScene/FinalScene.tscn")
-			level_number += 1
-			$"../IntroBackground".hide()
-			play_level_and_in_between(level_number)
+			else:
+				level_number += 1
+				$"../IntroBackground".hide()
+				play_level_and_in_between(level_number)
 	)
 	
 	in_between_scene.retry_level.connect(
@@ -69,6 +70,7 @@ func _convert_sequence(string_sequence: String):
 func _prepare_prompt(level_number: int, index: int):
 	var level_node = levels.get_child(level_number)
 	var current_prompt = level_node.get_child(index)
+	print("Level number: ", level_number)
 	
 	if not current_prompt:
 		print("ERROR: prompt_node does not exist")
@@ -81,9 +83,6 @@ func _prepare_prompt(level_number: int, index: int):
 	minigame.character = current_prompt.character
 	minigame.npc_sequence = sequence
 	return current_prompt
-
-func _display_text_player(text: String):
-	label_player.text = text
 
 func play_level(level_number: int):
 	var level_node = levels.get_child(level_number)
@@ -125,7 +124,13 @@ func play_prompt(level_number: int, index: int):
 	await minigame.start_player_turn()
 	
 	label_npc.text = ""
-	_display_text_player(current_prompt.response)
+	await label_npc.char2char(current_prompt.response, 0.025)
 	
-	print("PROMPT SCORES: ", prompt_scores)
+	await Metronome.tick
+	await Metronome.tick
+	await Metronome.tick
+	
+	minigame.is_npc = true
+	
+	#print("PROMPT SCORES: ", prompt_scores)
 	return prompt_scores

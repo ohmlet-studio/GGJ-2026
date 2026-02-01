@@ -104,8 +104,6 @@ func start_player_turn():
 		await Metronome.pretick
 		current_step_in_sequence_player += 1
 	
-	is_npc = true
-	
 	await Metronome.tick
 	
 	finished_sequence_player.emit()

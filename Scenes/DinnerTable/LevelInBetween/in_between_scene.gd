@@ -4,8 +4,6 @@ extends Node2D
 @onready var completion_label_pct = $CompletionPercentageLabel
 @onready var average_error_ms = $AverageErrorMsLabel
 @onready var score_letter = $FinalScoreLetter
-@onready var tot_average_error = []
-@onready var tot_complt_pct = []
 
 
 signal retry_level()
@@ -35,7 +33,7 @@ func show_in_between_scene(errors_ms: Array, good_thought: String, bad_thought: 
 	var completion_pct = 0.0
 	if total_notes > 0:
 		completion_pct = (float(hit_notes) / float(total_notes)) * 100.0
-		tot_complt_pct.append(completion_pct)
+		Globalvar.tot_complt_pct.append(completion_pct)
 	completion_label_pct.text = str("%.0f" % completion_pct +" %")
 	
 	# Calculate average error (only for hit notes)
@@ -45,8 +43,8 @@ func show_in_between_scene(errors_ms: Array, good_thought: String, bad_thought: 
 		for error in valid_errors:
 			sum += error
 		avg_error = sum / valid_errors.size()
-		tot_average_error.append(avg_error)
-	average_error_ms.text = str("%.2f" % avg_error + " ms")
+		Globalvar.tot_average_error.append(avg_error)
+	average_error_ms.text = str(int(avg_error))
 	
 	# Determine letter grade based on average error
 	# Assuming max acceptable error is around 250ms (half of a typical 500ms window)
@@ -66,19 +64,19 @@ func get_letter_grade(avg_error: float, max_error: float) -> String:
 	
 	# Grade thresholds (lower error = better grade)
 	if normalized_error <= 0.15:
-		return "A"
+		return "A+"
 	elif normalized_error <= 0.30:
-		return "B"
+		return "A"
 	elif normalized_error <= 0.45:
-		return "C"
+		return "B"
 	elif normalized_error <= 0.60:
-		return "D"
+		return "C"
 	elif normalized_error <= 0.75:
-		return "E"
+		return "D"
 	elif normalized_error <= 0.90:
-		return "F"
+		return "E"
 	else:
-		return "G"
+		return "F"
 
 func _on_retry_button_pressed() -> void:
 	self.visible = false

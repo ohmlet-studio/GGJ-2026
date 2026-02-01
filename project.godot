@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://d05mj545274rl"
 
 AudioController="*uid://cisl8qn8xgfet"
 Metronome="*uid://cu0flwsmafmt5"
+Globalvar="*uid://pnxl4e3ltwan"
 
 [display]
 

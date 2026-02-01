@@ -34,7 +34,7 @@
 [ext_resource type="Script" uid="uid://dh06rerknyks1" path="res://Scenes/DinnerTable/fps_counter.gd" id="24_r6s68"]
 [ext_resource type="Script" uid="uid://ci680c8mxneim" path="res://Scenes/DinnerTable/IntroBackground/intro_background.gd" id="26_xdat0"]
 [ext_resource type="Script" path="res://Scenes/DinnerTable/camera_2d.gd" id="30_aijkx"]
-[ext_resource type="Script" path="res://Scenes/DinnerTable/LevelParams.gd" id="30_m8rn3"]
+[ext_resource type="Script" uid="uid://cegw0hppiklu6" path="res://Scenes/DinnerTable/LevelParams.gd" id="30_m8rn3"]
 [ext_resource type="PackedScene" uid="uid://bta2kp608mcqf" path="res://Scenes/DinnerTable/LevelInBetween/InBetweenScene.tscn" id="32_dhylr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dhylr"]
@@ -356,7 +356,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "I missed you while you were away..."
 response = "I missed all of you too..."
 input_sequence = "HAPPY SAD HAPPY SAD HAPPY SAD"
-tempo_bpm = 150
+tempo_bpm = 100
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
