@@ -1,32 +1,42 @@
 @tool
+
 extends Node2D
 class_name Minigame
+
 @onready var char_sprite = %CharacterSprite
+
 @export var tempo_ms: float = 200.0
+
 @export var character: GlobalEnum.chars:
 	set(value):
 		character = value
 		_update_character_sprite()
+
 @export var is_npc: bool = false:
 	set(value):
 		is_npc = value
 		_update_character_sprite()
+		
+		
 signal next_queried_direction(direction: int)
 signal finished_sequence_player()
 signal input_valid(offset_ms: float)
 signal input_invalid(offset_ms: float)
 signal input_missed()
+signal sequence_started(sequence: Array)
+
 const character_sprites = {
 	GlobalEnum.chars.BABY: preload("res://Assets/Characters/baby.png"),
 	GlobalEnum.chars.BOB: preload("res://Assets/Characters/bob.png"),
 	GlobalEnum.chars.CHILD: preload("res://Assets/Characters/child.png"),
-	GlobalEnum.chars.DAD: preload("res://Assets/Characters/dad.png"),          # ← Swap these two
-	GlobalEnum.chars.MOM: preload("res://Assets/Characters/mom.png"),          # ← 
+	GlobalEnum.chars.DAD: preload("res://Assets/Characters/dad.png"),
+	GlobalEnum.chars.MOM: preload("res://Assets/Characters/mom.png"),
 	GlobalEnum.chars.OLD_LADY: preload("res://Assets/Characters/old_lady.png"),
 	GlobalEnum.chars.PUNK: preload("res://Assets/Characters/punk.png"),
 	GlobalEnum.chars.JEANKEVIN: preload("res://Assets/Characters/jean-kevin.png"),
 	GlobalEnum.chars.PLAYER: preload("res://Assets/Characters/us.png")
 }
+
 var reply_text: String
 var character_text: String
 var npc_sequence: Array
@@ -77,6 +87,8 @@ func _on_timer_finished():
 func start_player_turn():
 	is_npc = false
 	current_step_in_sequence_player = 0
+	
+	sequence_started.emit(npc_sequence)
 	
 	await Metronome.pretick
 	
