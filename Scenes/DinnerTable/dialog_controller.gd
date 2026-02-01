@@ -29,7 +29,7 @@ func play_level_and_in_between(level_number: int):
 	
 	in_between_scene.next_level.connect(
 		func():
-			if level_number == 1:
+			if level_number == levels.get_child_count():
 				get_tree().call_deferred("change_scene_to_file", "res://Scenes/FinalScene/FinalScene.tscn")
 			else:
 				level_number += 1
