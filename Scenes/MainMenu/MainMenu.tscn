@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://525pxxjd3n0c" path="res://Assets/TitleScene/enter.png" id="7_8qovt"]
 [ext_resource type="Shader" uid="uid://djx8tgp8tq2cw" path="res://Scenes/MainMenu/MainMenu.gdshader" id="8_0hjx5"]
 [ext_resource type="FontFile" uid="uid://bhv7184n448y8" path="res://Assets/main_font.ttf" id="8_fv0xt"]
+[ext_resource type="Texture2D" uid="uid://cva3shnug7kcf" path="res://Assets/TitleScene/rock_bottom.png" id="10_lic31"]
 [ext_resource type="Texture2D" uid="uid://dl8tmipe47wrd" path="res://Assets/Textures/2d_light_texture.png" id="10_sng02"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cruaa"]
@@ -265,6 +266,88 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8qovt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0hjx5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fv0xt")
 text = "Return"
+
+[node name="cailloux" type="TextureRect" parent="credits_screen" unique_id=1306315015]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.20462498
+anchor_top = 0.36846298
+anchor_right = 0.940625
+anchor_bottom = 0.775463
+offset_left = 0.120025635
+offset_top = -25.940002
+offset_right = 1413.0
+offset_bottom = 465.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.37296024, 0.37296024)
+texture = ExtResource("10_lic31")
+metadata/_edit_use_anchors_ = true
+
+[node name="ollligue" type="Label" parent="credits_screen" unique_id=1482447813]
+layout_mode = 0
+offset_left = 1228.0
+offset_top = 735.34125
+offset_right = 1386.0
+offset_bottom = 786.34125
+rotation = 0.1134464
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.72156864)
+theme_override_fonts/font = ExtResource("8_fv0xt")
+theme_override_font_sizes/font_size = 50
+text = "olligue"
+
+[node name="capumonkey" type="Label" parent="credits_screen" unique_id=1861285255]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 738.3412
+offset_right = 1175.0
+offset_bottom = 789.3412
+rotation = -0.05235988
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.72156864)
+theme_override_fonts/font = ExtResource("8_fv0xt")
+theme_override_font_sizes/font_size = 50
+text = "capumonkey"
+
+[node name="retronyme" type="Label" parent="credits_screen" unique_id=683210593]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 731.3412
+offset_right = 601.0
+offset_bottom = 782.3412
+rotation = -0.10471976
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.72156864)
+theme_override_fonts/font = ExtResource("8_fv0xt")
+theme_override_font_sizes/font_size = 50
+text = "retronyme"
+
+[node name="kima" type="Label" parent="credits_screen" unique_id=551760137]
+layout_mode = 0
+offset_left = 675.00006
+offset_top = 722.3412
+offset_right = 833.00006
+offset_bottom = 773.3412
+rotation = 0.09599311
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.72156864)
+theme_override_fonts/font = ExtResource("8_fv0xt")
+theme_override_font_sizes/font_size = 50
+text = "kima"
+
+[node name="esther?" type="Label" parent="credits_screen" unique_id=1869922653]
+layout_mode = 0
+offset_left = 1458.0
+offset_top = 731.3412
+offset_right = 1616.0
+offset_bottom = 782.3412
+rotation = -0.05235988
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.72156864)
+theme_override_fonts/font = ExtResource("8_fv0xt")
+theme_override_font_sizes/font_size = 50
+text = "esther"
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=2072592993]
 position = Vector2(965, 315)
