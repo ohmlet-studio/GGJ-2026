@@ -14,8 +14,8 @@
 [ext_resource type="Script" uid="uid://dnv3p0xv5vlsu" path="res://Scenes/Minigame/keep_rotation.gd" id="7_dn3w5"]
 [ext_resource type="Texture2D" uid="uid://bl5ih4aooxnm0" path="res://Assets/Masks/happy.png" id="7_yhojd"]
 [ext_resource type="Texture2D" uid="uid://cgj70rdsfq30r" path="res://Assets/Masks/angry.png" id="9_r6p87"]
-[ext_resource type="Texture2D" uid="uid://c0rtppwln6hli" path="res://Assets/Masks/chocked.png" id="10_g74kh"]
 [ext_resource type="Texture2D" uid="uid://cexg34u6ahgd8" path="res://Assets/Masks/sad.png" id="11_o0l4d"]
+[ext_resource type="Texture2D" uid="uid://bviuhfm75h1fn" path="res://Assets/Masks/surprised.png" id="12_g74kh"]
 
 [sub_resource type="Curve" id="Curve_f4dal"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.49545455, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -147,7 +147,7 @@ script = ExtResource("6_dn3w5")
 position = Vector2(-5.8034425e-07, -752)
 rotation = 1.5707964
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_g74kh")
+texture = ExtResource("12_g74kh")
 script = ExtResource("7_dn3w5")
 align = true
 
