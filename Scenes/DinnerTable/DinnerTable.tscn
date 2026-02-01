@@ -33,9 +33,10 @@
 [ext_resource type="Script" uid="uid://cxcw0vi7mftul" path="res://Scenes/DinnerTable/label_anim.gd" id="21_sxdy7"]
 [ext_resource type="Script" uid="uid://dh06rerknyks1" path="res://Scenes/DinnerTable/fps_counter.gd" id="24_r6s68"]
 [ext_resource type="Script" uid="uid://ci680c8mxneim" path="res://Scenes/DinnerTable/IntroBackground/intro_background.gd" id="26_xdat0"]
-[ext_resource type="Script" uid="uid://kgcjf68j0pf3" path="res://Scenes/DinnerTable/camera_2d.gd" id="30_aijkx"]
+[ext_resource type="Script" path="res://Scenes/DinnerTable/camera_2d.gd" id="30_aijkx"]
 [ext_resource type="Script" uid="uid://cegw0hppiklu6" path="res://Scenes/DinnerTable/LevelParams.gd" id="30_m8rn3"]
 [ext_resource type="PackedScene" uid="uid://bta2kp608mcqf" path="res://Scenes/DinnerTable/LevelInBetween/InBetweenScene.tscn" id="32_dhylr"]
+[ext_resource type="FontFile" uid="uid://bhv7184n448y8" path="res://Assets/main_font.ttf" id="32_dnfph"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dhylr"]
 animations = [{
@@ -303,7 +304,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_dy18p")
-level_number = 4
 
 [node name="label_npc" type="Label" parent="DialogController" unique_id=585406073]
 layout_mode = 0
@@ -311,6 +311,7 @@ offset_left = 128.0
 offset_top = 99.0
 offset_right = 1050.0
 offset_bottom = 300.0
+theme_override_fonts/font = ExtResource("32_dnfph")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_wh2rv")
 text = "L"
@@ -326,6 +327,7 @@ offset_left = 134.0
 offset_top = 107.0
 offset_right = 1056.0
 offset_bottom = 308.0
+theme_override_fonts/font = ExtResource("32_dnfph")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_wh2rv")
 text = "(Oh, that's right, I'm home, time to perform, ok, let's get used to it)
