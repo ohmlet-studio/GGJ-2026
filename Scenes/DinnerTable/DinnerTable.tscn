@@ -1,27 +1,27 @@
 [gd_scene format=3 uid="uid://8hum8taroxds"]
 
-[ext_resource type="Texture2D" uid="uid://bdu8ujc1pplhj" path="res://Assets/Background/walls.png" id="2_3ppc4"]
+[ext_resource type="Texture2D" uid="uid://bve3nl0hoo72e" path="res://Assets/Background/walls.png" id="2_3ppc4"]
 [ext_resource type="PackedScene" uid="uid://wfojq22ofpch" path="res://Scenes/Minigame/Minigame.tscn" id="2_ai5vm"]
 [ext_resource type="Script" uid="uid://bqkhobriou2pa" path="res://Scenes/DinnerTable/PushInput.gd" id="2_wh2rv"]
-[ext_resource type="Texture2D" uid="uid://cg860iri3m7gx" path="res://Assets/Background/table.png" id="3_i1a7h"]
-[ext_resource type="Texture2D" uid="uid://c2tq0i45atf60" path="res://Assets/Background/characters.png" id="4_3ppc4"]
+[ext_resource type="Texture2D" uid="uid://cobmpo7f72xfx" path="res://Assets/Background/table.png" id="3_i1a7h"]
+[ext_resource type="Texture2D" uid="uid://cwfgx6uq0h325" path="res://Assets/Background/characters.png" id="4_3ppc4"]
 [ext_resource type="Script" uid="uid://cr0vs2pn8smo6" path="res://Scenes/DinnerTable/dialog_controller.gd" id="4_dy18p"]
 [ext_resource type="Script" uid="uid://btusn0kqjv6ew" path="res://Scenes/Dialog/dialog_prompt.gd" id="4_l8u7i"]
-[ext_resource type="Texture2D" uid="uid://dbifr1m051iuv" path="res://Assets/Characters/speaking_bonus/Baby1.png" id="5_d8ug0"]
-[ext_resource type="Texture2D" uid="uid://chivd6n8n466k" path="res://Assets/Minigame/Cadre.png" id="6_3ppc4"]
-[ext_resource type="Texture2D" uid="uid://b1qa6gfnifvm2" path="res://Assets/Characters/speaking_bonus/Baby2.png" id="6_npwxr"]
-[ext_resource type="Texture2D" uid="uid://ctvsyexeqoqld" path="res://Assets/Characters/speaking_bonus/Bob1.png" id="7_sxdy7"]
-[ext_resource type="Texture2D" uid="uid://dsoimn06wu41w" path="res://Assets/Characters/speaking_bonus/Bob2.png" id="8_r6s68"]
-[ext_resource type="Texture2D" uid="uid://b7h11ukrltk68" path="res://Assets/Characters/speaking_bonus/Jean_Kev1.png" id="9_lm7s3"]
-[ext_resource type="Texture2D" uid="uid://ccwmfe0t1iah5" path="res://Assets/Characters/speaking_bonus/Jean_Kev2.png" id="10_3kl3o"]
-[ext_resource type="Texture2D" uid="uid://dqihfgxj0be27" path="res://Assets/Characters/speaking_bonus/Mom1.png" id="11_8vjpa"]
-[ext_resource type="Texture2D" uid="uid://cmfl502by25g0" path="res://Assets/Background/dad_portrait.png" id="11_mn11s"]
-[ext_resource type="Texture2D" uid="uid://cqwi6v4m4prs8" path="res://Assets/Minigame/MasqueGros.png" id="12_fhul8"]
-[ext_resource type="Texture2D" uid="uid://d3jkxqq2hcu7i" path="res://Assets/Characters/speaking_bonus/Mom2.png" id="12_ty6aa"]
-[ext_resource type="Texture2D" uid="uid://b8i448676kkq1" path="res://Assets/Characters/speaking_bonus/Old_Lady2 1.png" id="13_54m5f"]
-[ext_resource type="Texture2D" uid="uid://bmmmoegpqrv81" path="res://Assets/Characters/speaking_bonus/Old_Lady2.png" id="14_0vkll"]
-[ext_resource type="Texture2D" uid="uid://br4ix8ei4nulq" path="res://Assets/Characters/speaking_bonus/Punk1.png" id="15_wpjnp"]
-[ext_resource type="Texture2D" uid="uid://bt5vlr5ielw62" path="res://Assets/Characters/speaking_bonus/Punk2.png" id="16_m8rn3"]
+[ext_resource type="Texture2D" uid="uid://ckcys8pfrssgg" path="res://Assets/Characters/speaking_bonus/Baby1.png" id="5_d8ug0"]
+[ext_resource type="Texture2D" uid="uid://e4p8vr5nxdyk" path="res://Assets/Minigame/Cadre.png" id="6_3ppc4"]
+[ext_resource type="Texture2D" uid="uid://b64glgxkb2xf5" path="res://Assets/Characters/speaking_bonus/Baby2.png" id="6_npwxr"]
+[ext_resource type="Texture2D" uid="uid://bwcui773arex" path="res://Assets/Characters/speaking_bonus/Bob1.png" id="7_sxdy7"]
+[ext_resource type="Texture2D" uid="uid://d3x2a7105dyqm" path="res://Assets/Characters/speaking_bonus/Bob2.png" id="8_r6s68"]
+[ext_resource type="Texture2D" uid="uid://c3slscbmqavdy" path="res://Assets/Characters/speaking_bonus/Jean_Kev1.png" id="9_lm7s3"]
+[ext_resource type="Texture2D" uid="uid://cs6hi0cxns2ae" path="res://Assets/Characters/speaking_bonus/Jean_Kev2.png" id="10_3kl3o"]
+[ext_resource type="Texture2D" uid="uid://bu6n4twj8nt03" path="res://Assets/Characters/speaking_bonus/Mom1.png" id="11_8vjpa"]
+[ext_resource type="Texture2D" uid="uid://yncbdgmhpk1a" path="res://Assets/Background/dad_portrait.png" id="11_mn11s"]
+[ext_resource type="Texture2D" uid="uid://kb7pnv1jbj80" path="res://Assets/Minigame/MasqueGros.png" id="12_fhul8"]
+[ext_resource type="Texture2D" uid="uid://blmsitjf545ix" path="res://Assets/Characters/speaking_bonus/Mom2.png" id="12_ty6aa"]
+[ext_resource type="Texture2D" uid="uid://dak0jv24v7o88" path="res://Assets/Characters/speaking_bonus/Old_Lady2 1.png" id="13_54m5f"]
+[ext_resource type="Texture2D" uid="uid://cioq1sm8k3p8d" path="res://Assets/Characters/speaking_bonus/Old_Lady2.png" id="14_0vkll"]
+[ext_resource type="Texture2D" uid="uid://cigs1t6shi0kj" path="res://Assets/Characters/speaking_bonus/Punk1.png" id="15_wpjnp"]
+[ext_resource type="Texture2D" uid="uid://dtr862jk8wsgl" path="res://Assets/Characters/speaking_bonus/Punk2.png" id="16_m8rn3"]
 [ext_resource type="Script" uid="uid://dnikm7l6sqo1d" path="res://Scenes/DinnerTable/hint_anim.gd" id="18_sxdy7"]
 [ext_resource type="Script" path="res://Scenes/DinnerTable/label_anim.gd" id="21_sxdy7"]
 
@@ -249,7 +249,6 @@ size = Vector2i(607, 775)
 [node name="Minigame" parent="SubViewportMinigame" unique_id=1383645364 instance=ExtResource("2_ai5vm")]
 unique_name_in_owner = true
 character = 4
-is_npc = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=447278973]
 unique_name_in_owner = true
@@ -302,6 +301,7 @@ char_dialog = "I'm so glad to have you home dear."
 response = "(Oh, that's right, I'm home, time to perform, ok, let's get used to it)
 I'm glad to be home too mom !"
 input_sequence = "HAPPY"
+tempo_bpm = 120
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
@@ -310,6 +310,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "I missed you while you were away..."
 response = "I missed all of you too..."
 input_sequence = "SAD"
+tempo_bpm = 120
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
@@ -318,6 +319,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "By the way you could have texted and call more, I was worried!"
 response = "Yeah, I'm so overwhlmed between classes and work, it sucks!"
 input_sequence = "ANGER"
+tempo_bpm = 60
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
@@ -326,6 +328,7 @@ script = ExtResource("4_l8u7i")
 char_dialog = "If you did you would know, we just adopted a kitten yesterday, we named it Zoomies!"
 response = "Oh waow, I can't wait to meet it !"
 input_sequence = "SURPRISE"
+tempo_bpm = 60
 character = 4
 metadata/_custom_type_script = "uid://btusn0kqjv6ew"
 
