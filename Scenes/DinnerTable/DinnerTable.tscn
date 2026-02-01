@@ -4,14 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://c82o2adc5mp81" path="res://Assets/Background/Correc_Perspe.png" id="2_sxdy7"]
 [ext_resource type="Script" uid="uid://bqkhobriou2pa" path="res://Scenes/DinnerTable/PushInput.gd" id="2_wh2rv"]
 [ext_resource type="Texture2D" uid="uid://d726o21yboy" path="res://Assets/Background/TableEtTapis.png" id="3_r6s68"]
+[ext_resource type="Texture2D" uid="uid://beo5u6xpvvth8" path="res://Assets/Background/Bouke.png" id="3_wpjnp"]
 [ext_resource type="Script" uid="uid://cr0vs2pn8smo6" path="res://Scenes/DinnerTable/dialog_controller.gd" id="4_dy18p"]
 [ext_resource type="Script" uid="uid://btusn0kqjv6ew" path="res://Scenes/Dialog/dialog_prompt.gd" id="4_l8u7i"]
 [ext_resource type="Texture2D" uid="uid://dm6h2bsw8i4j7" path="res://Assets/Background/Papa.png" id="4_lm7s3"]
+[ext_resource type="Texture2D" uid="uid://c7ag7ne2ytmu7" path="res://Assets/Background/Etagere.png" id="4_m8rn3"]
 [ext_resource type="Texture2D" uid="uid://ckcys8pfrssgg" path="res://Assets/Characters/speaking_bonus/Baby1.png" id="5_d8ug0"]
+[ext_resource type="Texture2D" uid="uid://b7mr8as767ekd" path="res://Assets/Background/Guirlande.png" id="5_dhylr"]
 [ext_resource type="Texture2D" uid="uid://e4p8vr5nxdyk" path="res://Assets/Minigame/Cadre.png" id="6_3ppc4"]
 [ext_resource type="Script" uid="uid://dyft328yds4pr" path="res://Scenes/DinnerTable/talk_hint.gd" id="6_lm7s3"]
 [ext_resource type="Texture2D" uid="uid://b64glgxkb2xf5" path="res://Assets/Characters/speaking_bonus/Baby2.png" id="6_npwxr"]
+[ext_resource type="Texture2D" uid="uid://dk76pa666pvj3" path="res://Assets/Background/TabloBalencoire.png" id="6_pingq"]
 [ext_resource type="Texture2D" uid="uid://bwcui773arex" path="res://Assets/Characters/speaking_bonus/Bob1.png" id="7_sxdy7"]
+[ext_resource type="Texture2D" uid="uid://gkcney8kj1ca" path="res://Assets/Background/TabloBato.png" id="7_xdat0"]
+[ext_resource type="Texture2D" uid="uid://rsrihsnsirto" path="res://Assets/Background/TabloFleur.png" id="8_aijkx"]
 [ext_resource type="Texture2D" uid="uid://d3x2a7105dyqm" path="res://Assets/Characters/speaking_bonus/Bob2.png" id="8_r6s68"]
 [ext_resource type="Texture2D" uid="uid://c3slscbmqavdy" path="res://Assets/Characters/speaking_bonus/Jean_Kev1.png" id="9_lm7s3"]
 [ext_resource type="Texture2D" uid="uid://cs6hi0cxns2ae" path="res://Assets/Characters/speaking_bonus/Jean_Kev2.png" id="10_3kl3o"]
@@ -150,9 +156,39 @@ position = Vector2(960, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_sxdy7")
 
+[node name="Bouke" type="Sprite2D" parent="." unique_id=1213459557]
+position = Vector2(701, 293)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_wpjnp")
+
+[node name="Etagere" type="Sprite2D" parent="." unique_id=1808606632]
+position = Vector2(118, 434)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_m8rn3")
+
+[node name="Guirlande" type="Sprite2D" parent="." unique_id=796834291]
+position = Vector2(332, 97)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_dhylr")
+
+[node name="TabloBalencoire" type="Sprite2D" parent="." unique_id=1781023727]
+position = Vector2(369, 266)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_pingq")
+
+[node name="TabloBato" type="Sprite2D" parent="." unique_id=603984029]
+position = Vector2(858, 380)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_xdat0")
+
+[node name="TabloFleur" type="Sprite2D" parent="." unique_id=1082666997]
+position = Vector2(587, 283)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_aijkx")
+
 [node name="Table" type="Sprite2D" parent="." unique_id=1883768351]
-position = Vector2(684, 695)
-scale = Vector2(0.42751518, 0.42751518)
+position = Vector2(665, 725)
+scale = Vector2(0.482564, 0.482564)
 texture = ExtResource("3_r6s68")
 
 [node name="DadPortrait" type="Sprite2D" parent="." unique_id=604282543]
@@ -216,7 +252,7 @@ frame_progress = 0.47572345
 script = ExtResource("18_sxdy7")
 
 [node name="Hint_oldBaby" type="AnimatedSprite2D" parent="TalkHint" unique_id=1582503323]
-position = Vector2(-313.5315, -126.50003)
+position = Vector2(-373.16455, -123.06491)
 scale = Vector2(0.31102362, 0.31102362)
 sprite_frames = SubResource("SpriteFrames_dhylr")
 animation = &"hint_oldBaby"
